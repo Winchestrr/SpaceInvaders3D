@@ -9,12 +9,18 @@ public class PlayerController : MonoBehaviour
     float movX;
     float movZ;
     Vector3 direction;
+
     public float playerSpeed;
+    public float playerRotationSpeed;
+    public float targetAngleZ;
 
     void Update()
     {
+        targetAngleZ = 0;
+
         GetInputs();
         PlayerMove();
+        SetRotation();
     }
 
     void GetInputs()
@@ -25,13 +31,26 @@ public class PlayerController : MonoBehaviour
 
     void PlayerMove()
     {
-        direction = new Vector3(movX, 0f, movZ);
+        direction = new Vector3(movX, 0, movZ);
 
         if (direction.magnitude > 0.1f)
         {
             controller.Move(direction * playerSpeed * Time.deltaTime);
-        }
 
-        //add rotation
+            //to chyba do zmiany bêdzie
+            if(movX > 0.1)
+            {
+                targetAngleZ = -30;
+            }
+            else if(movX < -0.1)
+            {
+                targetAngleZ = 30;
+            }
+        }
+    }
+
+    void SetRotation()
+    {
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, targetAngleZ), playerRotationSpeed);
     }
 }

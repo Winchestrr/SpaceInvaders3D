@@ -1,18 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameController gameController;
+
+    public Text gameStateText;
+
+    public void Update()
     {
-        
+        SetUI();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetUI()
     {
-        
+        gameStateText.text = gameController.currentState.ToString();
     }
 }
