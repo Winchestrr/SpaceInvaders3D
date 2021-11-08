@@ -25,8 +25,8 @@ public class PlayerController : MonoBehaviour
 
     void GetInputs()
     {
-        movX = Input.GetAxisRaw("Horizontal");
-        movZ = Input.GetAxisRaw("Vertical");
+        movX = Input.GetAxis("Horizontal");
+        movZ = Input.GetAxis("Vertical");
     }
 
     void PlayerMove()
@@ -38,11 +38,11 @@ public class PlayerController : MonoBehaviour
             controller.Move(direction * playerSpeed * Time.deltaTime);
 
             //to chyba do zmiany bêdzie
-            if(movX > 0.1)
+            if(Input.GetKey(KeyCode.D))
             {
                 targetAngleZ = -30;
             }
-            else if(movX < -0.1)
+            else if(Input.GetKey(KeyCode.A))
             {
                 targetAngleZ = 30;
             }
