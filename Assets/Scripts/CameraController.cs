@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public PlayerController playerController;
+    public Transform target;
 
-    private void Update()
+    public float smoothSpeed = 0.125f;
+    public Vector3 offset;
+
+    private void LateUpdate()
     {
-        CameraMove();
-    }
-
-    void CameraMove()
-    {
-
+        Vector3 desiredPosition = target.position + offset;
+        Vector3 smoothPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * Time.deltaTime);
+        transform.position = smoothPosition;
     }
 }
