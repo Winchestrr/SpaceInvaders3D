@@ -14,5 +14,6 @@ public class StandardWeapon : GunBase
         base.Shoot();
 
         GameObject shotBullet = Instantiate(bullet, gunEnd.position, transform.rotation);
+        shotBullet.GetComponent<StandardBullet>().Launch(damage, bulletSpeed);
     }
 }
