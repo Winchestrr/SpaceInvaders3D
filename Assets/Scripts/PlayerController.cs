@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public CharacterController controller;
     public CameraController cameraController;
+    public GameController gameController;
     //do zmiany
     public StandardWeapon standardWeapon;
 
@@ -19,13 +20,13 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        GetInputs();
+        
     }
 
     void LateUpdate()
     {
         targetAngleZ = 0;
-
+        GetInputs();
         PlayerMove();
         SetRotation();
     }
@@ -35,10 +36,15 @@ public class PlayerController : MonoBehaviour
         movX = Input.GetAxis("Horizontal");
         movZ = Input.GetAxis("Vertical");
 
-        if(Input.GetButton("Fire1"))
+        if(Input.GetButton("Fire1") || Input.GetKey(KeyCode.Space))
         {
             //do zmiany
             standardWeapon.TryShoot();
+        }
+
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            gameController.GamePause();
         }
     }
 
