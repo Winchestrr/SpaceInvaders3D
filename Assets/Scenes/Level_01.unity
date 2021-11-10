@@ -378,7 +378,7 @@ MonoBehaviour:
   gameController: {fileID: 599069034}
   standardWeapon: {fileID: 1925607241}
   playerSpeed: 12
-  playerRotationSpeed: 0.022
+  playerRotationSpeed: 8
   targetAngleZ: 0
 --- !u!143 &573833959
 CharacterController:

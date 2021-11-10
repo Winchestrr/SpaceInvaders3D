@@ -21,6 +21,12 @@ public class CameraController : MonoBehaviour
         transform.position = smoothPosition;
     }
 
+    //to do ogarniêcia póŸniej, testowo
+    void CameraRotate()
+    {
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, 5), 0.025f);
+    }
+
     public IEnumerator CameraShake(float duration, float magnitude)
     {
         //nie dzia³a, do wyjebania albo do zmiany
