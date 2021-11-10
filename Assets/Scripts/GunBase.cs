@@ -4,23 +4,31 @@ using UnityEngine;
 
 public class GunBase : MonoBehaviour
 {
-    public GameObject bullet;
     public Transform gunEnd;
 
-    public bool canShoot;
-    public float timeBetweenShots;
+    [SerializeField] protected float timeBetweenShots;
+    protected float lastShotTime;
 
-
-
-    void Shoot()
+    public virtual void TryShoot()
     {
+        if(CanShoot())
+        {
+            Shoot();
+        }    
+    }
 
+    protected virtual void Shoot()
+    {
+        lastShotTime = Time.time;
+        //play gunshot audio
     }
 
     bool CanShoot()
     {
-
-
-        return canShoot;
+        if(Time.time > lastShotTime + timeBetweenShots)
+        {
+            return true;
+        }
+        return false;
     }
 }

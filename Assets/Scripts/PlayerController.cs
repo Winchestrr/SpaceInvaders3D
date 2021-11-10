@@ -5,6 +5,9 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public CharacterController controller;
+    public CameraController cameraController;
+    //do zmiany
+    public StandardWeapon standardWeapon;
 
     float movX;
     float movZ;
@@ -14,11 +17,15 @@ public class PlayerController : MonoBehaviour
     public float playerRotationSpeed;
     public float targetAngleZ;
 
-    void Update()
+    private void Update()
+    {
+        GetInputs();
+    }
+
+    void LateUpdate()
     {
         targetAngleZ = 0;
 
-        GetInputs();
         PlayerMove();
         SetRotation();
     }
@@ -27,6 +34,12 @@ public class PlayerController : MonoBehaviour
     {
         movX = Input.GetAxis("Horizontal");
         movZ = Input.GetAxis("Vertical");
+
+        if(Input.GetButton("Fire1"))
+        {
+            //do zmiany
+            standardWeapon.TryShoot();
+        }
     }
 
     void PlayerMove()
