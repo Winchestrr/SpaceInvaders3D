@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("Objects")]
     public CharacterController controller;
     public CameraController cameraController;
     public GameController gameController;
     public WeaponSystem weaponSystem;
-    //do zmiany
-    public StandardWeapon standardWeapon;
 
     float movX;
     float movZ;
     Vector3 direction;
 
+    [Header("Stats")]
     public float playerSpeed;
     public float playerRotationSpeed;
     public float targetAngleZ;

@@ -5,15 +5,16 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     public enum GameState { MENU, STARTBATTLE, BATTLE, LOST, WON, PAUSE }
-    public GameState currentState;
 
+    [Header("Objects")]
     public CameraController cameraController;
-
     public GameObject[] playerShips;
     public GameObject currentPlayerShip;
-    public int chosenShipIndex;
     public Transform startPoint;
 
+    [Header("Stats")]
+    public GameState currentState;
+    public int chosenShipIndex;
     private bool isPaused;
 
     public void Awake()
