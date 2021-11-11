@@ -21,6 +21,12 @@ public class CameraController : MonoBehaviour
         transform.position = smoothPosition;
     }
 
+    public void StickCameraToPlayer(Transform transform)
+    {
+        Debug.Log("stick camera");
+        target = transform;
+    }
+
     //to do ogarniêcia póŸniej, testowo
     void CameraRotate()
     {
