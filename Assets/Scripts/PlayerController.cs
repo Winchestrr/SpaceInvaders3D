@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     public CharacterController controller;
     public CameraController cameraController;
     public GameController gameController;
+    public WeaponSystem weaponSystem;
     //do zmiany
     public StandardWeapon standardWeapon;
 
@@ -39,12 +40,22 @@ public class PlayerController : MonoBehaviour
         if(Input.GetButton("Fire1") || Input.GetKey(KeyCode.Space))
         {
             //do zmiany
-            standardWeapon.TryShoot();
+            weaponSystem.Shoot();
         }
 
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             gameController.GamePause();
+        }
+
+        if(Input.GetKeyDown(KeyCode.Q))
+        {
+            weaponSystem.PreviousWeapon();
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            weaponSystem.NextWeapon();
         }
     }
 
