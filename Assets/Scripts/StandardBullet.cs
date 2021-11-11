@@ -15,4 +15,9 @@ public class StandardBullet : MonoBehaviour
 
         Destroy(gameObject, lifetime);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Destroy(gameObject);
+    }
 }
