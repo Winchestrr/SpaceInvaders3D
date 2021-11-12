@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     public float playerRotationSpeed;
     public float targetAngleZ;
 
-    private void Update()
+    private void Start()
     {
         
     }
@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            gameController.GamePause();
+            GameController.GamePause();
         }
 
         if(Input.GetKeyDown(KeyCode.Q))

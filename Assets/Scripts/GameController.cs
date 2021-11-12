@@ -12,10 +12,13 @@ public class GameController : MonoBehaviour
     public GameObject currentPlayerShip;
     public Transform startPoint;
 
+
     [Header("Stats")]
     public GameState currentState;
     public int chosenShipIndex;
-    private bool isPaused;
+
+    public static bool isPaused;
+
 
     public void Awake()
     {
@@ -25,7 +28,7 @@ public class GameController : MonoBehaviour
         currentPlayerShip = InstantiatePlayerShip(playerShips[chosenShipIndex]);
     }
 
-    public void GamePause()
+    public static void GamePause()
     {
         if(isPaused)
         {
