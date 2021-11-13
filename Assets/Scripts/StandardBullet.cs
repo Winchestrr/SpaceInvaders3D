@@ -8,7 +8,7 @@ public class StandardBullet : MonoBehaviour
 
     public float lifetime;
 
-    public void Launch(int damage, float speed)
+    public virtual void Launch(int damage, float speed)
     {
         rb = GetComponent<Rigidbody>();
         rb.velocity = transform.forward * speed;
@@ -16,7 +16,7 @@ public class StandardBullet : MonoBehaviour
         Destroy(gameObject, lifetime);
     }
 
-    private void OnTriggerEnter(Collider other)
+    public virtual void OnTriggerEnter(Collider other)
     {
         Destroy(gameObject);
     }
