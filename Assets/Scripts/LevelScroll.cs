@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class LevelScroll : MonoBehaviour
 {
+    public bool canMove = true;
     public float levelSpeed;
 
     private void Update()
@@ -13,6 +14,9 @@ public class LevelScroll : MonoBehaviour
 
     void LevelMove(float speed)
     {
-        transform.Translate(Vector3.up * speed * Time.deltaTime);
+        if(canMove)
+        {
+            transform.Translate(Vector3.up * speed * Time.deltaTime);
+        }
     }
 }

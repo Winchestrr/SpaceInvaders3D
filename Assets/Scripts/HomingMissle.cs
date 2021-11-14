@@ -4,14 +4,32 @@ using UnityEngine;
 
 public class HomingMissle : StandardBullet
 {
-    private void Update()
+    public float findTargetRange;
+    public float rotationSpeed;
+
+    public LayerMask targetLayer;
+    public Transform target;
+
+    private void Start()
     {
-        //SetAngle(SetTarget());
+        FindTarget();
     }
 
-    public override void Launch(int damage, float speed)
+    private void Update()
     {
-        base.Launch(damage, speed);
+        if(target == null)
+        {
+            return;
+        }
+        Vector3 toTarget = target.position - transform.position;
+        Quaternion targetRotation = Quaternion.LookRotation(toTarget);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+        rb.velocity = transform.forward * speed;
+    }
+
+    public override void Launch(int _damage, float _speed)
+    {
+        base.Launch(_damage, _speed);
     }
 
     public override void OnTriggerEnter(Collider other)
@@ -19,16 +37,23 @@ public class HomingMissle : StandardBullet
         base.OnTriggerEnter(other);
     }
 
-    //GameObject SetTarget()
-    //{
-    //    GameObject target;
-
-
-    //    return target;
-    //}
-
-    void SetAngle(GameObject target)
+    void FindTarget()
     {
+        Collider[] cols = Physics.OverlapSphere(transform.position, findTargetRange, targetLayer);
+        Transform closest = null;
+        float bestDist = float.MaxValue;
 
+        for(int i = 0; i < cols.Length; i++)
+        {
+            float dist = Vector3.Distance(transform.position, cols[i].transform.position);
+
+            if(dist < bestDist)
+            {
+                closest = cols[i].transform;
+                bestDist = dist;
+            }
+        }
+        target = closest;
     }
+
 }
