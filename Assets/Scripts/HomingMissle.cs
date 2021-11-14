@@ -6,7 +6,7 @@ public class HomingMissle : StandardBullet
 {
     private void Update()
     {
-        SetAngle(SetTarget());
+        //SetAngle(SetTarget());
     }
 
     public override void Launch(int damage, float speed)
@@ -19,13 +19,13 @@ public class HomingMissle : StandardBullet
         base.OnTriggerEnter(other);
     }
 
-    GameObject SetTarget()
-    {
-        GameObject target;
+    //GameObject SetTarget()
+    //{
+    //    GameObject target;
 
 
-        return target;
-    }
+    //    return target;
+    //}
 
     void SetAngle(GameObject target)
     {
