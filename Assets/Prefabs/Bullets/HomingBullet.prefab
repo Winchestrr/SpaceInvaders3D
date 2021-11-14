@@ -128,8 +128,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifetime: 6
-  findTargetRange: 383.1
-  rotationSpeed: 202.3
+  findTargetRange: 350
+  rotationSpeed: 300
   targetLayer:
     serializedVersion: 2
     m_Bits: 512
