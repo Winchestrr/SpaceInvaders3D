@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4155040055682604329}
   m_Layer: 0
   m_Name: HomingBullet
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -113,7 +113,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 118
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!114 &4155040055682604329
 MonoBehaviour:
@@ -128,8 +128,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifetime: 6
-  findTargetRange: 40
-  rotationSpeed: 40
+  findTargetRange: 383.1
+  rotationSpeed: 202.3
   targetLayer:
     serializedVersion: 2
     m_Bits: 512
+  target: {fileID: 0}

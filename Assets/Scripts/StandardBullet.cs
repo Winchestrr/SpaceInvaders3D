@@ -23,6 +23,11 @@ public class StandardBullet : MonoBehaviour
 
     public virtual void OnTriggerEnter(Collider other)
     {
-        Destroy(gameObject);
+        //do zmiany
+        if (other.tag != "Bullet" && other.tag != "Player" && other.tag != "Weapon")
+        {
+            Destroy(gameObject);
+        }
+        
     }
 }

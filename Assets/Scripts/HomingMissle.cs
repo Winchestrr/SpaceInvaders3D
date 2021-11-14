@@ -13,6 +13,14 @@ public class HomingMissle : StandardBullet
     private void Start()
     {
         FindTarget();
+        if (target == null)
+        {
+            return;
+        }
+        Vector3 toTarget = target.position - transform.position;
+        Quaternion targetRotation = Quaternion.LookRotation(toTarget);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+        rb.velocity = transform.forward * speed;
     }
 
     private void Update()
