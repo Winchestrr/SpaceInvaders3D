@@ -17,7 +17,7 @@ public class HomingMissle : StandardBullet
 
     private void Update()
     {
-        RotateToTarget();
+        RotateToTarget();  
     }
 
     public override void Launch(int _damage, float _speed)

@@ -175,11 +175,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunEnd: {fileID: 922871502696170002}
-  timeBetweenShots: 0.2
   bullet: {fileID: 2944955773603090048, guid: 7b78021aac6ec2c409cfb7500fc54f1a, type: 3}
-  gunEnd2: {fileID: 922871502143822086}
   damage: 1
   bulletSpeed: 30
+  timeBetweenShots: 0.2
+  gunEnd2: {fileID: 922871502143822086}
 --- !u!1 &4314779940631344706
 GameObject:
   m_ObjectHideFlags: 0
@@ -454,7 +454,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4314779940993900440}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3dfc9c583a4a1aa4b8dc119818e3069c, type: 3}
   m_Name: 
@@ -675,10 +675,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunEnd: {fileID: 3984081335125633572}
-  timeBetweenShots: 0.2
   bullet: {fileID: 8121441352637930604, guid: 9bf850be66593eb48840fc383e15d6eb, type: 3}
   damage: 1
   bulletSpeed: 30
+  timeBetweenShots: 0.2
 --- !u!1001 &4314779939463465208
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class GunBase : MonoBehaviour
 {
-    public Transform gunEnd;
+    [SerializeField] protected Transform gunEnd;
+    [SerializeField] protected GameObject bullet;
 
+    [SerializeField] protected int damage;
+    [SerializeField] protected float bulletSpeed;
     [SerializeField] protected float timeBetweenShots;
     protected float lastShotTime;
 

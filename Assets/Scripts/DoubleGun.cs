@@ -4,11 +4,7 @@ using UnityEngine;
 
 public class DoubleGun : GunBase
 {
-    [SerializeField] protected GameObject bullet;
     [SerializeField] private Transform gunEnd2;
-
-    [SerializeField] protected int damage;
-    [SerializeField] protected float bulletSpeed;
 
     protected override void Shoot()
     {

@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class StandardWeapon : GunBase
 {
-    [SerializeField] protected GameObject bullet;
-
-    [SerializeField] protected int damage;
-    [SerializeField] protected float bulletSpeed;
-
     protected override void Shoot()
     {
         base.Shoot();
