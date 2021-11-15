@@ -675,7 +675,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunEnd: {fileID: 3984081335125633572}
-  timeBetweenShots: 0.3
+  timeBetweenShots: 0.2
   bullet: {fileID: 8121441352637930604, guid: 9bf850be66593eb48840fc383e15d6eb, type: 3}
   damage: 1
   bulletSpeed: 30

@@ -13,26 +13,11 @@ public class HomingMissle : StandardBullet
     private void Start()
     {
         FindTarget();
-        if (target == null)
-        {
-            return;
-        }
-        Vector3 toTarget = target.position - transform.position;
-        Quaternion targetRotation = Quaternion.LookRotation(toTarget);
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
-        rb.velocity = transform.forward * speed;
     }
 
     private void Update()
     {
-        if(target == null)
-        {
-            return;
-        }
-        Vector3 toTarget = target.position - transform.position;
-        Quaternion targetRotation = Quaternion.LookRotation(toTarget);
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
-        rb.velocity = transform.forward * speed;
+        RotateToTarget();
     }
 
     public override void Launch(int _damage, float _speed)
@@ -64,4 +49,15 @@ public class HomingMissle : StandardBullet
         target = closest;
     }
 
+    void RotateToTarget()
+    {
+        if (target == null)
+        {
+            return;
+        }
+        Vector3 toTarget = target.position - transform.position;
+        Quaternion targetRotation = Quaternion.LookRotation(toTarget);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+        rb.velocity = transform.forward * speed;
+    }
 }
