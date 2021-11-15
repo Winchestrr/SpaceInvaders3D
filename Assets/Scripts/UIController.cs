@@ -10,7 +10,14 @@ public class UIController : MonoBehaviour
     public AmmoWeapon ammoWeapon;
 
     public Text gameStateText;
+    public GameObject ammoTextGO;
     public Text ammoText;
+
+    private void Start()
+    {
+        //to nie dzia³a
+        ammoWeapon = FindObjectOfType<AmmoWeapon>();
+    }
 
     public void Update()
     {
@@ -21,6 +28,6 @@ public class UIController : MonoBehaviour
     {
         gameStateText.text = gameController.currentState.ToString();
 
-        //ammoText.text = "Ammo: " + ammoWeapon.currentAmmo;
+        ammoText.text = "Ammo: " + ammoWeapon.bulletsLeft + "/" + ammoWeapon.allBullets;
     }
 }

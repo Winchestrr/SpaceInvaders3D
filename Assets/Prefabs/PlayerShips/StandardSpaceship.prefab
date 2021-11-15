@@ -614,7 +614,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1502183614537634057
 Transform:
   m_ObjectHideFlags: 0
@@ -659,7 +659,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0f1a6e5aa35fe7142a50b44a663cefdc, type: 2}
+  - {fileID: 2100000, guid: 7a1ab0d5151bca44cb6e4712c17bf481, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -711,11 +711,13 @@ MonoBehaviour:
   damage: 1
   bulletSpeed: 30
   timeBetweenShots: 0.3
+  uiController: {fileID: 0}
   magazineSize: 6
-  allBullets: 36
+  allBullets: 12
   ammoCost: 1
   bulletsLeft: 6
   reloadTime: 2
+  isMagazineEmpty: 0
 --- !u!1 &8299778275800573106
 GameObject:
   m_ObjectHideFlags: 0

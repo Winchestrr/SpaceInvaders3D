@@ -4,13 +4,25 @@ using UnityEngine;
 
 public class AmmoWeapon : GunBase
 {
+    public UIController uiController;
+
     [SerializeField] protected int magazineSize;
-    [SerializeField] protected int allBullets;
+    public int allBullets;
     [SerializeField] protected int ammoCost;
     public int bulletsLeft;
 
     [SerializeField] protected float reloadTime;
     [SerializeField] protected bool isMagazineEmpty;
+
+    private void OnEnable()
+    {
+        uiController.ammoTextGO.SetActive(true);
+    }
+
+    private void OnDisable()
+    {
+        uiController.ammoTextGO.SetActive(false);
+    }
 
     private void Update()
     {
