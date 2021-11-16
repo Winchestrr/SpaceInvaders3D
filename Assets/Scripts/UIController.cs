@@ -7,17 +7,12 @@ public class UIController : MonoBehaviour
 {
     public GameController gameController;
     //do zmiany, ¿eby bra³ aktywny ammo weapon zamiast jednego ca³y czas
+    public GameObject ammoWeaponGO;
     public AmmoWeapon ammoWeapon;
 
     public Text gameStateText;
-    public GameObject ammoTextGO;
+   // public GameObject ammoTextGO;
     public Text ammoText;
-
-    private void Start()
-    {
-        //to nie dzia³a
-        ammoWeapon = FindObjectOfType<AmmoWeapon>();
-    }
 
     public void Update()
     {
@@ -28,6 +23,9 @@ public class UIController : MonoBehaviour
     {
         gameStateText.text = gameController.currentState.ToString();
 
-        ammoText.text = "Ammo: " + ammoWeapon.bulletsLeft + "/" + ammoWeapon.allBullets;
+        if(ammoWeaponGO != null)
+        {
+            ammoText.text = "Ammo: " + ammoWeapon.bulletsLeft + "/" + ammoWeapon.allBullets;
+        }
     }
 }

@@ -14,14 +14,20 @@ public class AmmoWeapon : GunBase
     [SerializeField] protected float reloadTime;
     [SerializeField] protected bool isMagazineEmpty;
 
+    private void Start()
+    {
+        uiController.ammoWeaponGO = gameObject;
+    }
+
     private void OnEnable()
     {
-        uiController.ammoTextGO.SetActive(true);
+        uiController.ammoWeaponGO = gameObject;
+        //uiController.ammoTextGO.SetActive(true);
     }
 
     private void OnDisable()
     {
-        uiController.ammoTextGO.SetActive(false);
+        //uiController.ammoTextGO.SetActive(false);
     }
 
     private void Update()
