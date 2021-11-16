@@ -14,20 +14,22 @@ public class AmmoWeapon : GunBase
     [SerializeField] protected float reloadTime;
     [SerializeField] protected bool isMagazineEmpty;
 
-    private void Start()
+    private void Awake()
     {
-        uiController.ammoWeaponGO = gameObject;
+        uiController = FindObjectOfType<UIController>();
+        uiController.ammoWeapon = this;
+        uiController.ammoWeaponGO = this.gameObject;
     }
 
     private void OnEnable()
     {
-        uiController.ammoWeaponGO = gameObject;
-        //uiController.ammoTextGO.SetActive(true);
+        uiController.ammoTextGO.SetActive(true);
     }
 
     private void OnDisable()
     {
-        //uiController.ammoTextGO.SetActive(false);
+        uiController.ammoTextGO.SetActive(false);
+        uiController.reloadTextGO.SetActive(false);
     }
 
     private void Update()
@@ -37,9 +39,9 @@ public class AmmoWeapon : GunBase
             StartCoroutine(Reload());
         }
 
-        if(isMagazineEmpty)
+        if (isMagazineEmpty)
         {
-            //reload allert in UI controller true
+            uiController.reloadTextGO.SetActive(true);
         }
     }
 
@@ -66,10 +68,14 @@ public class AmmoWeapon : GunBase
     {
         if(allBullets > 0)
         {
+            uiController.reloadTextGO.SetActive(true);
+
             yield return new WaitForSeconds(reloadTime);
+
             allBullets -= magazineSize;
             bulletsLeft = magazineSize;
             isMagazineEmpty = false;
+            uiController.reloadTextGO.SetActive(false);
         }
         else { yield break; }
     }

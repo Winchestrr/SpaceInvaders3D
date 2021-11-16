@@ -6,13 +6,22 @@ using UnityEngine.UI;
 public class UIController : MonoBehaviour
 {
     public GameController gameController;
-    //do zmiany, ¿eby bra³ aktywny ammo weapon zamiast jednego ca³y czas
+
     public GameObject ammoWeaponGO;
     public AmmoWeapon ammoWeapon;
 
-    public Text gameStateText;
-   // public GameObject ammoTextGO;
+    public GameObject ammoTextGO;
     public Text ammoText;
+
+    public GameObject reloadTextGO;
+    public Text reloadText;
+
+    public Text gameStateText;
+
+    private void Start()
+    {
+        reloadText = reloadTextGO.GetComponent<Text>();
+    }
 
     public void Update()
     {
