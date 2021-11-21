@@ -28,6 +28,11 @@ public class WeaponSystem : MonoBehaviour
         weapons[currentWeaponIndex].gameObject.SetActive(false);
         currentWeaponIndex = newWeaponIndex;
         weapons[currentWeaponIndex].gameObject.SetActive(true);
+
+        if(weapons[currentWeaponIndex] is AmmoWeapon ammoWeapon)
+        {
+            ammoWeapon.SetAmount();
+        }
     }
 
     public void NextWeapon()

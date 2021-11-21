@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -43,6 +44,11 @@ public class AmmoWeapon : GunBase
         {
             uiController.reloadTextGO.SetActive(true);
         }
+    }
+
+    internal void SetAmount()
+    {
+
     }
 
     protected override void Shoot()
