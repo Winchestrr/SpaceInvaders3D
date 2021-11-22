@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public CameraController cameraController;
     public GameController gameController;
     public WeaponSystem weaponSystem;
+    public ParticleController particleController;
 
     float movX;
     float movZ;
@@ -41,6 +42,7 @@ public class PlayerController : MonoBehaviour
         {
             //do zmiany
             weaponSystem.Shoot();
+            //particleController.ShootParticles();
         }
 
         if(Input.GetKeyDown(KeyCode.Escape))
