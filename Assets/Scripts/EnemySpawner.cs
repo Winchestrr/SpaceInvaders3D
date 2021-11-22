@@ -4,22 +4,35 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public bool canSpawn = true;
-
     public Transform leftBorder;
     public Transform rightBorder;
 
     public GameObject[] entities;
 
-    public IEnumerator SpawnEnemies()
-    {
-        int randomEnemy = Random.Range(0, entities.Length);
-        float position = Random.Range(leftBorder.transform.position.x, rightBorder.transform.position.x);
+    public bool canSpawn = true;
 
-        while(canSpawn)
+    public float spawnTimerMin;
+    public float spawnTimerMax;
+
+    private void Start()
+    {
+        SpawnEnemies();
+    }
+
+    void SpawnEnemies()
+    {
+        if(canSpawn)
         {
-            Instantiate(entities[randomEnemy], new Vector3(position, 0f, 0f), transform.rotation);
-            yield return new WaitForSecondsRealtime(1f);
+            int randomEnemy = Random.Range(0, entities.Length);
+
+            float posX = Random.Range(leftBorder.position.x, rightBorder.position.x);
+            Vector3 temp = transform.position;
+            temp.x = posX;
+            temp.y = 1.5f;
+
+            Instantiate(entities[randomEnemy], temp, Quaternion.identity);
+
+            Invoke("SpawnEnemies", Random.Range(spawnTimerMin, spawnTimerMax));
         }
     }
 }

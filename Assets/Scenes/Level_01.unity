@@ -1386,6 +1386,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1770998412}
+  - component: {fileID: 1770998413}
   m_Layer: 0
   m_Name: SpawnPoints
   m_TagString: Untagged
@@ -1410,6 +1411,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1770998413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1770998411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f1b71bbeebd9b94e8b1d64ea396589d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftBorder: {fileID: 1601717709}
+  rightBorder: {fileID: 2020400641}
+  entities:
+  - {fileID: 5255127845214718805, guid: 371b99615c0c8b846b47b739eea8c376, type: 3}
+  canSpawn: 1
+  spawnTimerMin: 1
+  spawnTimerMax: 2
 --- !u!1 &1899366886
 GameObject:
   m_ObjectHideFlags: 0
