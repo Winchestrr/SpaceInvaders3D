@@ -18,7 +18,8 @@ public class EnemySpawner : MonoBehaviour
 
         while(canSpawn)
         {
-            Instantiate(entities[randomEnemy], position, transform.rotation);
+            Instantiate(entities[randomEnemy], new Vector3(position, 0f, 0f), transform.rotation);
+            yield return new WaitForSecondsRealtime(1f);
         }
     }
 }
