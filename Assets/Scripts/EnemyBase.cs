@@ -11,6 +11,11 @@ public class EnemyBase : MonoBehaviour
     public bool isAlive = true;
     public bool canMove = true;
 
+    private void Start()
+    {
+        destroyLine = GameObject.Find("EnemyDestroyLine").transform;
+    }
+
     void Update()
     {
         Move();
@@ -24,7 +29,7 @@ public class EnemyBase : MonoBehaviour
             temp.z -= speed * Time.deltaTime;
             transform.position = temp;
 
-            if(temp.z < destroyLine.transform.localPosition.z)
+            if (temp.z < destroyLine.transform.localPosition.z)
             {
                 Destroy(gameObject);
             }
