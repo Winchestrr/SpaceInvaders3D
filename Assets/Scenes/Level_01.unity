@@ -350,7 +350,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85604e9b74ce94c408d463392edcfdae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canMove: 0
+  canMove: 1
   levelSpeed: 15
 --- !u!1001 &508033148
 PrefabInstance:
@@ -1832,7 +1832,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e4f16962255b97b4d93a1bce436d274d, type: 2}
+  - {fileID: 2100000, guid: d5d7d0ed89278894b859b470052d7ede, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
