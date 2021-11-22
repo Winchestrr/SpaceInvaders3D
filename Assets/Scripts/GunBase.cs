@@ -7,10 +7,13 @@ public class GunBase : MonoBehaviour
     [SerializeField] protected Transform gunEnd;
     [SerializeField] protected GameObject bullet;
 
+    [SerializeField] protected ParticleSystem shootParticles;
+
     [SerializeField] protected int damage;
     [SerializeField] protected float bulletSpeed;
     [SerializeField] protected float timeBetweenShots;
     protected float lastShotTime;
+    public bool haveParticles;
 
     public virtual void TryShoot()
     {
@@ -24,6 +27,8 @@ public class GunBase : MonoBehaviour
     {
         lastShotTime = Time.time;
         //play gunshot audio
+
+        if (haveParticles) shootParticles.Play();
     }
 
     bool CanShoot()
