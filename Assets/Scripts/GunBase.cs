@@ -28,7 +28,7 @@ public class GunBase : MonoBehaviour
         lastShotTime = Time.time;
         //play gunshot audio
 
-        if (haveParticles) shootParticles.Play();
+        //if (haveParticles) shootParticles.Play();
     }
 
     bool CanShoot()

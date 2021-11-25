@@ -17,7 +17,8 @@ public class PlayerController : MonoBehaviour
     [Header("Stats")]
     public float playerSpeed;
     public float playerRotationSpeed;
-    public float targetAngleZ;
+    public float desiredAngleZ;
+    float targetAngleZ;
 
     private void Start()
     {
@@ -70,11 +71,11 @@ public class PlayerController : MonoBehaviour
             //to chyba do zmiany bêdzie
             if(Input.GetKey(KeyCode.D))
             {
-                targetAngleZ = -30;
+                targetAngleZ = -desiredAngleZ;
             }
             else if(Input.GetKey(KeyCode.A))
             {
-                targetAngleZ = 30;
+                targetAngleZ = desiredAngleZ;
             }
         }
     }

@@ -372,8 +372,8 @@ GameObject:
   - component: {fileID: 4314779940993900439}
   - component: {fileID: 4314779940993900436}
   - component: {fileID: 4314779940993900437}
-  - component: {fileID: 4314779940993900442}
   - component: {fileID: 4314779940993900443}
+  - component: {fileID: -4342924263845982272}
   m_Layer: 0
   m_Name: StandardSpaceship
   m_TagString: Untagged
@@ -464,7 +464,26 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!143 &4314779940993900442
+--- !u!114 &4314779940993900443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4314779940993900440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dfc9c583a4a1aa4b8dc119818e3069c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 0}
+  cameraController: {fileID: 0}
+  gameController: {fileID: 0}
+  weaponSystem: {fileID: 4314779940769903506}
+  playerSpeed: 12
+  playerRotationSpeed: 8
+  targetAngleZ: 0
+--- !u!143 &-4342924263845982272
 CharacterController:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -482,25 +501,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4314779940993900443
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4314779940993900440}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3dfc9c583a4a1aa4b8dc119818e3069c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  controller: {fileID: 4314779940993900442}
-  cameraController: {fileID: 0}
-  gameController: {fileID: 0}
-  weaponSystem: {fileID: 4314779940769903506}
-  playerSpeed: 12
-  playerRotationSpeed: 8
-  targetAngleZ: 0
 --- !u!1 &4314779941183865829
 GameObject:
   m_ObjectHideFlags: 0
