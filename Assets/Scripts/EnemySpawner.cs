@@ -30,7 +30,7 @@ public class EnemySpawner : MonoBehaviour
             temp.x = posX;
             temp.y = 1.5f;
 
-            Instantiate(entities[randomEnemy], temp, Quaternion.identity);
+            Instantiate(entities[randomEnemy], temp, Quaternion.Euler(0, 180, 0));
 
             Invoke("SpawnEnemies", Random.Range(spawnTimerMin, spawnTimerMax));
         }

@@ -1293,6 +1293,7 @@ GameObject:
   - component: {fileID: 1752664327}
   - component: {fileID: 1752664326}
   - component: {fileID: 1752664330}
+  - component: {fileID: 1752664331}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1404,6 +1405,23 @@ MonoBehaviour:
   reloadTextGO: {fileID: 1899366886}
   reloadText: {fileID: 0}
   gameStateText: {fileID: 1367231759}
+--- !u!114 &1752664331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1752664325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de10886dc6d218241b18ca7cebde1c9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  contactDamage: 0
+  destroyLine: {fileID: 0}
+  isAlive: 1
+  canMove: 1
 --- !u!1 &1769915681
 GameObject:
   m_ObjectHideFlags: 0
@@ -1526,7 +1544,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1770998411}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.91277194, y: -3.288931, z: 18.53}
+  m_LocalPosition: {x: 0.91277194, y: -3.288931, z: 62.88}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1550,7 +1568,8 @@ MonoBehaviour:
   leftBorder: {fileID: 1601717709}
   rightBorder: {fileID: 2020400641}
   entities:
-  - {fileID: 5255127845214718805, guid: 371b99615c0c8b846b47b739eea8c376, type: 3}
+  - {fileID: 660408803550257969, guid: 1a7af6b4081676a4c811a940f6b0613a, type: 3}
+  - {fileID: 8949091481558381302, guid: b92c061997c62b5409b3e7a4b99f38ed, type: 3}
   canSpawn: 1
   spawnTimerMin: 1
   spawnTimerMax: 2
