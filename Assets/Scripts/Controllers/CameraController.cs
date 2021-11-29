@@ -11,6 +11,12 @@ public class CameraController : MonoBehaviour
 
     private static CameraController instance; //singleton
 
+    private Vector3 smoothPosition;
+    private float zComp;
+    private float zCompSpeed;
+    public FloatSO dampParam;
+    public float dampEffectScale = 0.25f;
+
     private void OnEnable()
     {
         if (instance != null)
@@ -29,9 +35,21 @@ public class CameraController : MonoBehaviour
 
     void CameraFollow()
     {
+        smoothPosition = target.position + offset;
+
+        zComp = smoothPosition.z;
+
+        zComp = Mathf.SmoothDamp(zComp, zComp - (dampEffectScale * PlayerController.playerSpeedOut), ref zCompSpeed, dampParam.floatValue * Time.deltaTime);
+
+        smoothPosition.z = zComp;
+
+        transform.position = smoothPosition;
+
+        /*
         Vector3 desiredPosition = target.position + offset;
         Vector3 smoothPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * Time.deltaTime);
         transform.position = smoothPosition;
+        */
     }
 
     public static void StickCameraToPlayer(Transform transform)

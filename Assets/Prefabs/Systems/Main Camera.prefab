@@ -97,6 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0895c93872f634a4cacb04918cdbeb0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
   smoothSpeed: 9.68
   offset: {x: 0, y: 2.95, z: -6.89}
+  dampParam: {fileID: 11400000, guid: f20bd9d292d72f24fb07eb36e0547eb4, type: 2}
+  dampEffectScale: 0.25

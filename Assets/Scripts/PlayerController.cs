@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
     public float desiredAngleZ;
     float targetAngleZ;
 
+    public static float playerSpeedOut;
+
     private void Start()
     {
         
@@ -64,7 +66,10 @@ public class PlayerController : MonoBehaviour
 
     void PlayerMove()
     {
-        direction = new Vector3(movX, 0, movZ);
+        playerSpeedOut = movZ * playerSpeed;
+
+        //direction = new Vector3(movX, 0, movZ);
+        direction = new Vector3(movX, 0f, 0f);
 
         if (direction.magnitude > 0.1f)
         {
