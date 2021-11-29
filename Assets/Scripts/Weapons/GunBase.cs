@@ -12,6 +12,7 @@ public class GunBase : MonoBehaviour
     [SerializeField] protected int damage;
     [SerializeField] protected float bulletSpeed;
     [SerializeField] protected float timeBetweenShots;
+    protected float currentTimeBetweenShots;
     protected float lastShotTime;
     public bool haveParticles;
     public bool isShooting = true;
@@ -34,7 +35,7 @@ public class GunBase : MonoBehaviour
 
     bool CanShoot()
     {
-        if(Time.time > lastShotTime + timeBetweenShots && isShooting)
+        if(Time.time > lastShotTime + currentTimeBetweenShots && isShooting)
         {
             return true;
         }

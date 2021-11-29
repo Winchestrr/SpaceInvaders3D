@@ -41,6 +41,7 @@ public class CameraController : MonoBehaviour
         zComp = smoothPosition.z;
 
         zComp = Mathf.SmoothDamp(zComp, zComp - (dampEffectScale * playerSpeedOut.floatValue), ref zCompSpeed, dampParam.floatValue * Time.deltaTime);
+        //zComp = Mathf.MoveTowards(zComp, zComp - (dampEffectScale * playerSpeedOut.floatValue), dampParam.floatValue * Time.deltaTime);
 
         smoothPosition.z = zComp;
 

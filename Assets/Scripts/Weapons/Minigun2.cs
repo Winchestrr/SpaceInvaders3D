@@ -25,7 +25,7 @@ public class Minigun2 : GunBase
 
         if (isShooting)
         {
-            minigunSpeed = Mathf.Lerp(minigunSpeed, 1, minigunInc * Time.deltaTime);
+            minigunSpeed = Mathf.Lerp(minigunSpeed, 10, minigunInc * Time.deltaTime);
         }
         else
         {
@@ -35,7 +35,7 @@ public class Minigun2 : GunBase
         if(minigunSpeed >= minimumShootingSpeed)
         {
             //tu jest problem
-            timeBetweenShots = timeBetweenShots / minigunSpeed;
+            currentTimeBetweenShots = timeBetweenShots / minigunSpeed;
         }
     }
 
