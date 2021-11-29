@@ -34,8 +34,7 @@ public class Minigun2 : GunBase
 
         if(minigunSpeed >= minimumShootingSpeed)
         {
-            //tu jest problem
-            timeBetweenShots = timeBetweenShots / minigunSpeed;
+            currentTimeBetweenShots = timeBetweenShots / minigunSpeed;
         }
     }
 
