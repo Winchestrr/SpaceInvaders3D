@@ -4,10 +4,23 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public Transform target;
+    private static Transform target;
 
     public float smoothSpeed = 0.125f;
     public Vector3 offset;
+
+    private static CameraController instance; //singleton
+
+    private void OnEnable()
+    {
+        if (instance != null)
+        {
+            Debug.LogError("MORE INSTANCES! SINGLETON PROBLEM!");
+            return;
+        }
+        
+        instance = this;
+    }
 
     private void LateUpdate()
     {
@@ -21,10 +34,18 @@ public class CameraController : MonoBehaviour
         transform.position = smoothPosition;
     }
 
-    public void StickCameraToPlayer(Transform transform)
+    public static void StickCameraToPlayer(Transform transform)
     {
         Debug.Log("stick camera");
         target = transform;
+    }
+
+    public static float SmoothSpeed
+    {
+        get
+        {
+            return instance.smoothSpeed;
+        }
     }
 
     //to do ogarniêcia póŸniej, testowo

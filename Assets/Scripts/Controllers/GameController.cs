@@ -7,7 +7,7 @@ public class GameController : MonoBehaviour
     public enum GameState { MENU, STARTBATTLE, BATTLE, LOST, WON, PAUSE }
 
     [Header("Objects")]
-    public CameraController cameraController;
+    //private CameraController cameraController;
     public GameObject[] playerShips;
     public GameObject currentPlayerShip;
     public Transform startPoint;
@@ -20,8 +20,21 @@ public class GameController : MonoBehaviour
     public static bool isPaused;
 
 
-    public void Awake()
+    public void Start()
     {
+        /*
+        GameObject cameraObject = GameObject.FindGameObjectWithTag("MainCamera");
+
+        if (cameraObject != null)
+        {
+            cameraController = cameraObject.GetComponent<CameraController>();
+        }
+        else
+        {
+            Debug.LogError("cameraObject NOT FOUND!");
+        }
+        */
+
         currentState = GameState.STARTBATTLE;
         currentState = GameState.BATTLE;
 
@@ -44,11 +57,10 @@ public class GameController : MonoBehaviour
 
     GameObject InstantiatePlayerShip(GameObject ship)
     {
-        GameObject tempShip;
+        GameObject tempShip = Instantiate(ship, startPoint.position, transform.rotation);
 
-        tempShip = Instantiate(ship, startPoint.position, transform.rotation);
-        cameraController.StickCameraToPlayer(tempShip.transform);
-
+        CameraController.StickCameraToPlayer(tempShip.transform);
+        
         return tempShip;
     }
 }

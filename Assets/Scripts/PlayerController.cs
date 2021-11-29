@@ -6,8 +6,8 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Objects")]
     public CharacterController controller;
-    public CameraController cameraController;
-    public GameController gameController;
+    //public CameraController cameraController;
+    //public GameController gameController;
     public WeaponSystem weaponSystem;
 
     float movX;
@@ -57,6 +57,8 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             weaponSystem.NextWeapon();
+
+            Debug.Log(CameraController.SmoothSpeed.ToString());
         }
     }
 
