@@ -15,12 +15,10 @@ public class PlayerController : MonoBehaviour
     Vector3 direction;
 
     [Header("Stats")]
-    public float playerSpeed;
-    public float playerRotationSpeed;
-    public float desiredAngleZ;
+    public PlayerStatsSO attachedStats;
     float targetAngleZ;
 
-    public static float playerSpeedOut;
+    public FloatSO playerSpeedOut;
 
     private void Start()
     {
@@ -66,29 +64,29 @@ public class PlayerController : MonoBehaviour
 
     void PlayerMove()
     {
-        playerSpeedOut = movZ * playerSpeed;
+        playerSpeedOut.floatValue = movZ * attachedStats.playerSpeed;
 
         //direction = new Vector3(movX, 0, movZ);
         direction = new Vector3(movX, 0f, 0f);
 
         if (direction.magnitude > 0.1f)
         {
-            controller.Move(direction * playerSpeed * Time.deltaTime);
+            controller.Move(direction * attachedStats.playerSpeed * Time.deltaTime);
 
             //to chyba do zmiany bêdzie
             if(Input.GetKey(KeyCode.D))
             {
-                targetAngleZ = -desiredAngleZ;
+                targetAngleZ = -attachedStats.desiredAngleZ;
             }
             else if(Input.GetKey(KeyCode.A))
             {
-                targetAngleZ = desiredAngleZ;
+                targetAngleZ = attachedStats.desiredAngleZ;
             }
         }
     }
 
     void SetRotation()
     {
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, targetAngleZ), playerRotationSpeed * Time.deltaTime);
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, targetAngleZ), attachedStats.playerRotationSpeed * Time.deltaTime);
     }
 }

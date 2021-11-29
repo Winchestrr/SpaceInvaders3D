@@ -845,12 +845,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 8685935256089611126}
-  cameraController: {fileID: 0}
-  gameController: {fileID: 0}
   weaponSystem: {fileID: 7468608691676981483}
-  playerSpeed: 12
-  playerRotationSpeed: 6.5
-  desiredAngleZ: 25
+  attachedStats: {fileID: 11400000, guid: 05d688f320d15fd4591ce9da7fbe6622, type: 2}
+  playerSpeedOut: {fileID: 11400000, guid: dd38d8e40d67e2f4fad56f84d7880fbf, type: 2}
 --- !u!1 &1101820197794000045
 GameObject:
   m_ObjectHideFlags: 0

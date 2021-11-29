@@ -48,3 +48,4 @@ MonoBehaviour:
   levelTileSize: 47.8
   levelLength: 10
   levelSpeed: -20
+  playerSpeedOut: {fileID: 11400000, guid: dd38d8e40d67e2f4fad56f84d7880fbf, type: 2}

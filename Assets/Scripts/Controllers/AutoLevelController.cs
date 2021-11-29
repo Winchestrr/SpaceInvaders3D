@@ -14,6 +14,8 @@ public class AutoLevelController : MonoBehaviour
     private List<GameObject> currentLevelTiles = new List<GameObject>();
     private Vector3 currentSpawnPoint;
 
+    public FloatSO playerSpeedOut;
+
     void OnEnable()
     {
         SpawnLevel();
@@ -64,7 +66,7 @@ public class AutoLevelController : MonoBehaviour
     {
         for (int i = 0; i < currentLevelTiles.Count; i++)
         {
-            currentLevelTiles[i].transform.Translate(0f, (levelSpeed - PlayerController.playerSpeedOut) * Time.deltaTime, 0f, Space.Self);
+            currentLevelTiles[i].transform.Translate(0f, (levelSpeed - playerSpeedOut.floatValue) * Time.deltaTime, 0f, Space.Self);
 
             if (currentLevelTiles[i].transform.localPosition.z < -levelTileSize)
             {

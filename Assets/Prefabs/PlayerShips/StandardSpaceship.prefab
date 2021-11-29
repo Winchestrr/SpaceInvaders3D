@@ -212,6 +212,7 @@ MonoBehaviour:
   bulletSpeed: 30
   timeBetweenShots: 0.2
   haveParticles: 1
+  isShooting: 1
   gunEnd2: {fileID: 922871502143822086}
 --- !u!1 &4314779940631344706
 GameObject:
@@ -477,12 +478,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 0}
-  cameraController: {fileID: 0}
-  gameController: {fileID: 0}
   weaponSystem: {fileID: 4314779940769903506}
-  playerSpeed: 12
-  playerRotationSpeed: 8
-  targetAngleZ: 0
+  attachedStats: {fileID: 11400000, guid: 05d688f320d15fd4591ce9da7fbe6622, type: 2}
+  playerSpeedOut: {fileID: 11400000, guid: dd38d8e40d67e2f4fad56f84d7880fbf, type: 2}
 --- !u!143 &-4342924263845982272
 CharacterController:
   m_ObjectHideFlags: 0
@@ -5561,6 +5559,7 @@ MonoBehaviour:
   bulletSpeed: 30
   timeBetweenShots: 0.3
   haveParticles: 1
+  isShooting: 1
   uiController: {fileID: 0}
   magazineSize: 6
   allBullets: 12
@@ -5686,6 +5685,7 @@ MonoBehaviour:
   bulletSpeed: 30
   timeBetweenShots: 0.2
   haveParticles: 1
+  isShooting: 1
 --- !u!1 &8774413587975276669
 GameObject:
   m_ObjectHideFlags: 0

@@ -99,5 +99,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   smoothSpeed: 9.68
   offset: {x: 0, y: 2.95, z: -6.89}
+  playerSpeedOut: {fileID: 11400000, guid: dd38d8e40d67e2f4fad56f84d7880fbf, type: 2}
   dampParam: {fileID: 11400000, guid: f20bd9d292d72f24fb07eb36e0547eb4, type: 2}
   dampEffectScale: 0.25

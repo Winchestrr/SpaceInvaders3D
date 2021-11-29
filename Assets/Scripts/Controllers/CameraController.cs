@@ -11,6 +11,7 @@ public class CameraController : MonoBehaviour
 
     private static CameraController instance; //singleton
 
+    public FloatSO playerSpeedOut;
     private Vector3 smoothPosition;
     private float zComp;
     private float zCompSpeed;
@@ -39,7 +40,7 @@ public class CameraController : MonoBehaviour
 
         zComp = smoothPosition.z;
 
-        zComp = Mathf.SmoothDamp(zComp, zComp - (dampEffectScale * PlayerController.playerSpeedOut), ref zCompSpeed, dampParam.floatValue * Time.deltaTime);
+        zComp = Mathf.SmoothDamp(zComp, zComp - (dampEffectScale * playerSpeedOut.floatValue), ref zCompSpeed, dampParam.floatValue * Time.deltaTime);
 
         smoothPosition.z = zComp;
 
