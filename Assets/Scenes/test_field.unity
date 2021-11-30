@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -293,8 +293,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1441650806}
-  m_LocalRotation: {x: -0.1522744, y: 0.84394276, z: -0.31766176, w: -0.4045542}
-  m_LocalPosition: {x: 1.9746952, y: 2.0373812, z: 1.7307258}
+  m_LocalRotation: {x: -0.25078315, y: 0.008997888, z: -0.0023314843, w: -0.9679987}
+  m_LocalPosition: {x: 0.006406737, y: 4.436384, z: -5.008591}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -356,13 +356,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: RoundSpaceship
       objectReference: {fileID: 0}
-    - target: {fileID: 8134854904107996687, guid: b5a07bb2820bdf541bc030ae5c84e698, type: 3}
-      propertyPath: minigunDec
-      value: 2.19
-      objectReference: {fileID: 0}
-    - target: {fileID: 8134854904107996687, guid: b5a07bb2820bdf541bc030ae5c84e698, type: 3}
-      propertyPath: minigunInc
-      value: 3.26
+    - target: {fileID: 1564241541532749728, guid: b5a07bb2820bdf541bc030ae5c84e698, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.46
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b5a07bb2820bdf541bc030ae5c84e698, type: 3}

@@ -32,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1746668793}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &342810897
 MeshFilter:
@@ -130,7 +130,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1746668793}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &860944096
 MeshFilter:
@@ -228,7 +228,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1746668793}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1005828740
 MeshFilter:
@@ -326,7 +326,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1746668793}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1185752063
 MeshFilter:
@@ -424,6 +424,7 @@ Transform:
   m_LocalScale: {x: 1.10088, y: 0.81840533, z: 1.10088}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1564241541532749728}
   - {fileID: 1746668793}
   m_Father: {fileID: 4033572668298223210}
   m_RootOrder: 0
@@ -510,12 +511,13 @@ MonoBehaviour:
   damage: 2
   bulletSpeed: 30
   timeBetweenShots: 1
+  currentTimeBetweenShots: 0
   haveParticles: 0
   isShooting: 0
   animator: {fileID: 1746668795}
   minigunSpeed: 0.001
-  minigunInc: 3.09
-  minigunDec: 2.16
+  minigunInc: 3.26
+  minigunDec: 2.19
   minimumShootingSpeed: 0.5
 --- !u!1 &1360020891
 GameObject:
@@ -549,7 +551,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1746668793}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1360020895
 MeshFilter:
@@ -644,14 +646,13 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1564241541532749728}
   - {fileID: 1005828737}
   - {fileID: 342810894}
   - {fileID: 860944093}
   - {fileID: 1360020892}
   - {fileID: 1185752060}
   m_Father: {fileID: 1193017511}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1746668795
 Animator:
@@ -725,6 +726,7 @@ MonoBehaviour:
   damage: 1
   bulletSpeed: 30
   timeBetweenShots: 0.2
+  currentTimeBetweenShots: 0
   haveParticles: 1
   isShooting: 1
   gunEnd2: {fileID: 2706752125217216454}
@@ -968,6 +970,7 @@ MonoBehaviour:
   damage: 1
   bulletSpeed: 30
   timeBetweenShots: 0.3
+  currentTimeBetweenShots: 0
   haveParticles: 1
   isShooting: 1
   uiController: {fileID: 0}
@@ -1156,6 +1159,7 @@ MonoBehaviour:
   damage: 1
   bulletSpeed: 30
   timeBetweenShots: 0.2
+  currentTimeBetweenShots: 0
   haveParticles: 1
   isShooting: 1
 --- !u!1 &3737876895717046344
@@ -1212,12 +1216,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6931058733110925097}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.109, z: -0.165}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 4.13, z: -0.16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1746668793}
+  m_Father: {fileID: 1193017511}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8354708220996495231

@@ -17,6 +17,11 @@ public class GunBase : MonoBehaviour
     public bool haveParticles;
     public bool isShooting = true;
 
+    private void Start()
+    {
+        currentTimeBetweenShots = timeBetweenShots;
+    }
+
     public virtual void TryShoot()
     {
         if(CanShoot())

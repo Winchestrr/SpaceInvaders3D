@@ -55,7 +55,7 @@ public class Minigun2 : GunBase
     {
         base.Shoot();
 
-        //GameObject shotBullet = Instantiate(bullet, gunEnd.position, transform.rotation);
-        //shotBullet.GetComponent<StandardBullet>().Launch(damage, bulletSpeed);
+        GameObject shotBullet = Instantiate(bullet, gunEnd.position, Quaternion.Euler(0, 0, 90));
+        shotBullet.GetComponent<StandardBullet>().Launch(damage, bulletSpeed);
     }
 }
