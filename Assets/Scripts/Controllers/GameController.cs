@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
+    public static GameController instance;
+
     public enum GameState { MENU, STARTBATTLE, BATTLE, LOST, WON, PAUSE }
 
     [Header("Objects")]
     public CameraController cameraController;
     public GameObject[] playerShips;
     public GameObject currentPlayerShip;
-    public Transform startPoint;
 
 
     [Header("Stats")]
@@ -22,6 +23,11 @@ public class GameController : MonoBehaviour
 
     public void Awake()
     {
+        //instance == null ? instance = this : Debug.LogError("Instance problem"); 
+
+        if (instance == null) instance = this;
+        else Debug.LogError("Instance problem");
+
         currentState = GameState.STARTBATTLE;
         currentState = GameState.BATTLE;
 
@@ -46,8 +52,8 @@ public class GameController : MonoBehaviour
     {
         GameObject tempShip;
 
-        tempShip = Instantiate(ship, startPoint.position, transform.rotation);
-        cameraController.StickCameraToPlayer(tempShip.transform);
+        tempShip = Instantiate(ship, transform.position, transform.rotation);
+        CameraController.StickCameraToPlayer(tempShip.transform);
 
         return tempShip;
     }

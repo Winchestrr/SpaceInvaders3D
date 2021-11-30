@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public Transform target;
+    static CameraController instance;
+    static Transform target;
 
     public float smoothSpeed = 0.125f;
     public Vector3 offset;
 
+    private void Awake()
+    {
+        if (instance == null) instance = this;
+        else Debug.LogError("Instance problem");
+    }
     private void LateUpdate()
     {
         CameraFollow();
@@ -21,7 +27,7 @@ public class CameraController : MonoBehaviour
         transform.position = smoothPosition;
     }
 
-    public void StickCameraToPlayer(Transform transform)
+    public static void StickCameraToPlayer(Transform transform)
     {
         Debug.Log("stick camera");
         target = transform;
