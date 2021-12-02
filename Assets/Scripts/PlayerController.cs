@@ -44,18 +44,25 @@ public class PlayerController : MonoBehaviour
         {
             case "Obstacle":
                 Destroy(gameObject);
-                GameController.currentState = GameController.GameState.GAMEOVER;
+                GameController.GameOver();
+                break;
+
+            case "Enemy":
                 break;
         }
     }
 
     private void OnTriggerEnter(Collider target)
     {
-        switch (target.tag)
+        switch(target.tag)
         {
             case "Obstacle":
                 Destroy(gameObject);
                 GameController.GameOver();
+                break;
+
+            case "Enemy":
+                DealPlayerDamage(target.GetComponent<EnemyBase>().contactDamage);
                 break;
         }
     }
