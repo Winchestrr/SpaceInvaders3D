@@ -15,9 +15,10 @@ public class PlayerController : MonoBehaviour
     float movZ;
     Vector3 direction;
 
-        [Header("Stats")]
+    [Header("Stats")]
 
-    [SerializeField] private int startHealth;
+    public int startHealth;
+    public static int maxHealth;
     public static int playerHealth;
 
     public float playerSpeed;
@@ -27,7 +28,8 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        playerHealth = startHealth;
+        maxHealth = startHealth;
+        playerHealth = maxHealth;
     }
 
     void LateUpdate()
@@ -70,6 +72,10 @@ public class PlayerController : MonoBehaviour
     public static void DealPlayerDamage(int damage)
     {
         playerHealth -= damage;
+        if (playerHealth <= 0)
+        {
+            GameController.GameOver();
+        }
     }
 
     void GetInputs()
@@ -93,9 +99,15 @@ public class PlayerController : MonoBehaviour
             weaponSystem.PreviousWeapon();
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if(Input.GetKeyDown(KeyCode.E))
         {
             weaponSystem.NextWeapon();
+        }
+
+        if(Input.GetKeyDown(KeyCode.X))
+        {
+            //debug player hit
+            DealPlayerDamage(10);
         }
     }
 

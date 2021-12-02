@@ -18,6 +18,8 @@ public class UIController : MonoBehaviour
 
     public Text gameStateText;
 
+    public Image healthBar;
+
     private void Start()
     {
         reloadText = reloadTextGO.GetComponent<Text>();
@@ -37,5 +39,7 @@ public class UIController : MonoBehaviour
         {
             ammoText.text = "Ammo: " + ammoWeapon.bulletsLeft + "/" + ammoWeapon.allBullets;
         }
+
+        healthBar.fillAmount = (float)PlayerController.playerHealth / (float)PlayerController.maxHealth;
     }
 }
