@@ -1,17 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyBase : MonoBehaviour
 {
+    [Header("Components")]
+    public Transform destroyLine;
+    public Image healthBar;
+
+    [Header("Stats")]
     public float speed;
     public int contactDamage;
-
     public int maxHealth;
-    public int currentHealth;
-
-    public Transform destroyLine;
-    public HealthBar healthBar;
+    private int currentHealth;
 
     public bool isAlive = true;
     public bool canMove = true;
@@ -27,10 +29,13 @@ public class EnemyBase : MonoBehaviour
         Move();
     }
 
-    void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        healthBar.UpdateHPBar((float)currentHealth / (float)maxHealth);
+        healthBar.fillAmount = ((float)currentHealth / (float)maxHealth);
+
+        //do dodania animacja wybuchu
+        if (currentHealth <= 0) Destroy(gameObject);
     }
 
     void Move()
@@ -54,7 +59,6 @@ public class EnemyBase : MonoBehaviour
         {
             case "Bullet":
                 //do dodania animacja niszczenia
-                Destroy(gameObject);
                 break;
 
             case "Enemy":

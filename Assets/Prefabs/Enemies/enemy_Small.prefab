@@ -190,7 +190,6 @@ GameObject:
   - component: {fileID: 5700320490261780599}
   - component: {fileID: 3037239920516003414}
   - component: {fileID: 914229876959769208}
-  - component: {fileID: 6885051507548824691}
   m_Layer: 0
   m_Name: HealthBar
   m_TagString: Untagged
@@ -256,19 +255,6 @@ MonoBehaviour:
   m_FillOrigin: 1
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &6885051507548824691
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4290459034098197747}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d19323853c64b4d4cbcb94a4efaaa4f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthBar: {fileID: 914229876959769208}
 --- !u!1 &5707109916636728796
 GameObject:
   m_ObjectHideFlags: 0
@@ -360,7 +346,7 @@ GameObject:
   - component: {fileID: 6589065467374612921}
   m_Layer: 0
   m_Name: enemy_Small
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -443,11 +429,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de10886dc6d218241b18ca7cebde1c9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destroyLine: {fileID: 0}
+  healthBar: {fileID: 914229876959769208}
   speed: 12
   contactDamage: 4
-  maxHealth: 0
-  currentHealth: 0
-  destroyLine: {fileID: 0}
+  maxHealth: 100
   isAlive: 1
   canMove: 1
 --- !u!64 &6589065467374612921

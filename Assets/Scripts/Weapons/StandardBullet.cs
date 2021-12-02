@@ -10,6 +10,8 @@ public class StandardBullet : MonoBehaviour
     protected float speed;
     public float lifetime;
 
+    public bool isPiercing = false;
+
     public virtual void Launch(int _damage, float _speed)
     {
         rb = GetComponent<Rigidbody>();
@@ -28,6 +30,12 @@ public class StandardBullet : MonoBehaviour
         if (other.tag == "Obstacle")
         {
             Destroy(gameObject);
+        }
+
+        if(other.tag == "Enemy")
+        {
+            other.gameObject.GetComponent<EnemyBase>().TakeDamage(damage);
+            if(!isPiercing) Destroy(gameObject);
         }
         
     }
