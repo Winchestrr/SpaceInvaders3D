@@ -41,6 +41,9 @@ public class EnemyBase : MonoBehaviour
         switch(target.tag)
         {
             case "Bullet":
+                Debug.Log("Hit bullet");
+                //do dodania animacja niszczenia
+                Destroy(gameObject);
                 break;
 
             case "Enemy":

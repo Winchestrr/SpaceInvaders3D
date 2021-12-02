@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 8371468407780444952}
   - component: {fileID: 4864650370601157821}
   - component: {fileID: 7234543471891542135}
+  - component: {fileID: -6788392651689971170}
+  - component: {fileID: 4686347480318608815}
   m_Layer: 0
   m_Name: enemy_BigUV
   m_TagString: Untagged
@@ -27,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 9180234369629475234}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.4951563, y: 0.70703024, z: 6.1764545}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -83,3 +85,34 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &-6788392651689971170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9180234369629475234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de10886dc6d218241b18ca7cebde1c9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 8
+  contactDamage: 10
+  destroyLine: {fileID: 0}
+  isAlive: 1
+  canMove: 1
+--- !u!64 &4686347480318608815
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9180234369629475234}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -8678823145569952518, guid: d33edcbb73e4a2241931133239c76266, type: 3}

@@ -20,11 +20,6 @@ public class PlayerController : MonoBehaviour
     public float desiredAngleZ;
     float targetAngleZ;
 
-    private void Start()
-    {
-        
-    }
-
     void LateUpdate()
     {
         targetAngleZ = 0;

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4671785805448849385}
   - component: {fileID: 7435851152482980643}
   - component: {fileID: 1077005727328838728}
+  - component: {fileID: 6589065467374612921}
   m_Layer: 0
   m_Name: enemy_Small
   m_TagString: Untagged
@@ -101,3 +102,17 @@ MonoBehaviour:
   destroyLine: {fileID: 0}
   isAlive: 1
   canMove: 1
+--- !u!64 &6589065467374612921
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8949091481558381302}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5053925668127403250, guid: fd341bd42069dcf4bae3b2b0140dee47, type: 3}
