@@ -38,6 +38,28 @@ public class PlayerController : MonoBehaviour
         SetRotation();
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        switch(collision.gameObject.tag)
+        {
+            case "Obstacle":
+                Destroy(gameObject);
+                GameController.currentState = GameController.GameState.GAMEOVER;
+                break;
+        }
+    }
+
+    private void OnTriggerEnter(Collider target)
+    {
+        switch (target.tag)
+        {
+            case "Obstacle":
+                Destroy(gameObject);
+                GameController.GameOver();
+                break;
+        }
+    }
+
     public static void DealPlayerDamage(int damage)
     {
         playerHealth -= damage;

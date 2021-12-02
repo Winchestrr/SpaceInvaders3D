@@ -31,7 +31,7 @@ public class UIController : MonoBehaviour
     //to zmieniæ na static, ale nie wiem jak
     public void SetUI()
     {
-        gameStateText.text = gameController.currentState.ToString();
+        gameStateText.text = GameController.currentState.ToString();
 
         if(ammoWeaponGO != null)
         {

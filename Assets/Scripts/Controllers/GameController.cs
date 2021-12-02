@@ -6,7 +6,7 @@ public class GameController : MonoBehaviour
 {
     public static GameController instance;
 
-    public enum GameState { MENU, STARTBATTLE, BATTLE, LOST, WON, PAUSE }
+    public enum GameState { MENU, STARTBATTLE, BATTLE, PAUSE, GAMEOVER }
 
     [Header("Objects")]
     public CameraController cameraController;
@@ -15,7 +15,7 @@ public class GameController : MonoBehaviour
 
 
     [Header("Stats")]
-    public GameState currentState;
+    public static GameState currentState;
     public int chosenShipIndex;
 
     public static bool isPaused;
@@ -46,6 +46,12 @@ public class GameController : MonoBehaviour
             Time.timeScale = 0;
             isPaused = true;
         }
+    }
+
+    public static void GameOver()
+    {
+        GameController.currentState = GameController.GameState.GAMEOVER;
+        Time.timeScale = 0;
     }
 
     GameObject InstantiatePlayerShip(GameObject ship)
