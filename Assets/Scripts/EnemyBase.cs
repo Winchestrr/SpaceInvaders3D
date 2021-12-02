@@ -6,19 +6,31 @@ public class EnemyBase : MonoBehaviour
 {
     public float speed;
     public int contactDamage;
+
+    public int maxHealth;
+    public int currentHealth;
+
     public Transform destroyLine;
+    public HealthBar healthBar;
 
     public bool isAlive = true;
     public bool canMove = true;
 
-    private void Start()
+    private void OnEnable()
     {
         destroyLine = GameObject.Find("EnemyDestroyLine").transform;
+        currentHealth = maxHealth;
     }
 
     void Update()
     {
         Move();
+    }
+
+    void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+        healthBar.UpdateHPBar((float)currentHealth / (float)maxHealth);
     }
 
     void Move()
