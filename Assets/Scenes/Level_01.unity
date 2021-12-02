@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1503,7 +1503,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1770998411}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.91277194, y: -3.288931, z: 62.88}
+  m_LocalPosition: {x: 0.91277194, y: -4.1, z: 62.88}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1527,7 +1527,7 @@ MonoBehaviour:
   leftBorder: {fileID: 1601717709}
   rightBorder: {fileID: 2020400641}
   entities:
-  - {fileID: 660408803550257969, guid: 1a7af6b4081676a4c811a940f6b0613a, type: 3}
+  - {fileID: 9180234369629475234, guid: 5be67ca0d1f63464b8924c18677487e7, type: 3}
   - {fileID: 8949091481558381302, guid: b92c061997c62b5409b3e7a4b99f38ed, type: 3}
   canSpawn: 1
   spawnTimerMin: 1

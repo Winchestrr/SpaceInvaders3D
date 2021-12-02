@@ -41,7 +41,6 @@ public class EnemyBase : MonoBehaviour
         switch(target.tag)
         {
             case "Bullet":
-                Debug.Log("Hit bullet");
                 //do dodania animacja niszczenia
                 Destroy(gameObject);
                 break;
@@ -50,9 +49,13 @@ public class EnemyBase : MonoBehaviour
                 break;
 
             case "Player":
+                //do dodania obra¿enia dla bohatera
+                Destroy(gameObject);
                 break;
 
             case "Obstacle":
+                //do zmiany
+                Destroy(gameObject);
                 break;
         }
     }

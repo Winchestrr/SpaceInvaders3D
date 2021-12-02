@@ -29,7 +29,6 @@ public class CameraController : MonoBehaviour
 
     public static void StickCameraToPlayer(Transform transform)
     {
-        Debug.Log("stick camera");
         target = transform;
     }
 
@@ -41,8 +40,6 @@ public class CameraController : MonoBehaviour
 
     public IEnumerator CameraShake(float duration, float magnitude)
     {
-        //nie dzia³a, do wyjebania albo do zmiany
-
         Vector3 originalPos = transform.localPosition;
 
         float elapsed = 0.0f;

@@ -850,6 +850,7 @@ MonoBehaviour:
   cameraController: {fileID: 0}
   gameController: {fileID: 0}
   weaponSystem: {fileID: 7468608691676981483}
+  startHealth: 100
   playerSpeed: 12
   playerRotationSpeed: 6.5
   desiredAngleZ: 25

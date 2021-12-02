@@ -28,6 +28,7 @@ public class UIController : MonoBehaviour
         SetUI();
     }
 
+    //to zmieniæ na static, ale nie wiem jak
     public void SetUI()
     {
         gameStateText.text = gameController.currentState.ToString();

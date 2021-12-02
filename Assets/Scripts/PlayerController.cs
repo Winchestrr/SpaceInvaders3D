@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [Header("Objects")]
+        [Header("Objects")]
+
     public CharacterController controller;
     public CameraController cameraController;
     public GameController gameController;
@@ -14,11 +15,20 @@ public class PlayerController : MonoBehaviour
     float movZ;
     Vector3 direction;
 
-    [Header("Stats")]
+        [Header("Stats")]
+
+    [SerializeField] private int startHealth;
+    public static int playerHealth;
+
     public float playerSpeed;
     public float playerRotationSpeed;
     public float desiredAngleZ;
     float targetAngleZ;
+
+    private void Start()
+    {
+        playerHealth = startHealth;
+    }
 
     void LateUpdate()
     {
@@ -26,6 +36,11 @@ public class PlayerController : MonoBehaviour
         GetInputs();
         PlayerMove();
         SetRotation();
+    }
+
+    public static void DealPlayerDamage(int damage)
+    {
+        playerHealth -= damage;
     }
 
     void GetInputs()

@@ -211,7 +211,9 @@ MonoBehaviour:
   damage: 1
   bulletSpeed: 30
   timeBetweenShots: 0.2
+  currentTimeBetweenShots: 0
   haveParticles: 1
+  isShooting: 1
   gunEnd2: {fileID: 922871502143822086}
 --- !u!1 &4314779940631344706
 GameObject:
@@ -480,9 +482,10 @@ MonoBehaviour:
   cameraController: {fileID: 0}
   gameController: {fileID: 0}
   weaponSystem: {fileID: 4314779940769903506}
+  startHealth: 100
   playerSpeed: 12
   playerRotationSpeed: 8
-  targetAngleZ: 0
+  desiredAngleZ: 0
 --- !u!143 &-4342924263845982272
 CharacterController:
   m_ObjectHideFlags: 0
@@ -5560,7 +5563,9 @@ MonoBehaviour:
   damage: 1
   bulletSpeed: 30
   timeBetweenShots: 0.3
+  currentTimeBetweenShots: 0
   haveParticles: 1
+  isShooting: 1
   uiController: {fileID: 0}
   magazineSize: 6
   allBullets: 12
@@ -5685,7 +5690,9 @@ MonoBehaviour:
   damage: 1
   bulletSpeed: 30
   timeBetweenShots: 0.2
+  currentTimeBetweenShots: 0
   haveParticles: 1
+  isShooting: 1
 --- !u!1 &8774413587975276669
 GameObject:
   m_ObjectHideFlags: 0
