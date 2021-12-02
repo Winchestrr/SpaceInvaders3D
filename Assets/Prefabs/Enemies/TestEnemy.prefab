@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5255127845214718807}
   - component: {fileID: 5255127845214718804}
   - component: {fileID: 1231697503002281124}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TestEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -111,8 +111,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de10886dc6d218241b18ca7cebde1c9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destroyLine: {fileID: 0}
+  healthBar: {fileID: 0}
   speed: 8
   contactDamage: 10
-  destroyLine: {fileID: 0}
+  maxHealth: 0
   isAlive: 1
   canMove: 1
