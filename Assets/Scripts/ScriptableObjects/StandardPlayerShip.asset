@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: StandardPlayerShip
   m_EditorClassIdentifier: 
   startHealth: 100
-  playerSpeed: 15
-  playerRotationSpeed: 6.5
+  speedX: 14
+  speedZ: 7
+  rotationSpeed: 4
   desiredAngleZ: 25
