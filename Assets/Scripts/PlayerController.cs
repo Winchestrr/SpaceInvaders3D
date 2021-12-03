@@ -12,17 +12,16 @@ public class PlayerController : MonoBehaviour
     public WeaponSystem weaponSystem;
     public PlayerStats stats;
 
-    float movX;
-    float movZ;
-    Vector3 direction;
-    public Transform cameraFollow;
-
-    [Header("Stats")]
+        [Header("Stats")]
 
     public static int maxHealth;
     public static int playerHealth;
 
     float targetAngleZ;
+
+    float movX;
+    public static float movZ;
+    Vector3 direction;
 
     private void Start()
     {
