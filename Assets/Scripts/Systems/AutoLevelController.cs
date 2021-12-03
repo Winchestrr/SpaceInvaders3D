@@ -35,7 +35,8 @@ public class AutoLevelController : MonoBehaviour
 
         for (int i = 0; i < levelLength; i++)
         {
-            GameObject tempTile = Instantiate(autoLevelTile, currentSpawnPoint, Quaternion.LookRotation(Vector3.up, Vector3.forward), transform);
+            //GameObject tempTile = Instantiate(autoLevelTile, currentSpawnPoint, Quaternion.LookRotation(Vector3.up, Vector3.forward), transform);
+            GameObject tempTile = Instantiate(autoLevelTile, currentSpawnPoint, Quaternion.identity, transform);
 
             currentLevelTiles.Add(tempTile);
 
@@ -64,7 +65,7 @@ public class AutoLevelController : MonoBehaviour
     {
         for (int i = 0; i < currentLevelTiles.Count; i++)
         {
-            currentLevelTiles[i].transform.Translate(0f, (levelSpeed - PlayerController.playerSpeedOut) * Time.deltaTime, 0f, Space.Self);
+            currentLevelTiles[i].transform.Translate(0f, 0f, (levelSpeed - PlayerController.playerSpeedOut) * Time.deltaTime, Space.Self);
 
             if (currentLevelTiles[i].transform.localPosition.z < -levelTileSize)
             {

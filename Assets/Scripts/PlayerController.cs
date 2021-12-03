@@ -127,8 +127,6 @@ public class PlayerController : MonoBehaviour
                 targetAngleZ = stats.desiredAngleZ;
             }
         }
-
-        //tu dodaæ przemieszczanie siê cameraFollow o x jednostek w przód/ty³ kiedy porusza siê kamer¹
     }
 
     void SetRotation()
