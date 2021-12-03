@@ -14,6 +14,8 @@ public class EnemySpawner : MonoBehaviour
     public float spawnTimerMin;
     public float spawnTimerMax;
 
+    public float spawnY;
+
     private void Start()
     {
         SpawnEnemies();
@@ -28,7 +30,7 @@ public class EnemySpawner : MonoBehaviour
             float posX = Random.Range(leftBorder.position.x, rightBorder.position.x);
             Vector3 temp = transform.position;
             temp.x = posX;
-            temp.y = 1.5f;
+            temp.y = spawnY;
 
             Instantiate(entities[randomEnemy], temp, Quaternion.Euler(0, 180, 0));
 

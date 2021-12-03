@@ -17,6 +17,7 @@ public class UIController : MonoBehaviour
     public Text reloadText;
 
     public Text gameStateText;
+    public Text pointsText;
 
     public Image healthBar;
 
@@ -34,8 +35,9 @@ public class UIController : MonoBehaviour
     public void SetUI()
     {
         gameStateText.text = GameController.currentState.ToString();
+        pointsText.text = PointsSystem.points.ToString();
 
-        if(ammoWeaponGO != null)
+        if (ammoWeaponGO != null)
         {
             ammoText.text = "Ammo: " + ammoWeapon.bulletsLeft + "/" + ammoWeapon.allBullets;
         }

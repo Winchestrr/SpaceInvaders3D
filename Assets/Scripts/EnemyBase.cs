@@ -31,7 +31,13 @@ public class EnemyBase : MonoBehaviour
         healthBar.fillAmount = ((float)currentHealth / (float)stats.maxHealth);
 
         //do dodania animacja wybuchu
-        if (currentHealth <= 0) Destroy(gameObject);
+        if (currentHealth <= 0)
+        {
+            GameController.enemiesKilled++;
+            PointsSystem.AddPoints(stats.pointValue);
+            Destroy(gameObject);
+        }
+        
     }
 
     void Move()

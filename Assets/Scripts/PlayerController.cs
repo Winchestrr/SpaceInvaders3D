@@ -61,12 +61,12 @@ public class PlayerController : MonoBehaviour
                 break;
 
             case "Enemy":
-                DealPlayerDamage(target.GetComponent<EnemyBase>().stats.contactDamage);
+                PlayerTakeDamage(target.GetComponent<EnemyBase>().stats.contactDamage);
                 break;
         }
     }
 
-    public static void DealPlayerDamage(int damage)
+    public static void PlayerTakeDamage(int damage)
     {
         playerHealth -= damage;
         if (playerHealth <= 0)
@@ -104,7 +104,7 @@ public class PlayerController : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.X))
         {
             //debug player hit
-            DealPlayerDamage(10);
+            PlayerTakeDamage(10);
         }
     }
 

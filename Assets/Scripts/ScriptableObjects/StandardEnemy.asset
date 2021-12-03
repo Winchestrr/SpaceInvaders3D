@@ -10,10 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 905cae5d57e9155418600d222871e3b0, type: 3}
-  m_Name: EnemyStats
+  m_Name: StandardEnemy
   m_EditorClassIdentifier: 
-  speed: 0
-  contactDamage: 0
-  maxHealth: 0
-  isAlive: 0
-  canMove: 0
+  speed: 12
+  contactDamage: 30
+  maxHealth: 100
+  pointValue: 80

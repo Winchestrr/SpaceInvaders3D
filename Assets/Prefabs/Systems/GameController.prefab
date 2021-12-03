@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7699639517789193115}
   - component: {fileID: 7699639517789193114}
+  - component: {fileID: 8251579261379084644}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -48,5 +49,17 @@ MonoBehaviour:
   playerShips:
   - {fileID: 931765880746793457, guid: b5a07bb2820bdf541bc030ae5c84e698, type: 3}
   currentPlayerShip: {fileID: 0}
-  currentState: 0
   chosenShipIndex: 0
+--- !u!114 &8251579261379084644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7699639517789193113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59ceef31e9e775b43adef391fd79d829, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointsDisplay: 0

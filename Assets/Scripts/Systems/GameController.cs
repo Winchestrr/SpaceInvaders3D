@@ -17,6 +17,7 @@ public class GameController : MonoBehaviour
     [Header("Stats")]
     public static GameState currentState;
     public int chosenShipIndex;
+    public static int enemiesKilled;
 
     public static bool isPaused;
 
