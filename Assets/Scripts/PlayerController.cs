@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public CameraController cameraController;
     public GameController gameController;
     public WeaponSystem weaponSystem;
+    public PlayerStats stats;
 
     float movX;
     float movZ;
@@ -17,18 +18,14 @@ public class PlayerController : MonoBehaviour
 
     [Header("Stats")]
 
-    public int startHealth;
     public static int maxHealth;
     public static int playerHealth;
 
-    public float playerSpeed;
-    public float playerRotationSpeed;
-    public float desiredAngleZ;
     float targetAngleZ;
 
     private void Start()
     {
-        maxHealth = startHealth;
+        maxHealth = stats.startHealth;
         playerHealth = maxHealth;
     }
 
@@ -117,22 +114,22 @@ public class PlayerController : MonoBehaviour
 
         if (direction.magnitude > 0.1f)
         {
-            controller.Move(direction * playerSpeed * Time.deltaTime);
+            controller.Move(direction * stats.playerSpeed * Time.deltaTime);
 
             //to chyba do zmiany bêdzie
             if(Input.GetKey(KeyCode.D))
             {
-                targetAngleZ = -desiredAngleZ;
+                targetAngleZ = -stats.desiredAngleZ;
             }
             else if(Input.GetKey(KeyCode.A))
             {
-                targetAngleZ = desiredAngleZ;
+                targetAngleZ = stats.desiredAngleZ;
             }
         }
     }
 
     void SetRotation()
     {
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, targetAngleZ), playerRotationSpeed * Time.deltaTime);
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, targetAngleZ), stats.playerRotationSpeed * Time.deltaTime);
     }
 }

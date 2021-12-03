@@ -135,6 +135,7 @@ MonoBehaviour:
   cameraController: {fileID: 0}
   gameController: {fileID: 0}
   weaponSystem: {fileID: 7468608691676981483}
+  stats: {fileID: 11400000, guid: 84cee9b425f2cbf49ac3053cfe1af25d, type: 2}
   startHealth: 100
   playerSpeed: 12
   playerRotationSpeed: 6.5
