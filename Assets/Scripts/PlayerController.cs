@@ -61,7 +61,7 @@ public class PlayerController : MonoBehaviour
                 break;
 
             case "Enemy":
-                DealPlayerDamage(target.GetComponent<EnemyBase>().contactDamage);
+                DealPlayerDamage(target.GetComponent<EnemyBase>().stats.contactDamage);
                 break;
         }
     }

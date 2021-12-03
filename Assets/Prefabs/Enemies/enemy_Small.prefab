@@ -431,11 +431,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destroyLine: {fileID: 0}
   healthBar: {fileID: 914229876959769208}
-  speed: 12
-  contactDamage: 4
-  maxHealth: 100
-  isAlive: 1
-  canMove: 1
+  stats: {fileID: 11400000, guid: 6dbb027caf191e94d9967db385b8632d, type: 2}
 --- !u!64 &6589065467374612921
 MeshCollider:
   m_ObjectHideFlags: 0
