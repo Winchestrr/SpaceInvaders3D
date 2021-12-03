@@ -6,7 +6,8 @@ using UnityEngine;
 public class PlayerStats : ScriptableObject
 {
     public int startHealth;
-    public float playerSpeed;
-    public float playerRotationSpeed;
+    public float speedX;
+    public float speedZ;
+    public float rotationSpeed;
     public float desiredAngleZ;
 }

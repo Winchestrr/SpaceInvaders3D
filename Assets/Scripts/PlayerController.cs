@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
 
     float movX;
     public static float movZ;
+    public static float playerSpeedOut;
     Vector3 direction;
 
     private void Start()
@@ -110,9 +111,11 @@ public class PlayerController : MonoBehaviour
     {
         direction = new Vector3(movX, 0, 0);
 
+        playerSpeedOut = stats.speedZ * movZ;
+
         if (direction.magnitude > 0.1f)
         {
-            controller.Move(direction * stats.playerSpeed * Time.deltaTime);
+            controller.Move(direction * stats.speedX * Time.deltaTime);
 
             //to chyba do zmiany bêdzie
             if(Input.GetKey(KeyCode.D))
@@ -130,6 +133,6 @@ public class PlayerController : MonoBehaviour
 
     void SetRotation()
     {
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, targetAngleZ), stats.playerRotationSpeed * Time.deltaTime);
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, targetAngleZ), stats.rotationSpeed * Time.deltaTime);
     }
 }

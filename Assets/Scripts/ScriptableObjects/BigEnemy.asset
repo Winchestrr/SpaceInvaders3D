@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 905cae5d57e9155418600d222871e3b0, type: 3}
   m_Name: BigEnemy
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 13
   contactDamage: 50
   maxHealth: 150
   pointValue: 130

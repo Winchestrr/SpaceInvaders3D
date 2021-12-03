@@ -64,7 +64,7 @@ public class AutoLevelController : MonoBehaviour
     {
         for (int i = 0; i < currentLevelTiles.Count; i++)
         {
-            currentLevelTiles[i].transform.Translate(0f, levelSpeed * Time.deltaTime, 0f, Space.Self);
+            currentLevelTiles[i].transform.Translate(0f, (levelSpeed - PlayerController.playerSpeedOut) * Time.deltaTime, 0f, Space.Self);
 
             if (currentLevelTiles[i].transform.localPosition.z < -levelTileSize)
             {

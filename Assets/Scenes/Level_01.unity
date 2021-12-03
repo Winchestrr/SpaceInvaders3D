@@ -633,6 +633,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AutoLevel
       objectReference: {fileID: 0}
+    - target: {fileID: 4076492458655948354, guid: 6b67ae44082e509469bbae7700e8b370, type: 3}
+      propertyPath: levelSpeed
+      value: -13
+      objectReference: {fileID: 0}
     - target: {fileID: 4076492458655948355, guid: 6b67ae44082e509469bbae7700e8b370, type: 3}
       propertyPath: m_RootOrder
       value: 7
