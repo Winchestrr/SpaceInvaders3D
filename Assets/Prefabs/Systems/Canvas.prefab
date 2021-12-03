@@ -782,7 +782,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 250f83c402373424d9e75db039d92498, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameController: {fileID: 0}
+  gameController: {fileID: 7699639517789193114, guid: 8bb0400175c8f9845a5b6b5cd0a3a094, type: 3}
   ammoWeaponGO: {fileID: 0}
   ammoWeapon: {fileID: 0}
   ammoTextGO: {fileID: 6009163222089072294}

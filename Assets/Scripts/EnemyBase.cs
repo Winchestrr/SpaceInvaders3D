@@ -22,7 +22,10 @@ public class EnemyBase : MonoBehaviour
 
     void Update()
     {
-        Move();
+        if(isAlive)
+        {
+            Move();
+        }
     }
 
     public void TakeDamage(int damage)

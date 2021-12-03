@@ -47,4 +47,4 @@ MonoBehaviour:
   autoLevelTile: {fileID: 7197209886196589185, guid: b93df3386245a324bbb2a26db2e87c15, type: 3}
   levelTileSize: 47.8
   levelLength: 10
-  levelSpeed: -10
+  levelSpeed: -13
