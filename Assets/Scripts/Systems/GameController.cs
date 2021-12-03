@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class GameController : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class GameController : MonoBehaviour
     public CameraController cameraController;
     public GameObject[] playerShips;
     public GameObject currentPlayerShip;
+    public CinemachineVirtualCamera virtualCamera;
 
 
     [Header("Stats")]
@@ -60,8 +62,13 @@ public class GameController : MonoBehaviour
         GameObject tempShip;
 
         tempShip = Instantiate(ship, transform.position, transform.rotation);
-        CameraController.StickCameraToPlayer(tempShip.transform);
+        StickCameraToPlayer(tempShip);
 
         return tempShip;
+    }
+
+    public void StickCameraToPlayer(GameObject target)
+    {
+        virtualCamera.Follow = target.transform;
     }
 }

@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     float movX;
     float movZ;
     Vector3 direction;
+    public Transform cameraFollow;
 
     [Header("Stats")]
 
@@ -61,12 +62,12 @@ public class PlayerController : MonoBehaviour
                 break;
 
             case "Enemy":
-                PlayerTakeDamage(target.GetComponent<EnemyBase>().stats.contactDamage);
+                DealPlayerDamage(target.GetComponent<EnemyBase>().stats.contactDamage);
                 break;
         }
     }
 
-    public static void PlayerTakeDamage(int damage)
+    public static void DealPlayerDamage(int damage)
     {
         playerHealth -= damage;
         if (playerHealth <= 0)
@@ -82,7 +83,6 @@ public class PlayerController : MonoBehaviour
 
         if(Input.GetButton("Fire1") || Input.GetKey(KeyCode.Space))
         {
-            //do zmiany
             weaponSystem.Shoot();
         }
 
@@ -103,14 +103,13 @@ public class PlayerController : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.X))
         {
-            //debug player hit
-            PlayerTakeDamage(10);
+            DealPlayerDamage(10);
         }
     }
 
     void PlayerMove()
     {
-        direction = new Vector3(movX, 0, movZ);
+        direction = new Vector3(movX, 0, 0);
 
         if (direction.magnitude > 0.1f)
         {
@@ -126,6 +125,8 @@ public class PlayerController : MonoBehaviour
                 targetAngleZ = stats.desiredAngleZ;
             }
         }
+
+        //tu dodaæ przemieszczanie siê cameraFollow o x jednostek w przód/ty³ kiedy porusza siê kamer¹
     }
 
     void SetRotation()

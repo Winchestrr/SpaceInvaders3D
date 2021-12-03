@@ -34,6 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4033572668298223210}
+  - {fileID: 367614654373313141}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -136,10 +137,55 @@ MonoBehaviour:
   gameController: {fileID: 0}
   weaponSystem: {fileID: 7468608691676981483}
   stats: {fileID: 11400000, guid: 84cee9b425f2cbf49ac3053cfe1af25d, type: 2}
-  startHealth: 100
-  playerSpeed: 12
-  playerRotationSpeed: 6.5
-  desiredAngleZ: 25
+  cameraFollow: {fileID: 367614654373313141}
+--- !u!1 &6516893887646950684
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 367614654373313141}
+  - component: {fileID: 1295119021}
+  m_Layer: 0
+  m_Name: FollowTarget
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &367614654373313141
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6516893887646950684}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 551018659448718155}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1295119021
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6516893887646950684}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!1 &8354708220996495231
 GameObject:
   m_ObjectHideFlags: 0
@@ -354,6 +400,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4033572668298223210}
     m_Modifications:
+    - target: {fileID: 2479648225747248765, guid: 93ed680fd4d16fc41bb09b51410d8ee0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.46
+      objectReference: {fileID: 0}
     - target: {fileID: 4025153227865696634, guid: 93ed680fd4d16fc41bb09b51410d8ee0, type: 3}
       propertyPath: m_RootOrder
       value: 0

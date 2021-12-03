@@ -30,10 +30,10 @@ public class CameraController : MonoBehaviour
         }
     }
 
-    public static void StickCameraToPlayer(Transform transform)
-    {
-        target = transform;
-    }
+    //public static void StickCameraToPlayer(Transform transform)
+    //{
+    //    target = transform;
+    //}
 
     //to do ogarniêcia póŸniej, testowo
     void CameraRotate()
