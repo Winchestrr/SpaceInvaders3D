@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4132576243567944970
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4132576243567944972}
+  - component: {fileID: 4132576243567944973}
+  m_Layer: 0
+  m_Name: TileLevelGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4132576243567944972
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4132576243567944970}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.0552995, y: 1.3563242, z: 2.1996212}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4132576243567944973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4132576243567944970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94ff4912512f17147af5f90cd060501d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentLevelTiles: []
+  subtiles:
+  - {fileID: 4975317631124669716, guid: e54d6c37b820abb4aa3d79893cd47e0b, type: 3}
+  - {fileID: 2403296445566813716, guid: 7f6549d0e924aa842956e32f34243c3b, type: 3}
+  - {fileID: 260331765662306779, guid: 500ff1ebcc38382448091d013f589673, type: 3}
+  - {fileID: 367545692484493949, guid: 4552f9363f1e410459529da75dfe1cee, type: 3}
+  - {fileID: 7207503787112872608, guid: 0e4b822a7aaa9cf42a2f5aca671318cc, type: 3}
+  - {fileID: 6475160433202936270, guid: f4b5989340362ee40a439c755f7eb616, type: 3}
+  - {fileID: 1193299122153378106, guid: 815ea75948d84df42b70d0f376f19458, type: 3}
+  - {fileID: 58898459820147811, guid: 3ff289b04a88b3442aa01bc7ec6e8a21, type: 3}
+  - {fileID: 3893525744433227096, guid: df94beedc668b70419910ad2d4b9e90f, type: 3}
+  levelTile: {fileID: 9120963624350965754, guid: cad0eddb687da5447b5229c36edc190b, type: 3}
+  levelGO: {fileID: 2442973924373572728, guid: 77492b23527c8c14388c853a01150a12, type: 3}
+  tileLength: 6
+  floorWidth: 10
+  wallHeight: 4
+  numberOfTiles: 10
+  levelSpeed: -15
