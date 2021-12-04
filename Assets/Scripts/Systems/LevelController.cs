@@ -2,14 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestTileGenerator : MonoBehaviour
+public class LevelController : MonoBehaviour
 {
     public List<GameObject> currentLevelTiles = new List<GameObject>();
 
-    public GameObject[] subtiles;
+    public GameObject[] wallsSubtiles;
+    public GameObject[] floorSubtiles;
     public GameObject levelTile;
     public GameObject levelGO;
-    private GameObject levelClone;
+
+    public Transform destroyLine;
 
     public int tileLength;
     public int floorWidth;
@@ -22,7 +24,7 @@ public class TestTileGenerator : MonoBehaviour
 
     private void Start()
     {
-        levelClone = Instantiate(levelGO, Vector3.zero, Quaternion.identity);
+        destroyLine = GameObject.Find("DestroyLine").transform;
         GenerateLevel();
     }
 
@@ -45,7 +47,7 @@ public class TestTileGenerator : MonoBehaviour
 
     void GenerateTile(Vector3 position)
     {
-        GameObject tempTile = Instantiate(levelTile, new Vector3(0, 0, position.z), Quaternion.Euler(new Vector3(0, 0, 0)), levelClone.transform);
+        GameObject tempTile = Instantiate(levelTile, new Vector3(0, 0, position.z), Quaternion.Euler(new Vector3(0, 0, 0)), levelGO.transform);
         currentLevelTiles.Add(tempTile);
 
         GenerateFloor(tempTile);
@@ -58,14 +60,14 @@ public class TestTileGenerator : MonoBehaviour
         {
             for(int j = 0; j < wallHeight; j++)
             {
-                Instantiate(subtiles[Random.Range(0, subtiles.Length)],
+                Instantiate(wallsSubtiles[Random.Range(0, wallsSubtiles.Length)],
                     new Vector3(-floorWidth, (2 * j) + 1, (2 * i) + noInOrder),
-                    Quaternion.Euler(new Vector3(0, 0, 90)),
+                    Quaternion.Euler(new Vector3(0, 90, -90)),
                     parent.transform);
 
-                Instantiate(subtiles[Random.Range(0, subtiles.Length)],
+                Instantiate(wallsSubtiles[Random.Range(0, wallsSubtiles.Length)],
                     new Vector3(floorWidth, (2 * j) + 1, (2 * i) + noInOrder),
-                    Quaternion.Euler(new Vector3(0, 0, -90)),
+                    Quaternion.Euler(new Vector3(180, 90, 90)),
                     parent.transform);
             }
         }
@@ -77,7 +79,7 @@ public class TestTileGenerator : MonoBehaviour
         {
             for (int j = 0; j < floorWidth; j++)
             {
-                Instantiate(subtiles[Random.Range(0, subtiles.Length)],
+                Instantiate(floorSubtiles[Random.Range(0, floorSubtiles.Length)],
                     new Vector3((2 * j) - floorWidth + 1, 0, (2 * i) + noInOrder),
                     Quaternion.Euler(new Vector3(0, 0, 0)),
                     parent.transform);
@@ -94,6 +96,7 @@ public class TestTileGenerator : MonoBehaviour
             currentLevelTiles[i].transform.Translate(0f, 0f, (levelSpeed - PlayerController.playerSpeedOut) * Time.deltaTime, Space.Self);
 
             if (currentLevelTiles[i].transform.localPosition.z < -(tileLength * 2))
+            //if (currentLevelTiles[i].transform.localPosition.z < destroyLine.transform.position.z)
             {
                 Destroy(currentLevelTiles[i]);
                 currentLevelTiles.RemoveAt(i);

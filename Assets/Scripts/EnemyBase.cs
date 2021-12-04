@@ -16,7 +16,7 @@ public class EnemyBase : MonoBehaviour
 
     private void OnEnable()
     {
-        destroyLine = GameObject.Find("EnemyDestroyLine").transform;
+        destroyLine = GameObject.Find("DestroyLine").transform;
         currentHealth = stats.maxHealth;
     }
 

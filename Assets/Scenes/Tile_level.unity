@@ -189,7 +189,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4212881892957434862, guid: 6331eb8532bd77548979bfa7779d2681, type: 3}
       propertyPath: m_Name
-      value: EnemyDestroyLine
+      value: DestroyLine
       objectReference: {fileID: 0}
     - target: {fileID: 4212881892957434863, guid: 6331eb8532bd77548979bfa7779d2681, type: 3}
       propertyPath: m_RootOrder
@@ -387,6 +387,65 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f63f459a2cd3d49a3ee5ed389cce10, type: 3}
+--- !u!1 &722733959
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 722733961}
+  - component: {fileID: 722733960}
+  m_Layer: 0
+  m_Name: LevelController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &722733960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 722733959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94ff4912512f17147af5f90cd060501d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentLevelTiles: []
+  wallsSubtiles:
+  - {fileID: 279413659923599288, guid: 3f6a02e3cc07e3e49a19cb9f699fd6e7, type: 3}
+  floorSubtiles:
+  - {fileID: 4975317631124669716, guid: e54d6c37b820abb4aa3d79893cd47e0b, type: 3}
+  - {fileID: 2403296445566813716, guid: 7f6549d0e924aa842956e32f34243c3b, type: 3}
+  - {fileID: 7207503787112872608, guid: 0e4b822a7aaa9cf42a2f5aca671318cc, type: 3}
+  levelTile: {fileID: 9120963624350965754, guid: cad0eddb687da5447b5229c36edc190b, type: 3}
+  levelGO: {fileID: 722733959}
+  destroyLine: {fileID: 0}
+  tileLength: 6
+  floorWidth: 10
+  wallHeight: 5
+  numberOfTiles: 6
+  levelSpeed: -13
+--- !u!4 &722733961
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 722733959}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1048457827
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -663,7 +722,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4076492458655948353, guid: 6b67ae44082e509469bbae7700e8b370, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4076492458655948354, guid: 6b67ae44082e509469bbae7700e8b370, type: 3}
       propertyPath: autoLevelTile
