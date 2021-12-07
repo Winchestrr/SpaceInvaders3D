@@ -13,6 +13,8 @@ public class LevelController : MonoBehaviour
 
     public Transform destroyLine;
 
+    public int wallSubtileSize;
+    public int floorSubtileSize;
     public int tileLength;
     public int floorWidth;
     public int wallHeight;
@@ -39,7 +41,7 @@ public class LevelController : MonoBehaviour
     {
         for (int x = 0; x < numberOfTiles; x++)
         {
-            noInOrder += 2 * tileLength;
+            noInOrder += wallSubtileSize * tileLength;
 
             GenerateTile(new Vector3(0f, 0f, noInOrder - 1));
         }
@@ -61,13 +63,13 @@ public class LevelController : MonoBehaviour
             for(int j = 0; j < wallHeight; j++)
             {
                 Instantiate(wallsSubtiles[Random.Range(0, wallsSubtiles.Length)],
-                    new Vector3(-floorWidth, (2 * j) + 1, (2 * i) + noInOrder),
-                    Quaternion.Euler(new Vector3(0, 90, -90)),
+                    new Vector3(-floorWidth, (wallSubtileSize * j) + 1, (wallSubtileSize * i) + noInOrder),
+                    Quaternion.Euler(new Vector3(0, 0, -90)),
                     parent.transform);
 
                 Instantiate(wallsSubtiles[Random.Range(0, wallsSubtiles.Length)],
-                    new Vector3(floorWidth, (2 * j) + 1, (2 * i) + noInOrder),
-                    Quaternion.Euler(new Vector3(180, 90, 90)),
+                    new Vector3(floorWidth, (wallSubtileSize * j) + 1, (wallSubtileSize * i) + noInOrder),
+                    Quaternion.Euler(new Vector3(180, 0, 90)),
                     parent.transform);
             }
         }
@@ -80,7 +82,7 @@ public class LevelController : MonoBehaviour
             for (int j = 0; j < floorWidth; j++)
             {
                 Instantiate(floorSubtiles[Random.Range(0, floorSubtiles.Length)],
-                    new Vector3((2 * j) - floorWidth + 1, 0, (2 * i) + noInOrder),
+                    new Vector3((floorSubtileSize * j) - floorWidth + 1, 0, (floorSubtileSize * i) + noInOrder),
                     Quaternion.Euler(new Vector3(0, 0, 0)),
                     parent.transform);
             }
