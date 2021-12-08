@@ -15,5 +15,5 @@ MonoBehaviour:
   startHealth: 100
   speedX: 14
   speedZ: 7
-  rotationSpeed: 4
+  rotationSpeed: 8
   desiredAngleZ: 25

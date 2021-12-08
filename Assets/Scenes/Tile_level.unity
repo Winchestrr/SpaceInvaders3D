@@ -144,7 +144,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4949510399721025075, guid: b03c6dbe8a635b24d8490acceedd8bcd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 23.04
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4949510399721025075, guid: b03c6dbe8a635b24d8490acceedd8bcd, type: 3}
       propertyPath: m_LocalRotation.w
@@ -474,7 +474,7 @@ MonoBehaviour:
   wallSubtileSize: 4
   floorSubtileSize: 4
   tileLength: 8
-  floorWidth: 5
+  floorWidth: 10
   wallHeight: 4
   numberOfTiles: 12
   levelSpeed: -13
@@ -522,7 +522,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7699639517789193115, guid: 8bb0400175c8f9845a5b6b5cd0a3a094, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 55
       objectReference: {fileID: 0}
     - target: {fileID: 7699639517789193115, guid: 8bb0400175c8f9845a5b6b5cd0a3a094, type: 3}
       propertyPath: m_LocalRotation.w
