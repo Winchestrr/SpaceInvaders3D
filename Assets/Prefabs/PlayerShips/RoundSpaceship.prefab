@@ -66,7 +66,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: fbab98afaddf9b341ac2060a62706751, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -137,7 +137,6 @@ MonoBehaviour:
   gameController: {fileID: 0}
   weaponSystem: {fileID: 7468608691676981483}
   stats: {fileID: 11400000, guid: 84cee9b425f2cbf49ac3053cfe1af25d, type: 2}
-  cameraFollow: {fileID: 367614654373313141}
 --- !u!1 &6516893887646950684
 GameObject:
   m_ObjectHideFlags: 0

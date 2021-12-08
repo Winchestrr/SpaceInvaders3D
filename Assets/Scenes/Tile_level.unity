@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17323539, g: 0.16459554, b: 0.2966911, a: 1}
+  m_IndirectSpecularColor: {r: 0.17316318, g: 0.16457182, b: 0.29665613, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -180,6 +180,44 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b03c6dbe8a635b24d8490acceedd8bcd, type: 3}
+--- !u!1 &345228534 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8835683307446565234, guid: 31f63f459a2cd3d49a3ee5ed389cce10, type: 3}
+  m_PrefabInstance: {fileID: 631657375}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &345228540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 345228534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1001 &356018229
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -418,7 +456,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLevelTiles: []
   wallsSubtiles:
-  - {fileID: 279413659923599288, guid: 3f6a02e3cc07e3e49a19cb9f699fd6e7, type: 3}
+  - {fileID: 1740823539069208564, guid: 4225309e4a5a7db489384fd01d633ca7, type: 3}
+  - {fileID: 1207058749838071435, guid: 73c76d76b0caba847b2e60f6b1c383a7, type: 3}
+  - {fileID: 3455448217884872178, guid: 8b51a38448885ab44b6dcec2c5039381, type: 3}
+  - {fileID: 1962394195870453523, guid: 28c73b22e0b04c94dac698d9973eb066, type: 3}
+  - {fileID: 3507303789552821141, guid: 96f23f4f35d8b58478dacfb6f4745841, type: 3}
+  - {fileID: 6797285398756711116, guid: 4286672db064c704b96dbd9cc5e1aeb3, type: 3}
+  - {fileID: 1088011911127099463, guid: 3f7d5dbcfa4defd489b26f8fca67b52b, type: 3}
+  - {fileID: 4410875631250989023, guid: c559f4c1cd0dd06428ebab96ecbb5182, type: 3}
   floorSubtiles:
   - {fileID: 4975317631124669716, guid: e54d6c37b820abb4aa3d79893cd47e0b, type: 3}
   - {fileID: 2403296445566813716, guid: 7f6549d0e924aa842956e32f34243c3b, type: 3}
@@ -426,10 +471,12 @@ MonoBehaviour:
   levelTile: {fileID: 9120963624350965754, guid: cad0eddb687da5447b5229c36edc190b, type: 3}
   levelGO: {fileID: 722733959}
   destroyLine: {fileID: 0}
-  tileLength: 6
-  floorWidth: 10
-  wallHeight: 5
-  numberOfTiles: 6
+  wallSubtileSize: 4
+  floorSubtileSize: 4
+  tileLength: 8
+  floorWidth: 5
+  wallHeight: 4
+  numberOfTiles: 12
   levelSpeed: -13
 --- !u!4 &722733961
 Transform:
@@ -625,6 +672,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1688058030}
   - component: {fileID: 1688058031}
+  - component: {fileID: 1688058032}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -709,6 +757,26 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1688058032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1688058029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1001 &1741418517
 PrefabInstance:
   m_ObjectHideFlags: 0
