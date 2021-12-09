@@ -28,6 +28,9 @@ public class EnemySpawner : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.I)) LineSpawn(false, 0, 3);
         if (Input.GetKeyDown(KeyCode.O)) TriangleSpawn(false, 0, 3);
         if (Input.GetKeyDown(KeyCode.P)) GuardSpawn(0);
+        if (Input.GetKeyDown(KeyCode.J)) AskewSpawn(false, 0, 3);
+        if (Input.GetKeyDown(KeyCode.K)) RandomXTrainSpawn(0, 5);
+        if (Input.GetKeyDown(KeyCode.L)) RandomGroup(true, 0, 6);
     }
 
     public void SpawnEnemy(bool isRandom, int enemyNo, float posX, float posZ)
@@ -43,6 +46,8 @@ public class EnemySpawner : MonoBehaviour
             else Instantiate(entities[Random.Range(0, entities.Length)], temp, Quaternion.Euler(0, 180, 0));
         }
     }
+
+    #region Patterns
 
     public void LineSpawn(bool isRandom, int enemyNo, int size)
     {
@@ -77,6 +82,35 @@ public class EnemySpawner : MonoBehaviour
         SpawnEnemy(false, enemyNo, -3, spawnZ + 3);
         SpawnEnemy(false, enemyNo, 3, spawnZ - 3);
     }
+
+    public void AskewSpawn(bool isRandom, int enemyNo, int size)
+    {
+        for (int i = -size; i < size; i++)
+        {
+            SpawnEnemy(false, enemyNo, i * 3, spawnZ + i * 3);
+        }
+    }
+
+    public void RandomXTrainSpawn(int enemyNo, int size)
+    {
+        float temp = Random.Range(leftBorder.position.x, rightBorder.position.x);
+
+        for (int i = 0; i < size; i++)
+        {
+            SpawnEnemy(false, enemyNo, temp, spawnZ + i * 3);
+        }
+    }
+
+    public void RandomGroup(bool isRandom, int enemyNo, int size)
+    {
+        for (int i = 0; i < size; i++)
+        {
+            if(isRandom) SpawnEnemy(true, 0, Random.Range(leftBorder.position.x, rightBorder.position.x), spawnZ + i * 4);
+            else SpawnEnemy(false, enemyNo, Random.Range(leftBorder.position.x, rightBorder.position.x), spawnZ + i * 4);
+        }
+    }
+
+    #endregion
 
     void SpawnEnemies()
     {
