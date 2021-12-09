@@ -80,4 +80,9 @@ public class EnemyBase : MonoBehaviour
                 break;
         }
     }
+
+    private void DrawRay()
+    {
+
+    }
 }

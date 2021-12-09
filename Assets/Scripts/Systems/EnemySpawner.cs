@@ -21,6 +21,8 @@ public class EnemySpawner : MonoBehaviour
     {
         spawnZ = rightBorder.position.z;
         //SpawnEnemies();
+
+        StartCoroutine(EnemySpawnerCoroutine());
     }
 
     private void Update()
@@ -30,7 +32,7 @@ public class EnemySpawner : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.P)) GuardSpawn(0);
         if (Input.GetKeyDown(KeyCode.J)) AskewSpawn(false, 0, 3);
         if (Input.GetKeyDown(KeyCode.K)) RandomXTrainSpawn(0, 5);
-        if (Input.GetKeyDown(KeyCode.L)) RandomGroup(true, 0, 6);
+        if (Input.GetKeyDown(KeyCode.L)) RandomGroupSpawn(true, 0, 6);
     }
 
     public void SpawnEnemy(bool isRandom, int enemyNo, float posX, float posZ)
@@ -101,7 +103,7 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-    public void RandomGroup(bool isRandom, int enemyNo, int size)
+    public void RandomGroupSpawn(bool isRandom, int enemyNo, int size)
     {
         for (int i = 0; i < size; i++)
         {
@@ -111,6 +113,44 @@ public class EnemySpawner : MonoBehaviour
     }
 
     #endregion
+
+    IEnumerator EnemySpawnerCoroutine()
+    {
+        int formationNo = Random.Range(0, 6);
+
+        bool randomBool = Random.value > 0.5f;
+        int randomEnemy = Random.Range(0, entities.Length);
+
+        switch (formationNo)
+        {
+            case 0:
+                LineSpawn(randomBool, randomEnemy, Random.Range(2, 3));
+                break;
+
+            case 1:
+                TriangleSpawn(randomBool, randomEnemy, Random.Range(2, 3));
+                break;
+
+            case 2:
+                GuardSpawn(randomEnemy);
+                break;
+
+            case 3:
+                AskewSpawn(randomBool, randomEnemy, Random.Range(2, 4));
+                break;
+
+            case 4:
+                RandomXTrainSpawn(randomEnemy, Random.Range(3, 7));
+                break;
+
+            case 5:
+                RandomGroupSpawn(randomBool, randomEnemy, Random.Range(4, 7));
+                break;
+        }
+
+        yield return new WaitForSeconds(Random.Range(spawnTimerMin, spawnTimerMax));
+        StartCoroutine(EnemySpawnerCoroutine());
+    }
 
     void SpawnEnemies()
     {
