@@ -14,6 +14,11 @@ public class EnemyBase : MonoBehaviour
     private bool isAlive = true;
     private bool canMove = true;
 
+    [Header("Raycast")]
+    private RaycastHit hitInfo;
+    public float rayDistance;
+    public bool isPlayerHit;
+
     private void OnEnable()
     {
         destroyLine = GameObject.Find("DestroyLine").transform;
@@ -25,6 +30,7 @@ public class EnemyBase : MonoBehaviour
         if(isAlive)
         {
             Move();
+            CastRay();
         }
     }
 
@@ -81,8 +87,18 @@ public class EnemyBase : MonoBehaviour
         }
     }
 
-    private void DrawRay()
+    private void CastRay()
     {
+        RaycastHit[] hit = Physics.RaycastAll(transform.position, transform.forward, rayDistance);
+        Debug.DrawRay(transform.position, new Vector3(0, 0, transform.position.z - rayDistance), Color.green);
 
+        if (hit.Length == 1 && hit[0].transform.gameObject.tag == "Player")
+        {
+            isPlayerHit = true;
+        }
+        else
+        {
+            isPlayerHit = false;
+        }
     }
 }
