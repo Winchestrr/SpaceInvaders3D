@@ -15,10 +15,67 @@ public class EnemySpawner : MonoBehaviour
     public float spawnTimerMax;
 
     public float spawnY;
+    public float spawnZ;
 
     private void Start()
     {
-        SpawnEnemies();
+        spawnZ = rightBorder.position.z;
+        //SpawnEnemies();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.I)) LineSpawn(false, 0, 3);
+        if (Input.GetKeyDown(KeyCode.O)) TriangleSpawn(false, 0, 3);
+        if (Input.GetKeyDown(KeyCode.P)) GuardSpawn(0);
+    }
+
+    public void SpawnEnemy(bool isRandom, int enemyNo, float posX, float posZ)
+    {
+        if(canSpawn)
+        {
+            Vector3 temp = transform.position;
+            temp.x = posX;
+            temp.y = spawnY;
+            temp.z = posZ;
+
+            if(!isRandom) Instantiate(entities[enemyNo], temp, Quaternion.Euler(0, 180, 0));
+            else Instantiate(entities[Random.Range(0, entities.Length)], temp, Quaternion.Euler(0, 180, 0));
+        }
+    }
+
+    public void LineSpawn(bool isRandom, int enemyNo, int size)
+    {
+        //center enemy
+        SpawnEnemy(isRandom, 0, (leftBorder.position.x + rightBorder.position.x) / 2, spawnZ);
+
+        for (int i = 1; i < size; i++)
+        {
+            SpawnEnemy(isRandom, 0, i * 3, spawnZ);
+            SpawnEnemy(isRandom, 0, -i * 3, spawnZ);
+        }
+    }
+
+    public void TriangleSpawn(bool isRandom, int enemyNo, int size)
+    {
+        //center enemy
+        SpawnEnemy(isRandom, 0, (leftBorder.position.x + rightBorder.position.x) / 2, spawnZ);
+
+        for (int i = 1; i < size; i++)
+        {
+            SpawnEnemy(isRandom, 0, i * 3, spawnZ + i * 3);
+            SpawnEnemy(isRandom, 0, -i * 3, spawnZ + i * 3);
+        }
+    }
+
+    public void GuardSpawn(int enemyNo)
+    {
+        for (int i = -1; i < 2; i++)
+        {
+            SpawnEnemy(false, enemyNo, i * 3, spawnZ + i * 3);
+        }
+        SpawnEnemy(false, enemyNo, -3, spawnZ + 3);
+        SpawnEnemy(false, enemyNo, 3, spawnZ - 3);
     }
 
     void SpawnEnemies()
