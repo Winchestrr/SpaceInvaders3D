@@ -111,10 +111,9 @@ MonoBehaviour:
   gunEnd: {fileID: 5030750614626717277}
   bullet: {fileID: 2944955773603090048, guid: 7b78021aac6ec2c409cfb7500fc54f1a, type: 3}
   shootParticles: {fileID: 0}
-  damage: 8
+  damage: 10
   bulletSpeed: 30
   timeBetweenShots: 0.2
-  currentTimeBetweenShots: 0
   haveParticles: 0
   isShooting: 1
   gunEnd2: {fileID: 6852186080060347221}
