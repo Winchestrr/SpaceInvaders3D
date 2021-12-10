@@ -83,9 +83,10 @@ MonoBehaviour:
   - {fileID: 8949091481558381302, guid: b92c061997c62b5409b3e7a4b99f38ed, type: 3}
   - {fileID: 9180234369629475234, guid: 5be67ca0d1f63464b8924c18677487e7, type: 3}
   canSpawn: 1
-  spawnTimerMin: 1
-  spawnTimerMax: 3
+  spawnTimerMin: 3
+  spawnTimerMax: 5
   spawnY: 1
+  spawnZ: 0
 --- !u!1 &4949510399974881983
 GameObject:
   m_ObjectHideFlags: 0

@@ -432,7 +432,7 @@ MonoBehaviour:
   destroyLine: {fileID: 0}
   healthBar: {fileID: 914229876959769208}
   stats: {fileID: 11400000, guid: 6dbb027caf191e94d9967db385b8632d, type: 2}
-  rayDistance: 20
+  rayDistance: 1000
   isPlayerHit: 0
 --- !u!65 &2800961515501653129
 BoxCollider:

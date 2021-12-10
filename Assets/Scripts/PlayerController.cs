@@ -107,28 +107,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void OldPlayerMove()
-    {
-        direction = new Vector3(movX, 0, 0);
-
-        playerSpeedOut = stats.speedZ * movZ;
-
-        if (direction.magnitude > 0.1f)
-        {
-            controller.Move(direction * stats.speedX * Time.deltaTime);
-
-            //to chyba do zmiany bêdzie
-            if(Input.GetKey(KeyCode.D))
-            {
-                targetAngleZ = -stats.desiredAngleZ;
-            }
-            else if(Input.GetKey(KeyCode.A))
-            {
-                targetAngleZ = stats.desiredAngleZ;
-            }
-        }
-    }
-
     void PlayerMove()
     {
         direction = new Vector3(movX, 0, 0);
@@ -146,5 +124,27 @@ public class PlayerController : MonoBehaviour
     void SetRotation()
     {
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, targetAngleZ), stats.rotationSpeed * Time.deltaTime);
+    }
+
+    void OldPlayerMove()
+    {
+        direction = new Vector3(movX, 0, 0);
+
+        playerSpeedOut = stats.speedZ * movZ;
+
+        if (direction.magnitude > 0.1f)
+        {
+            controller.Move(direction * stats.speedX * Time.deltaTime);
+
+            //to chyba do zmiany bêdzie
+            if (Input.GetKey(KeyCode.D))
+            {
+                targetAngleZ = -stats.desiredAngleZ;
+            }
+            else if (Input.GetKey(KeyCode.A))
+            {
+                targetAngleZ = stats.desiredAngleZ;
+            }
+        }
     }
 }

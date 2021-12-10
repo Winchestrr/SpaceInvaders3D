@@ -17,6 +17,6 @@ public class StandardEnemy : EnemyBase
     {
         base.OnEnable();
 
-        currentWeapon = GetComponentInChildren<GunBase>();
+        //currentWeapon = GetComponentInChildren<GunBase>();
     }
 }

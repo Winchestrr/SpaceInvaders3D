@@ -66,7 +66,7 @@ GameObject:
   - component: {fileID: 4678447640380200424}
   m_Layer: 0
   m_Name: Standard_ship
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -154,6 +154,7 @@ MonoBehaviour:
   gameController: {fileID: 7699639517789193114, guid: 8bb0400175c8f9845a5b6b5cd0a3a094, type: 3}
   weaponSystem: {fileID: 5292149896130560874}
   stats: {fileID: 11400000, guid: 84cee9b425f2cbf49ac3053cfe1af25d, type: 2}
+  movX: 0
 --- !u!143 &7583028781385966506
 CharacterController:
   m_ObjectHideFlags: 0
