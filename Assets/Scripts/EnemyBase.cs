@@ -89,16 +89,17 @@ public class EnemyBase : MonoBehaviour
 
     private void CastRay()
     {
-        RaycastHit[] hit = Physics.RaycastAll(transform.position, transform.forward, rayDistance);
-        Debug.DrawRay(transform.position, new Vector3(0, 0, transform.position.z - rayDistance), Color.green);
-
-        if (hit.Length == 1 && hit[0].transform.gameObject.tag == "Player")
+        Debug.DrawRay(transform.position, transform.forward * rayDistance, Color.green);
+        if (Physics.Raycast(transform.position, transform.forward, out hitInfo, rayDistance))
         {
-            isPlayerHit = true;
-        }
-        else
-        {
-            isPlayerHit = false;
+            if(hitInfo.transform.gameObject.tag == "Player")
+            {
+                isPlayerHit = true;
+            }
+            else
+            {
+                isPlayerHit = false;
+            }
         }
     }
 }
