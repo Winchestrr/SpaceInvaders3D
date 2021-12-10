@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
 
     float targetAngleZ;
 
-    float movX;
+    public float movX;
     public static float movZ;
     public static float playerSpeedOut;
     Vector3 direction;
@@ -107,7 +107,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void PlayerMove()
+    void OldPlayerMove()
     {
         direction = new Vector3(movX, 0, 0);
 
@@ -127,6 +127,20 @@ public class PlayerController : MonoBehaviour
                 targetAngleZ = stats.desiredAngleZ;
             }
         }
+    }
+
+    void PlayerMove()
+    {
+        direction = new Vector3(movX, 0, 0);
+        playerSpeedOut = stats.speedZ * movZ;
+
+        if (direction.magnitude > 0.1f)
+        {
+            transform.Translate(direction * stats.speedX * Time.deltaTime, Space.World);
+        }
+
+        if (direction.x > 0.2f) targetAngleZ = -stats.desiredAngleZ;
+        else if (direction.x < -0.2f) targetAngleZ = stats.desiredAngleZ;
     }
 
     void SetRotation()

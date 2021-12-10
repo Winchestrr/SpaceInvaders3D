@@ -343,7 +343,7 @@ GameObject:
   - component: {fileID: 4671785805448849385}
   - component: {fileID: 7435851152482980643}
   - component: {fileID: 1077005727328838728}
-  - component: {fileID: 6589065467374612921}
+  - component: {fileID: 2800961515501653129}
   m_Layer: 9
   m_Name: enemy_Small
   m_TagString: Enemy
@@ -358,7 +358,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8949091481558381302}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.55, y: 0.55, z: 0.55}
   m_ConstrainProportionsScale: 1
@@ -434,8 +434,8 @@ MonoBehaviour:
   stats: {fileID: 11400000, guid: 6dbb027caf191e94d9967db385b8632d, type: 2}
   rayDistance: 20
   isPlayerHit: 0
---- !u!64 &6589065467374612921
-MeshCollider:
+--- !u!65 &2800961515501653129
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -444,7 +444,6 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5053925668127403250, guid: fd341bd42069dcf4bae3b2b0140dee47, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 5.046091, y: 1.599144, z: 3.8528206}
+  m_Center: {x: 0.009141835, y: 0.011258287, z: 0.016116662}

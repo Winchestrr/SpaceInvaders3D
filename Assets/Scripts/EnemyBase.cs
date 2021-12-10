@@ -19,13 +19,13 @@ public class EnemyBase : MonoBehaviour
     public float rayDistance;
     public bool isPlayerHit;
 
-    private void OnEnable()
+    protected virtual void OnEnable()
     {
         destroyLine = GameObject.Find("DestroyLine").transform;
         currentHealth = stats.maxHealth;
     }
 
-    void Update()
+    protected virtual void Update()
     {
         if(isAlive)
         {
@@ -46,10 +46,9 @@ public class EnemyBase : MonoBehaviour
             PointsSystem.AddPoints(stats.pointValue);
             Destroy(gameObject);
         }
-        
     }
 
-    void Move()
+    protected void Move()
     {
         if(canMove)
         {
@@ -64,7 +63,7 @@ public class EnemyBase : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider target)
+    protected void OnTriggerEnter(Collider target)
     {
         switch(target.tag)
         {
@@ -87,7 +86,7 @@ public class EnemyBase : MonoBehaviour
         }
     }
 
-    private void CastRay()
+    protected void CastRay()
     {
         Debug.DrawRay(transform.position, transform.forward * rayDistance, Color.green);
         if (Physics.Raycast(transform.position, transform.forward, out hitInfo, rayDistance))

@@ -343,7 +343,7 @@ GameObject:
   - component: {fileID: 4864650370601157821}
   - component: {fileID: 7234543471891542135}
   - component: {fileID: -6788392651689971170}
-  - component: {fileID: 4686347480318608815}
+  - component: {fileID: 3605423918516116651}
   m_Layer: 9
   m_Name: enemy_BigUV
   m_TagString: Enemy
@@ -434,8 +434,8 @@ MonoBehaviour:
   stats: {fileID: 11400000, guid: 885228130d5cee242a4e96e44facf27d, type: 2}
   rayDistance: 20
   isPlayerHit: 0
---- !u!64 &4686347480318608815
-MeshCollider:
+--- !u!65 &3605423918516116651
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -444,7 +444,6 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -8678823145569952518, guid: d33edcbb73e4a2241931133239c76266, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 10.731736, y: 3.9204285, z: 10.150582}
+  m_Center: {x: -0.16200969, y: 1.2531838, z: -3.4988132}
