@@ -469,14 +469,13 @@ MonoBehaviour:
   - {fileID: 2403296445566813716, guid: 7f6549d0e924aa842956e32f34243c3b, type: 3}
   - {fileID: 7207503787112872608, guid: 0e4b822a7aaa9cf42a2f5aca671318cc, type: 3}
   levelTile: {fileID: 9120963624350965754, guid: cad0eddb687da5447b5229c36edc190b, type: 3}
-  levelGO: {fileID: 722733959}
-  destroyLine: {fileID: 0}
   wallSubtileSize: 4
   floorSubtileSize: 4
   tileLength: 8
-  floorWidth: 10
+  floorWidth: 8
   wallHeight: 4
   numberOfTiles: 12
+  startIndex: -1
   levelSpeed: -12
 --- !u!4 &722733961
 Transform:
@@ -522,7 +521,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7699639517789193115, guid: 8bb0400175c8f9845a5b6b5cd0a3a094, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 55
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7699639517789193115, guid: 8bb0400175c8f9845a5b6b5cd0a3a094, type: 3}
       propertyPath: m_LocalRotation.w
