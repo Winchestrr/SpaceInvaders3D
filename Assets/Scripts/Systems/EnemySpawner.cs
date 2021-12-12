@@ -20,7 +20,6 @@ public class EnemySpawner : MonoBehaviour
     private void Start()
     {
         spawnZ = rightBorder.position.z;
-        //SpawnEnemies();
 
         StartCoroutine(EnemySpawnerCoroutine());
     }
@@ -152,7 +151,7 @@ public class EnemySpawner : MonoBehaviour
         StartCoroutine(EnemySpawnerCoroutine());
     }
 
-    void SpawnEnemies()
+    void SpawnEnemies() //old way
     {
         if(canSpawn)
         {
