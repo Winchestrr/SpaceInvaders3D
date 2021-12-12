@@ -48,6 +48,7 @@ public class UIController : MonoBehaviour
 
     public static void OnRestartButton()
     {
+        Debug.Log("test");
         SceneManager.LoadScene("Tile_level");
         GameController.currentState = GameController.GameState.BATTLE;
         PointsSystem.points = 0;

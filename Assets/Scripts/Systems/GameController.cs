@@ -55,7 +55,7 @@ public class GameController : MonoBehaviour
     public static void GameOver()
     {
         GameController.currentState = GameController.GameState.GAMEOVER;
-        instance.canvasAnimator.SetTrigger("GameOver");
+        //instance.canvasAnimator.SetTrigger("GameOver");
         Time.timeScale = 0;
     }
 
