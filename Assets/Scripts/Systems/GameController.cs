@@ -14,6 +14,7 @@ public class GameController : MonoBehaviour
     public GameObject[] playerShips;
     public GameObject currentPlayerShip;
     public CinemachineVirtualCamera virtualCamera;
+    public Animator canvasAnimator;
 
 
     [Header("Stats")]
@@ -54,6 +55,7 @@ public class GameController : MonoBehaviour
     public static void GameOver()
     {
         GameController.currentState = GameController.GameState.GAMEOVER;
+        instance.canvasAnimator.SetTrigger("GameOver");
         Time.timeScale = 0;
     }
 

@@ -103,7 +103,7 @@ public class PlayerController : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.X))
         {
-            DealPlayerDamage(10);
+            GameController.GameOver();
         }
     }
 

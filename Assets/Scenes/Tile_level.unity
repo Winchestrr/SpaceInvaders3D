@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17316318, g: 0.16457182, b: 0.29665613, a: 1}
+  m_IndirectSpecularColor: {r: 0.17323539, g: 0.16459554, b: 0.2966911, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -326,6 +326,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08c52feab63a3ce4685acc12e1a0e561, type: 3}
+--- !u!95 &568554423 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7112179909143802262, guid: 5ceba98fd9ff4264cb45ac81bcacab9a, type: 3}
+  m_PrefabInstance: {fileID: 1266349026}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &631657375
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -406,6 +411,10 @@ PrefabInstance:
       propertyPath: virtualCamera
       value: 
       objectReference: {fileID: 1263531169}
+    - target: {fileID: 7699639517789193114, guid: 8bb0400175c8f9845a5b6b5cd0a3a094, type: 3}
+      propertyPath: canvasAnimator
+      value: 
+      objectReference: {fileID: 568554423}
     - target: {fileID: 7699639517789193115, guid: 8bb0400175c8f9845a5b6b5cd0a3a094, type: 3}
       propertyPath: m_RootOrder
       value: 3
