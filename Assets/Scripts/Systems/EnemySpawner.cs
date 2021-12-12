@@ -9,7 +9,7 @@ public class EnemySpawner : MonoBehaviour
 
     public GameObject[] entities;
 
-    public bool canSpawn = true;
+    public static bool canSpawn = true;
 
     public float spawnTimerMin;
     public float spawnTimerMax;

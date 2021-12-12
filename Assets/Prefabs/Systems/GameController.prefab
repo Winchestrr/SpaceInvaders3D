@@ -49,7 +49,8 @@ MonoBehaviour:
   playerShips:
   - {fileID: 4035350727181750759, guid: f6aadb96aef79c6449b6e1c7049f6350, type: 3}
   currentPlayerShip: {fileID: 0}
-  virtualCamera: {fileID: 1042748091647639685, guid: 08c52feab63a3ce4685acc12e1a0e561, type: 3}
+  virtualCamera: {fileID: 0}
+  canvasAnimator: {fileID: 0}
   chosenShipIndex: 0
 --- !u!114 &8251579261379084644
 MonoBehaviour:

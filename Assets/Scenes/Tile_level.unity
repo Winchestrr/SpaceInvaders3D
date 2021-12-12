@@ -409,7 +409,7 @@ PrefabInstance:
     - target: {fileID: 7699639517789193114, guid: 8bb0400175c8f9845a5b6b5cd0a3a094, type: 3}
       propertyPath: canvasAnimator
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1949445122}
     - target: {fileID: 7699639517789193115, guid: 8bb0400175c8f9845a5b6b5cd0a3a094, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -746,6 +746,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1949445122 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1949445122, guid: 5ceba98fd9ff4264cb45ac81bcacab9a, type: 3}
+  m_PrefabInstance: {fileID: 1266349026}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6350520893973698356
 PrefabInstance:
   m_ObjectHideFlags: 0
