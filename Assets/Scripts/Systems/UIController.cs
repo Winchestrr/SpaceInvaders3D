@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIController : MonoBehaviour
 {
@@ -43,5 +44,23 @@ public class UIController : MonoBehaviour
         }
 
         healthBar.fillAmount = (float)PlayerController.playerHealth / (float)PlayerController.maxHealth;
+    }
+
+    public static void OnRestartButton()
+    {
+        SceneManager.LoadScene("Tile_level");
+        GameController.currentState = GameController.GameState.BATTLE;
+        PointsSystem.points = 0;
+        Time.timeScale = 1;
+    }
+
+    public static void OnExitButton()
+    {
+        Application.Quit();
+    }
+
+    public static void OnMenuButton()
+    {
+        //load menu scene
     }
 }
