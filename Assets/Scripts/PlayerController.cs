@@ -40,7 +40,9 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        switch(collision.gameObject.tag)
+        Debug.Log("collision");
+
+        switch (collision.gameObject.tag)
         {
             case "Obstacle":
                 Destroy(gameObject);
@@ -48,6 +50,7 @@ public class PlayerController : MonoBehaviour
                 break;
 
             case "Enemy":
+                Destroy(collision.gameObject);
                 break;
         }
     }

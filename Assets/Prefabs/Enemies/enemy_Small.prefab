@@ -344,6 +344,7 @@ GameObject:
   - component: {fileID: 7435851152482980643}
   - component: {fileID: 1077005727328838728}
   - component: {fileID: 2800961515501653129}
+  - component: {fileID: 574016892440050606}
   m_Layer: 9
   m_Name: enemy_Small
   m_TagString: Enemy
@@ -447,3 +448,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.046091, y: 1.599144, z: 3.8528206}
   m_Center: {x: 0.009141835, y: 0.011258287, z: 0.016116662}
+--- !u!54 &574016892440050606
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8949091481558381302}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

@@ -52,7 +52,7 @@ public class LevelController : MonoBehaviour
 
     void GenerateTile(Vector3 givenPosition)
     {
-        Debug.Log("GenerateTile(" + givenPosition.ToString() + ")");
+        //Debug.Log("GenerateTile(" + givenPosition.ToString() + ")");
 
         //GameObject tempTile = Instantiate(levelTile, new Vector3(0, 0, position.z), Quaternion.Euler(new Vector3(0, 0, 0)), transform); //po co tworzy znów nowy wektor?
         GameObject tempTile = Instantiate(levelTile, givenPosition, Quaternion.Euler(new Vector3(0, 0, 0)), transform);
