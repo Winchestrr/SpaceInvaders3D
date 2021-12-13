@@ -65,3 +65,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointsDisplay: 0
+  enemiesKilledDisplay: 0
+  currentTime: 0

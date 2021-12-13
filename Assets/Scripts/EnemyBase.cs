@@ -42,8 +42,8 @@ public class EnemyBase : MonoBehaviour
         //do dodania animacja wybuchu
         if (currentHealth <= 0)
         {
-            GameController.enemiesKilled++;
-            PointsSystem.AddPoints(stats.pointValue);
+            GameStatsSystem.enemiesKilled++;
+            GameStatsSystem.AddPoints(stats.pointValue);
             Destroy(gameObject);
         }
     }
@@ -53,7 +53,7 @@ public class EnemyBase : MonoBehaviour
         if(canMove)
         {
             Vector3 temp = transform.position;
-            temp.z -= stats.speed * Time.deltaTime;
+            temp.z -= (stats.speed - LevelController.levelSpeed) * Time.deltaTime;
             transform.position = temp;
 
             if (temp.z < destroyLine.transform.localPosition.z)

@@ -23,7 +23,8 @@ public class LevelController : MonoBehaviour
     public int numberOfTiles;
     public int startIndex = -1;
 
-    public float levelSpeed;
+    public static float levelSpeed;
+    public float levelSpeedDisplay;
 
     private void Start()
     {
@@ -32,7 +33,9 @@ public class LevelController : MonoBehaviour
     }
 
     private void Update()
-    { 
+    {
+        levelSpeed = levelSpeedDisplay;
+
         MoveLevel();
     }
 

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15929011e1cdd45449fa0cb3474650f0, type: 3}
   m_Name: StandardPlayerShip
   m_EditorClassIdentifier: 
-  startHealth: 2844
+  startHealth: 200
   speedX: 14
   speedZ: 7
   rotationSpeed: 8

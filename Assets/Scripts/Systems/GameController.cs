@@ -24,6 +24,10 @@ public class GameController : MonoBehaviour
 
     public static bool isPaused;
 
+    //test events
+    public delegate void newGameOver();
+    public static event newGameOver OnGameOver;
+
 
     public void Awake()
     {
@@ -54,6 +58,8 @@ public class GameController : MonoBehaviour
 
     public static void GameOver()
     {
+        OnGameOver();
+
         GameController.currentState = GameController.GameState.GAMEOVER;
         EnemySpawner.canSpawn = !EnemySpawner.canSpawn;
         Destroy(instance.currentPlayerShip);
