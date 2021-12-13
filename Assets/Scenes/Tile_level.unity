@@ -762,10 +762,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelController
       objectReference: {fileID: 0}
-    - target: {fileID: 6350520894593146044, guid: 26ca9e92d4d30ae49a79384afc3c0e3c, type: 3}
-      propertyPath: levelSpeedDisplay
-      value: -13
-      objectReference: {fileID: 0}
     - target: {fileID: 6350520894593146045, guid: 26ca9e92d4d30ae49a79384afc3c0e3c, type: 3}
       propertyPath: m_RootOrder
       value: 8

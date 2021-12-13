@@ -66,4 +66,4 @@ MonoBehaviour:
   wallHeight: 4
   numberOfTiles: 12
   startIndex: -1
-  levelSpeed: -12
+  levelSpeedDisplay: -13

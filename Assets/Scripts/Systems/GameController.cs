@@ -36,24 +36,12 @@ public class GameController : MonoBehaviour
         if (instance == null) instance = this;
         else Debug.LogError("Instance problem");
 
+        isPaused = false;
+
         currentState = GameState.STARTBATTLE;
         currentState = GameState.BATTLE;
 
         currentPlayerShip = InstantiatePlayerShip(playerShips[chosenShipIndex]);
-    }
-
-    public static void GamePause()
-    {
-        if(isPaused)
-        {
-            Time.timeScale = 1;
-            isPaused = false;
-        }
-        else
-        {
-            Time.timeScale = 0;
-            isPaused = true;
-        }
     }
 
     public static void GameOver()

@@ -92,7 +92,8 @@ public class PlayerController : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            GameController.GamePause();
+            if (GameController.isPaused) UIController.Unpause();
+            else UIController.Pause();
         }
 
         if(Input.GetKeyDown(KeyCode.Q))

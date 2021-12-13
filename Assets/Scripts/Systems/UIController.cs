@@ -7,6 +7,8 @@ using TMPro;
 
 public class UIController : MonoBehaviour
 {
+    public static UIController instance;
+
     public GameController gameController;
 
     public GameObject ammoWeaponGO;
@@ -23,11 +25,19 @@ public class UIController : MonoBehaviour
 
     public Image healthBar;
 
+    public GameObject pauseScreen;
+
     [Header("Game over screen")]
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI timeText;
     [SerializeField] private TextMeshProUGUI enemiesKilledText;
     [SerializeField] private TextMeshProUGUI finalScoreText;
+
+    private void Awake()
+    {
+        if (instance == null) instance = this;
+        else Debug.LogError("Instance problem");
+    }
 
     #region ---EVENT_ASSIGN---
     private void OnEnable()
@@ -75,6 +85,20 @@ public class UIController : MonoBehaviour
         finalScoreText.SetText(">final score: ");
     }
 
+    public static void Pause()
+    {
+        GameController.isPaused = true;
+        Time.timeScale = 0;
+        instance.pauseScreen.SetActive(true);
+    }
+
+    public static void Unpause()
+    {
+        GameController.isPaused = false;
+        Time.timeScale = 1;
+        instance.pauseScreen.SetActive(false);
+    }
+
     #endregion
 
     #region ---BUTTONS---
@@ -95,7 +119,8 @@ public class UIController : MonoBehaviour
 
     public static void OnMenuButton()
     {
-        //load menu scene
+        Time.timeScale = 1;
+        SceneManager.LoadScene("Main_menu");
     }
 
     #endregion
