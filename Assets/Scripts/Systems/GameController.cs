@@ -56,6 +56,7 @@ public class GameController : MonoBehaviour
     {
         GameController.currentState = GameController.GameState.GAMEOVER;
         EnemySpawner.canSpawn = !EnemySpawner.canSpawn;
+        Destroy(instance.currentPlayerShip);
         instance.canvasAnimator.SetTrigger("GameOver");
         Time.timeScale = 0.2f;
     }

@@ -67,16 +67,7 @@ public class EnemyBase : MonoBehaviour
     {
         switch(target.tag)
         {
-            case "Bullet":
-                //do dodania animacja niszczenia
-                break;
-
             case "Enemy":
-                break;
-
-            case "Player":
-                //do dodania obra¿enia dla bohatera
-                Destroy(gameObject);
                 break;
 
             case "Obstacle":

@@ -50,6 +50,7 @@ public class PlayerController : MonoBehaviour
                 break;
 
             case "Enemy":
+                DealPlayerDamage(collision.gameObject.GetComponent<EnemyBase>().stats.contactDamage);
                 Destroy(collision.gameObject);
                 break;
         }
