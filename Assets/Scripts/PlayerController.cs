@@ -40,8 +40,6 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("collision");
-
         switch (collision.gameObject.tag)
         {
             case "Obstacle":

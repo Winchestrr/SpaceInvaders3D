@@ -47,10 +47,6 @@ public class AmmoWeapon : GunBase
         {
             uiController.reloadTextGO.SetActive(true);
         }
-        else if (isMagazineEmpty)
-        {
-            weaponSystem.RemoveWeapon(gameObject);
-        }
     }
 
     internal void SetAmount()
@@ -74,10 +70,10 @@ public class AmmoWeapon : GunBase
                 isMagazineEmpty = true;
                 //reload allert true
             }
-            else if(bulletsLeft == 0)
-            {
-                weaponSystem.RemoveWeapon(gameObject);
-            }
+            //else if(bulletsLeft == 0)
+            //{
+            //    weaponSystem.RemoveWeapon(gameObject);
+            //}
         }
     }
 

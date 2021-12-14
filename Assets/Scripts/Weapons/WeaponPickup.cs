@@ -13,9 +13,20 @@ public class WeaponPickup : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("dziala");
-
         WeaponSystem weaponSystem = collision.gameObject.GetComponentInChildren<WeaponSystem>();
+
+        foreach (GunBase gunBase in weaponSystem.weapons)
+        {
+            Debug.Log(gunBase);
+
+            if(gunBase.gameObject.tag == weaponPrefab.tag)
+            {
+                AmmoWeapon tempWeapon = gunBase.gameObject.GetComponent<AmmoWeapon>();
+
+                //tempWeapon.bulletsLeft += tempWeapon.allBullets;
+                break;
+            }
+        }
 
         if (weaponSystem != null)
         {

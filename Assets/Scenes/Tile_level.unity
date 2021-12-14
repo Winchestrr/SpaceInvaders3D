@@ -170,7 +170,7 @@ AudioSource:
   m_Volume: 0.755
   m_Pitch: 1
   Loop: 1
-  Mute: 0
+  Mute: 1
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
@@ -466,6 +466,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8835683307446565232, guid: 31f63f459a2cd3d49a3ee5ed389cce10, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8835683307446565234, guid: 31f63f459a2cd3d49a3ee5ed389cce10, type: 3}
       propertyPath: m_Name
       value: Camera

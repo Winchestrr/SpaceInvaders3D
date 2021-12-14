@@ -7,7 +7,7 @@ public class WeaponSystem : MonoBehaviour
     public List<GunBase> weapons;
     public Transform weaponHolder;
 
-    int currentWeaponIndex;
+    public int currentWeaponIndex;
 
     private void Start()
     {
@@ -64,8 +64,8 @@ public class WeaponSystem : MonoBehaviour
 
     public void RemoveWeapon(GameObject weapon)
     {
-        currentWeaponIndex--;
         weapons.Remove(weapon.GetComponent<GunBase>());
+        currentWeaponIndex--;
         Destroy(weapon);
     }
 }
