@@ -15,6 +15,7 @@ public class GameController : MonoBehaviour
     public GameObject currentPlayerShip;
     public CinemachineVirtualCamera virtualCamera;
     public Animator canvasAnimator;
+    public AudioSource levelMusic;
 
 
     [Header("Stats")]
@@ -40,6 +41,8 @@ public class GameController : MonoBehaviour
 
         currentState = GameState.STARTBATTLE;
         currentState = GameState.BATTLE;
+
+        levelMusic.Play();
 
         currentPlayerShip = InstantiatePlayerShip(playerShips[chosenShipIndex]);
     }
