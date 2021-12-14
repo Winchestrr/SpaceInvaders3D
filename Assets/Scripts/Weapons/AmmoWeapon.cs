@@ -6,7 +6,9 @@ using UnityEngine;
 public class AmmoWeapon : GunBase
 {
     public UIController uiController;
+    public WeaponSystem weaponSystem;
 
+    [SerializeField] protected bool isReloadable;
     [SerializeField] protected int magazineSize;
     public int allBullets;
     [SerializeField] protected int ammoCost;
@@ -18,31 +20,36 @@ public class AmmoWeapon : GunBase
     private void Awake()
     {
         uiController = FindObjectOfType<UIController>();
-        uiController.ammoWeapon = this;
-        uiController.ammoWeaponGO = this.gameObject;
+        weaponSystem = FindObjectOfType<WeaponSystem>();
+        //uiController.ammoWeapon = this;
+        //uiController.ammoWeaponGO = this.gameObject;
     }
 
     private void OnEnable()
     {
-        uiController.ammoTextGO.SetActive(true);
+        //uiController.ammoTextGO.SetActive(true);
     }
 
     private void OnDisable()
     {
-        uiController.ammoTextGO.SetActive(false);
-        uiController.reloadTextGO.SetActive(false);
+        //uiController.ammoTextGO.SetActive(false);
+        //uiController.reloadTextGO.SetActive(false);
     }
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.R))
+        if(Input.GetKeyDown(KeyCode.R) && isReloadable)
         {
             StartCoroutine(Reload());
         }
 
-        if (isMagazineEmpty)
+        if (isMagazineEmpty && isReloadable)
         {
             uiController.reloadTextGO.SetActive(true);
+        }
+        else if (isMagazineEmpty)
+        {
+            weaponSystem.RemoveWeapon(gameObject);
         }
     }
 
@@ -62,17 +69,21 @@ public class AmmoWeapon : GunBase
             GameObject shotBullet = Instantiate(bullet, gunEnd.position, transform.rotation);
             shotBullet.GetComponent<StandardBullet>().Launch(damage, bulletSpeed);
 
-            if(bulletsLeft == 0)
+            if(bulletsLeft == 0 && isReloadable)
             {
                 isMagazineEmpty = true;
                 //reload allert true
+            }
+            else if(bulletsLeft == 0)
+            {
+                weaponSystem.RemoveWeapon(gameObject);
             }
         }
     }
 
     IEnumerator Reload()
     {
-        if(allBullets > 0)
+        if(allBullets > 0 && isReloadable)
         {
             uiController.reloadTextGO.SetActive(true);
 

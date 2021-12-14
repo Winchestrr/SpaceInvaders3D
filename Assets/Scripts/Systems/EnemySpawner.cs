@@ -24,15 +24,15 @@ public class EnemySpawner : MonoBehaviour
         StartCoroutine(EnemySpawnerCoroutine());
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.I)) LineSpawn(false, 0, 3);
-        if (Input.GetKeyDown(KeyCode.O)) TriangleSpawn(false, 0, 3);
-        if (Input.GetKeyDown(KeyCode.P)) GuardSpawn(0);
-        if (Input.GetKeyDown(KeyCode.J)) AskewSpawn(false, 0, 3);
-        if (Input.GetKeyDown(KeyCode.K)) RandomXTrainSpawn(0, 5);
-        if (Input.GetKeyDown(KeyCode.L)) RandomGroupSpawn(true, 0, 6);
-    }
+    //private void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.I)) LineSpawn(false, 0, 3);
+    //    if (Input.GetKeyDown(KeyCode.O)) TriangleSpawn(false, 0, 3);
+    //    if (Input.GetKeyDown(KeyCode.P)) GuardSpawn(0);
+    //    if (Input.GetKeyDown(KeyCode.J)) AskewSpawn(false, 0, 3);
+    //    if (Input.GetKeyDown(KeyCode.K)) RandomXTrainSpawn(0, 5);
+    //    if (Input.GetKeyDown(KeyCode.L)) RandomGroupSpawn(true, 0, 6);
+    //}
 
     public void SpawnEnemy(bool isRandom, int enemyNo, float posX, float posZ)
     {

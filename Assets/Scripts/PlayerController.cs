@@ -110,6 +110,16 @@ public class PlayerController : MonoBehaviour
         {
             GameController.GameOver();
         }
+
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            SaveSystem.SavePlayer();
+        }
+
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            SaveSystem.LoadPlayer();
+        }
     }
 
     void PlayerMove()

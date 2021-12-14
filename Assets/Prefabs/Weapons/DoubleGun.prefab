@@ -116,4 +116,13 @@ MonoBehaviour:
   timeBetweenShots: 0.2
   haveParticles: 0
   isShooting: 1
+  uiController: {fileID: 0}
+  weaponSystem: {fileID: 0}
+  isReloadable: 0
+  magazineSize: 50
+  allBullets: 50
+  ammoCost: 1
+  bulletsLeft: 50
+  reloadTime: 0
+  isMagazineEmpty: 0
   gunEnd2: {fileID: 6852186080060347221}

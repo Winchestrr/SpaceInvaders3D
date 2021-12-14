@@ -61,4 +61,11 @@ public class WeaponSystem : MonoBehaviour
         weapons.Add(newWeaponObject.GetComponent<GunBase>());
         newWeaponObject.SetActive(false);
     }
+
+    public void RemoveWeapon(GameObject weapon)
+    {
+        currentWeaponIndex--;
+        weapons.Remove(weapon.GetComponent<GunBase>());
+        Destroy(weapon);
+    }
 }
