@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 18106328}
   - component: {fileID: 18106329}
+  - component: {fileID: 18106330}
   m_Layer: 0
   m_Name: Level01
   m_TagString: Untagged
@@ -167,10 +168,10 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 9f83a98cf6db44844927cf432df18cb8, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.755
+  m_Volume: 0.456
   m_Pitch: 1
   Loop: 1
-  Mute: 1
+  Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
@@ -242,6 +243,31 @@ AudioSource:
     - serializedVersion: 3
       time: 0
       value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!169 &18106330
+AudioLowPassFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 18106327}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_LowpassResonanceQ: 1
+  lowpassLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.22727273
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -609,6 +635,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1372769155}
+  - component: {fileID: 1372769156}
   m_Layer: 0
   m_Name: MusicPlayer
   m_TagString: Untagged
@@ -630,8 +657,25 @@ Transform:
   m_Children:
   - {fileID: 18106328}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1372769156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372769154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 032e8bb08d14fee4b8807244d6b80c10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelMusic: {fileID: 18106329}
+  lowPass: {fileID: 18106330}
+  lowPassSpeed: 4
+  pitchSpeed: 0.52
+  testSFX: {fileID: 0}
 --- !u!1001 &1427641163
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -988,7 +1032,7 @@ PrefabInstance:
       objectReference: {fileID: 4371008165409910202, guid: 9f8e8ecd5271bea47804eb056111ffaf, type: 3}
     - target: {fileID: 6350520894593146045, guid: 26ca9e92d4d30ae49a79384afc3c0e3c, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6350520894593146045, guid: 26ca9e92d4d30ae49a79384afc3c0e3c, type: 3}
       propertyPath: m_LocalPosition.x
