@@ -9,9 +9,7 @@ public class LevelController : MonoBehaviour
     public GameObject[] wallsSubtiles;
     public GameObject[] floorSubtiles;
     public GameObject levelTile;
-    //public GameObject levelGO; //tego nie potrzebujesz, masz transform tego obiektu do którego jest podpiêty skrypt pod transform, a sam game object pod gameObject
-
-    //public Transform destroyLine; // co to robi, skoro nic nie robi? :)
+    public GameObject[] pickups;
 
     public float wallSubtileSize;
     public float floorSubtileSize;
@@ -19,16 +17,16 @@ public class LevelController : MonoBehaviour
     public float floorWidth;
     public float wallHeight;
 
-    //private int noInOrder = 0; //niezbyt dobry pomys³
     public int numberOfTiles;
     public int startIndex = -1;
 
     public static float levelSpeed;
     public float levelSpeedDisplay;
 
+    private Collider[] hitColliders;
+
     private void Start()
     {
-        //destroyLine = GameObject.Find("DestroyLine").transform;
         GenerateLevel();
     }
 
@@ -63,6 +61,7 @@ public class LevelController : MonoBehaviour
 
         GenerateFloor(tempTile);
         GenerateWalls(tempTile);
+        //SpawnPickups(pickups[0]);
     }
 
     void GenerateWalls(GameObject parent)
@@ -98,6 +97,24 @@ public class LevelController : MonoBehaviour
                     Quaternion.Euler(new Vector3(0, 0, 0)),
                     parent.transform);
             }
+        }
+    }
+
+    void SpawnPickups(GameObject pickup)
+    {
+        do
+        {
+            float spawnX = Random.Range(-(floorSubtileSize * floorWidth) / 2, (floorSubtileSize * floorWidth) / 2);
+            float spawnZ = Random.Range(-(floorSubtileSize * tileLength) / 2, (floorSubtileSize * tileLength) / 2);
+            Vector3 spawnPoint = new Vector3(spawnX, gameObject.transform.position.y, spawnZ);
+
+            hitColliders = Physics.OverlapSphere(spawnPoint, 1);
+        }
+        while (hitColliders.Length > 0);
+
+        for (int i = 0; i < hitColliders.Length; i++)
+        {
+            Debug.Log(hitColliders[i]);
         }
     }
 

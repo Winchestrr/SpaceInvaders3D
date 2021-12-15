@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 7954414691989487643}
   m_Layer: 0
   m_Name: DoubleGun
-  m_TagString: Untagged
+  m_TagString: DoubleGun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
