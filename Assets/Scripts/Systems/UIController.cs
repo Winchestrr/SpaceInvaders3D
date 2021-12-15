@@ -108,6 +108,7 @@ public class UIController : MonoBehaviour
         SceneManager.LoadScene("Tile_level");
         GameController.currentState = GameController.GameState.BATTLE;
         GameStatsSystem.points = 0;
+        EnemySpawner.canSpawn = true;
         Time.timeScale = 1;
     }
 
