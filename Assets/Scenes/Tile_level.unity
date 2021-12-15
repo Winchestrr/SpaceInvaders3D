@@ -466,10 +466,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8835683307446565232, guid: 31f63f459a2cd3d49a3ee5ed389cce10, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8835683307446565234, guid: 31f63f459a2cd3d49a3ee5ed389cce10, type: 3}
       propertyPath: m_Name
       value: Camera
@@ -521,10 +517,6 @@ PrefabInstance:
     - target: {fileID: 8835683307446565262, guid: 31f63f459a2cd3d49a3ee5ed389cce10, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8835683307446565263, guid: 31f63f459a2cd3d49a3ee5ed389cce10, type: 3}
-      propertyPath: field of view
-      value: 60
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f63f459a2cd3d49a3ee5ed389cce10, type: 3}
@@ -938,6 +930,62 @@ PrefabInstance:
       propertyPath: pickups.Array.data[0]
       value: 
       objectReference: {fileID: 377749394621041867, guid: 7e821c9a6f1fadf468304d15854025a1, type: 3}
+    - target: {fileID: 6350520894593146044, guid: 26ca9e92d4d30ae49a79384afc3c0e3c, type: 3}
+      propertyPath: floorSubtiles.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6350520894593146044, guid: 26ca9e92d4d30ae49a79384afc3c0e3c, type: 3}
+      propertyPath: wallsSubtiles.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6350520894593146044, guid: 26ca9e92d4d30ae49a79384afc3c0e3c, type: 3}
+      propertyPath: floorSubtiles.Array.data[0]
+      value: 
+      objectReference: {fileID: 4410875631250989023, guid: c559f4c1cd0dd06428ebab96ecbb5182, type: 3}
+    - target: {fileID: 6350520894593146044, guid: 26ca9e92d4d30ae49a79384afc3c0e3c, type: 3}
+      propertyPath: floorSubtiles.Array.data[1]
+      value: 
+      objectReference: {fileID: 1088011911127099463, guid: 3f7d5dbcfa4defd489b26f8fca67b52b, type: 3}
+    - target: {fileID: 6350520894593146044, guid: 26ca9e92d4d30ae49a79384afc3c0e3c, type: 3}
+      propertyPath: floorSubtiles.Array.data[2]
+      value: 
+      objectReference: {fileID: 6797285398756711116, guid: 4286672db064c704b96dbd9cc5e1aeb3, type: 3}
+    - target: {fileID: 6350520894593146044, guid: 26ca9e92d4d30ae49a79384afc3c0e3c, type: 3}
+      propertyPath: floorSubtiles.Array.data[3]
+      value: 
+      objectReference: {fileID: 3507303789552821141, guid: 96f23f4f35d8b58478dacfb6f4745841, type: 3}
+    - target: {fileID: 6350520894593146044, guid: 26ca9e92d4d30ae49a79384afc3c0e3c, type: 3}
+      propertyPath: floorSubtiles.Array.data[4]
+      value: 
+      objectReference: {fileID: 1962394195870453523, guid: 28c73b22e0b04c94dac698d9973eb066, type: 3}
+    - target: {fileID: 6350520894593146044, guid: 26ca9e92d4d30ae49a79384afc3c0e3c, type: 3}
+      propertyPath: floorSubtiles.Array.data[5]
+      value: 
+      objectReference: {fileID: 3455448217884872178, guid: 8b51a38448885ab44b6dcec2c5039381, type: 3}
+    - target: {fileID: 6350520894593146044, guid: 26ca9e92d4d30ae49a79384afc3c0e3c, type: 3}
+      propertyPath: floorSubtiles.Array.data[6]
+      value: 
+      objectReference: {fileID: 1207058749838071435, guid: 73c76d76b0caba847b2e60f6b1c383a7, type: 3}
+    - target: {fileID: 6350520894593146044, guid: 26ca9e92d4d30ae49a79384afc3c0e3c, type: 3}
+      propertyPath: floorSubtiles.Array.data[7]
+      value: 
+      objectReference: {fileID: 1740823539069208564, guid: 4225309e4a5a7db489384fd01d633ca7, type: 3}
+    - target: {fileID: 6350520894593146044, guid: 26ca9e92d4d30ae49a79384afc3c0e3c, type: 3}
+      propertyPath: floorSubtiles.Array.data[8]
+      value: 
+      objectReference: {fileID: 4371008165409910202, guid: 9f8e8ecd5271bea47804eb056111ffaf, type: 3}
+    - target: {fileID: 6350520894593146044, guid: 26ca9e92d4d30ae49a79384afc3c0e3c, type: 3}
+      propertyPath: floorSubtiles.Array.data[9]
+      value: 
+      objectReference: {fileID: 8257564672410176977, guid: da793ff940a86f447b7f609cd189e268, type: 3}
+    - target: {fileID: 6350520894593146044, guid: 26ca9e92d4d30ae49a79384afc3c0e3c, type: 3}
+      propertyPath: wallsSubtiles.Array.data[8]
+      value: 
+      objectReference: {fileID: 8257564672410176977, guid: da793ff940a86f447b7f609cd189e268, type: 3}
+    - target: {fileID: 6350520894593146044, guid: 26ca9e92d4d30ae49a79384afc3c0e3c, type: 3}
+      propertyPath: wallsSubtiles.Array.data[9]
+      value: 
+      objectReference: {fileID: 4371008165409910202, guid: 9f8e8ecd5271bea47804eb056111ffaf, type: 3}
     - target: {fileID: 6350520894593146045, guid: 26ca9e92d4d30ae49a79384afc3c0e3c, type: 3}
       propertyPath: m_RootOrder
       value: 8

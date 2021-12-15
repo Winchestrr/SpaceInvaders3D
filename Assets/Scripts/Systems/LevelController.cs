@@ -23,6 +23,8 @@ public class LevelController : MonoBehaviour
     public static float levelSpeed;
     public float levelSpeedDisplay;
 
+    private bool isGenerated;
+
     private Collider[] hitColliders;
 
     private void Start()
@@ -42,26 +44,22 @@ public class LevelController : MonoBehaviour
     void GenerateLevel()
     {
         for (int x = startIndex; x < numberOfTiles; x++)
-        {
-            //noInOrder += wallSubtileSize * tileLength; //no nie za bardzo w ten sposób, a nawet jak, to nie mo¿esz odejmowaæ -1 na dole od tego
-
+        { 
             //Debug.Log("For x = " + x.ToString() + ", result = " + (x * (wallSubtileSize * tileLength)).ToString());
 
-            GenerateTile(new Vector3(0f, 0f, x * (wallSubtileSize * tileLength))); //najpierw generuj Tile w dobrych miejscach
+            GenerateTile(new Vector3(0f, 0f, x * (wallSubtileSize * tileLength)));
         }
+        isGenerated = true;
     }
 
     void GenerateTile(Vector3 givenPosition)
     {
-        //Debug.Log("GenerateTile(" + givenPosition.ToString() + ")");
-
-        //GameObject tempTile = Instantiate(levelTile, new Vector3(0, 0, position.z), Quaternion.Euler(new Vector3(0, 0, 0)), transform); //po co tworzy znów nowy wektor?
         GameObject tempTile = Instantiate(levelTile, givenPosition, Quaternion.Euler(new Vector3(0, 0, 0)), transform);
         currentLevelTiles.Add(tempTile);
 
         GenerateFloor(tempTile);
         GenerateWalls(tempTile);
-        //SpawnPickups(pickups[0]);
+        if (isGenerated) SpawnPickups(pickups[0], tempTile.transform);
     }
 
     void GenerateWalls(GameObject parent)
@@ -100,21 +98,15 @@ public class LevelController : MonoBehaviour
         }
     }
 
-    void SpawnPickups(GameObject pickup)
+    void SpawnPickups(GameObject pickup, Transform parent)
     {
-        do
+        if (Random.Range(0, 2) > 0)
         {
             float spawnX = Random.Range(-(floorSubtileSize * floorWidth) / 2, (floorSubtileSize * floorWidth) / 2);
-            float spawnZ = Random.Range(-(floorSubtileSize * tileLength) / 2, (floorSubtileSize * tileLength) / 2);
-            Vector3 spawnPoint = new Vector3(spawnX, gameObject.transform.position.y, spawnZ);
+            float spawnZ = tileLength * floorSubtileSize * (numberOfTiles - 1);
+            Vector3 spawnPoint = new Vector3(spawnX, gameObject.transform.position.y + 1, spawnZ);
 
-            hitColliders = Physics.OverlapSphere(spawnPoint, 1);
-        }
-        while (hitColliders.Length > 0);
-
-        for (int i = 0; i < hitColliders.Length; i++)
-        {
-            Debug.Log(hitColliders[i]);
+            Instantiate(pickup, spawnPoint, transform.rotation, parent);
         }
     }
 
@@ -126,14 +118,11 @@ public class LevelController : MonoBehaviour
         {
             currentLevelTiles[i].transform.Translate(0f, 0f, (levelSpeed - PlayerController.playerSpeedOut) * Time.deltaTime, Space.Self);
 
-            //if (currentLevelTiles[i].transform.localPosition.z < -(tileLength * 2))
             if (currentLevelTiles[i].transform.localPosition.z < (-1f + startIndex) * (tileLength * floorSubtileSize))
-            //if (currentLevelTiles[i].transform.localPosition.z < destroyLine.transform.position.z)
             {
                 Destroy(currentLevelTiles[i]);
                 currentLevelTiles.RemoveAt(i);
 
-                //tu jest problem, gdzie dodaje jedn¹ "pust¹" p³ytkê za pierwszym razem (potem jest git)
                 GenerateTile(new Vector3(0f, 0f, tileLength * floorSubtileSize * (numberOfTiles - 1)));
             }
         }

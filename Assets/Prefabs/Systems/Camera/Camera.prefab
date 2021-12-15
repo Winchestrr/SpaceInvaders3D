@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ef85375d50d3c24487091b71fbba44c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCamera: {fileID: 1042748091647639685, guid: 08c52feab63a3ce4685acc12e1a0e561, type: 3}
+  mainCamera: {fileID: 0}
   fovCurve:
     serializedVersion: 2
     m_Curve:
@@ -185,7 +185,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
