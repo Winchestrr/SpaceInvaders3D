@@ -4,31 +4,35 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
+    public AudioSource shootSFX;
 
-    public static AudioClip;
-    static AudioSource audioSrc;
+    //public static AudioClip laserShot;
+     //AudioSource audioSrc;
 
     // Start is called before the first frame update
     void Start()
     {
-        LaserShot = SFX.Load<AudioCLip>("LaserShot");
-
-        audioSrc = GetComponent<AudioSource>();
+      
+        // laserShot = SFX.Load<AudioCLip>("LaserShot")
+       // audioSrc = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.P)) PlaySound("shoot");
 
     }
-    public static void PlaySound (string clip)
+    public void PlaySound (string clip)
     
         {
         switch (clip)
         {
-            case "fire":
-                audioSrc.PlayOneShot(LaserShot);
+            case "shoot":
+                shootSFX.Play();
                 break;
+
+            
         }
         }
 }
