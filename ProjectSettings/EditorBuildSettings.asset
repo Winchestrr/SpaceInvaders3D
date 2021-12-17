@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Main_menu.unity
     guid: 7b32036ba79cc3848a4932a66c7054dc
   - enabled: 1
+    path: Assets/Scenes/Select_ship.unity
+    guid: a9a9bd70c45b3784490c21eeb3e9c220
+  - enabled: 1
     path: Assets/Scenes/Tile_level.unity
     guid: 241b386d2c2e85745817d41a1865937d
   m_configObjects: {}

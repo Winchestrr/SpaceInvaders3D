@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class SaveData
+public static class SaveData
 {
-    public int score;
-    public float time;
-    public int enemiesKilled;
+    public static int score { get; set; }
+    public static float roundTime { get; set; }
+    public static int enemiesKilled { get; set; }
+    public static int chosenShip { get; set; }
 
-    public SaveData()
-    {
-        score = GameStatsSystem.points;
-        time = GameStatsSystem.currentTime;
-        enemiesKilled = GameStatsSystem.enemiesKilled;
-    }
+    //public SaveData()
+    //{
+    //    score = GameStatsSystem.points;
+    //    time = GameStatsSystem.currentTime;
+    //    enemiesKilled = GameStatsSystem.enemiesKilled;
+    //}
 }

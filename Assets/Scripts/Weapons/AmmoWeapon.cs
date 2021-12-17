@@ -37,8 +37,15 @@ public class AmmoWeapon : GunBase
 
     private void OnDisable()
     {
-        uiController.ammoTextGO.SetActive(false);
-        uiController.reloadTextGO.SetActive(false);
+        if(uiController.ammoTextGO != null)
+        {
+            uiController.ammoTextGO.SetActive(false);
+        }
+
+        if(uiController.reloadTextGO != null)
+        {
+            uiController.reloadTextGO.SetActive(false);
+        }
     }
 
     private void Update()

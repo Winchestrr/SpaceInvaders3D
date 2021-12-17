@@ -41,6 +41,7 @@ public class GameController : MonoBehaviour
         currentState = GameState.STARTBATTLE;
         currentState = GameState.BATTLE;
 
+        chosenShipIndex = SaveData.chosenShip;
         currentPlayerShip = InstantiatePlayerShip(playerShips[chosenShipIndex]);
     }
 
