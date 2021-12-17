@@ -9,23 +9,24 @@ public class UIController : MonoBehaviour
 {
     public static UIController instance;
 
-    public GameController gameController;
-
+    [Header("Weapons")]
     public GameObject ammoWeaponGO;
     public AmmoWeapon ammoWeapon;
-
     public GameObject ammoTextGO;
     public Text ammoText;
 
+    [Header("Reload")]
     public GameObject reloadTextGO;
     public Text reloadText;
+    public GameObject reloadBarGO;
+    public Image reloadBar;
 
+    [Header("Systems")]
+    public GameController gameController;
     public Text gameStateText;
     public Text pointsText;
-
-    public Image healthBar;
-
     public GameObject pauseScreen;
+    public Image healthBar;
 
     [Header("Game over screen")]
     [SerializeField] private TextMeshProUGUI scoreText;
@@ -83,6 +84,20 @@ public class UIController : MonoBehaviour
         timeText.SetText(">time : {0}", GameStatsSystem.currentTime);
         enemiesKilledText.SetText(">enemies killed: {0}", GameStatsSystem.enemiesKilled);
         finalScoreText.SetText(">final score: ");
+    }
+
+    public IEnumerator ReloadBar()
+    {
+        reloadBarGO.SetActive(true);
+        reloadBar.fillAmount = 0;
+
+        for (float i = 0; i < 100; i++)
+        {
+            reloadBar.fillAmount += 0.01f;
+            yield return new WaitForSeconds(ammoWeapon.reloadTime / 100);
+        }
+
+        reloadBarGO.SetActive(false);
     }
 
     public static void Pause()

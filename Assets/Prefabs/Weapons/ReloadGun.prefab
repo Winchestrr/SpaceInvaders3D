@@ -19,7 +19,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &534984728739843565
 Transform:
   m_ObjectHideFlags: 0
@@ -114,17 +114,19 @@ MonoBehaviour:
   gunEnd: {fileID: 2752822241813907825}
   bullet: {fileID: 2944955773603090048, guid: 7b78021aac6ec2c409cfb7500fc54f1a, type: 3}
   shootParticles: {fileID: 0}
-  damage: 35
-  bulletSpeed: 30
-  timeBetweenShots: 0.3
+  damage: 40
+  bulletSpeed: 22
+  timeBetweenShots: 0.4
   haveParticles: 0
   isShooting: 1
   uiController: {fileID: 0}
-  magazineSize: 8
-  allBullets: 64
+  weaponSystem: {fileID: 0}
+  isReloadable: 1
+  magazineSize: 12
+  allBullets: 480
   ammoCost: 1
-  bulletsLeft: 8
-  reloadTime: 2
+  bulletsLeft: 12
+  reloadTime: 1.5
   isMagazineEmpty: 0
 --- !u!1 &4785449168101687660
 GameObject:

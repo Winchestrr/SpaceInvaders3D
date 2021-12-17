@@ -48,6 +48,7 @@ MonoBehaviour:
   cameraController: {fileID: 0}
   playerShips:
   - {fileID: 4035350727181750759, guid: f6aadb96aef79c6449b6e1c7049f6350, type: 3}
+  - {fileID: 3429273752451055058, guid: a4251eb923ff1f3428598844514fe57a, type: 3}
   currentPlayerShip: {fileID: 0}
   virtualCamera: {fileID: 0}
   canvasAnimator: {fileID: 0}
@@ -66,4 +67,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointsDisplay: 0
   enemiesKilledDisplay: 0
-  currentTime: 0

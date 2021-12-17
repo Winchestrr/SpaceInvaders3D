@@ -14,31 +14,36 @@ public class AmmoWeapon : GunBase
     [SerializeField] protected int ammoCost;
     public int bulletsLeft;
 
-    [SerializeField] protected float reloadTime;
+    public float currentReloadRate;
+    public float reloadTime;
     [SerializeField] protected bool isMagazineEmpty;
+
+    public bool canReload;
 
     private void Awake()
     {
         uiController = FindObjectOfType<UIController>();
         weaponSystem = FindObjectOfType<WeaponSystem>();
-        //uiController.ammoWeapon = this;
-        //uiController.ammoWeaponGO = this.gameObject;
+        uiController.ammoWeapon = this;
+        uiController.ammoWeaponGO = this.gameObject;
     }
 
     private void OnEnable()
     {
-        //uiController.ammoTextGO.SetActive(true);
+        uiController.ammoTextGO.SetActive(true);
+
+        canReload = true;
     }
 
     private void OnDisable()
     {
-        //uiController.ammoTextGO.SetActive(false);
-        //uiController.reloadTextGO.SetActive(false);
+        uiController.ammoTextGO.SetActive(false);
+        uiController.reloadTextGO.SetActive(false);
     }
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.R) && isReloadable)
+        if(Input.GetKeyDown(KeyCode.R) && isReloadable && canReload)
         {
             StartCoroutine(Reload());
         }
@@ -81,14 +86,19 @@ public class AmmoWeapon : GunBase
     {
         if(allBullets > 0 && isReloadable)
         {
-            uiController.reloadTextGO.SetActive(true);
+            isShooting = false;
+            canReload = false;
+            uiController.reloadTextGO.SetActive(false);
 
-            yield return new WaitForSeconds(reloadTime);
+            yield return StartCoroutine(uiController.ReloadBar());
 
-            allBullets -= magazineSize;
+            allBullets -= (magazineSize - bulletsLeft);
             bulletsLeft = magazineSize;
             isMagazineEmpty = false;
-            uiController.reloadTextGO.SetActive(false);
+            
+
+            isShooting = true;
+            canReload = true;
         }
         else { yield break; }
     }
