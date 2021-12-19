@@ -284,6 +284,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4949510399721025074, guid: b03c6dbe8a635b24d8490acceedd8bcd, type: 3}
+      propertyPath: spawnY
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4949510399721025075, guid: b03c6dbe8a635b24d8490acceedd8bcd, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -606,6 +610,10 @@ PrefabInstance:
     - target: {fileID: 7699639517789193113, guid: 8bb0400175c8f9845a5b6b5cd0a3a094, type: 3}
       propertyPath: m_Name
       value: GameController
+      objectReference: {fileID: 0}
+    - target: {fileID: 7699639517789193114, guid: 8bb0400175c8f9845a5b6b5cd0a3a094, type: 3}
+      propertyPath: playerHeight
+      value: 3.2
       objectReference: {fileID: 0}
     - target: {fileID: 7699639517789193114, guid: 8bb0400175c8f9845a5b6b5cd0a3a094, type: 3}
       propertyPath: virtualCamera
@@ -1189,7 +1197,7 @@ Light:
     m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0
+    m_Strength: 0.61
     m_Bias: 0.15
     m_NormalBias: 0.4
     m_NearPlane: 0.2

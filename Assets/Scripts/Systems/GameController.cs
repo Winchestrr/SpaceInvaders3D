@@ -24,6 +24,8 @@ public class GameController : MonoBehaviour
 
     public static bool isPaused;
 
+    public float playerHeight;
+
     //test events
     public delegate void newGameOver();
     public static event newGameOver OnGameOver;
@@ -60,7 +62,7 @@ public class GameController : MonoBehaviour
     {
         GameObject tempShip;
 
-        tempShip = Instantiate(ship, transform.position, transform.rotation);
+        tempShip = Instantiate(ship, transform.position + new Vector3(0, playerHeight, 0), transform.rotation);
         StickCameraToPlayer(tempShip);
 
         return tempShip;

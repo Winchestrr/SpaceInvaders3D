@@ -104,6 +104,7 @@ MonoBehaviour:
   gameController: {fileID: 7699639517789193114, guid: 8bb0400175c8f9845a5b6b5cd0a3a094, type: 3}
   weaponSystem: {fileID: 6838212588855734111}
   stats: {fileID: 11400000, guid: 84cee9b425f2cbf49ac3053cfe1af25d, type: 2}
+  playerHeight: 4
   movX: 0
 --- !u!65 &6303463892257503709
 BoxCollider:

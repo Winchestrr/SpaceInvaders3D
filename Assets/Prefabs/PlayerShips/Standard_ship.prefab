@@ -47,6 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapons: []
   weaponHolder: {fileID: 3943265023849209613}
+  currentWeaponIndex: 0
 --- !u!1 &4035350727181750759
 GameObject:
   m_ObjectHideFlags: 0
@@ -151,6 +152,7 @@ MonoBehaviour:
   gameController: {fileID: 7699639517789193114, guid: 8bb0400175c8f9845a5b6b5cd0a3a094, type: 3}
   weaponSystem: {fileID: 5292149896130560874}
   stats: {fileID: 11400000, guid: 84cee9b425f2cbf49ac3053cfe1af25d, type: 2}
+  playerHeight: 4
   movX: 0
 --- !u!65 &4678447640380200424
 BoxCollider:

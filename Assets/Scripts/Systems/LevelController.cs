@@ -20,6 +20,9 @@ public class LevelController : MonoBehaviour
     public int numberOfTiles;
     public int startIndex = -1;
 
+    [HideInInspector]
+    public float wallPosX;
+
     public static float levelSpeed;
     public float levelSpeedDisplay;
 
@@ -68,15 +71,15 @@ public class LevelController : MonoBehaviour
         {
             for(int j = 0; j < wallHeight; j++)
             {
+                wallPosX = ((floorWidth / 2) * floorSubtileSize);
+
                 Instantiate(wallsSubtiles[Random.Range(0, wallsSubtiles.Length)],
-                    //new Vector3(-floorWidth, (wallSubtileSize * j) + 1, (wallSubtileSize * i) + noInOrder), //ten noInOrder trochê Ciê zdradzi³ tutaj
-                    new Vector3(-((floorWidth / 2) * floorSubtileSize), (wallSubtileSize * j) + 1, (wallSubtileSize * i)) + parent.transform.position,
+                    new Vector3(-wallPosX, (wallSubtileSize * j) + 1, (wallSubtileSize * i)) + parent.transform.position,
                     Quaternion.Euler(new Vector3(0, 0, -90)),
                     parent.transform);
 
                 Instantiate(wallsSubtiles[Random.Range(0, wallsSubtiles.Length)],
-                    //new Vector3(floorWidth, (wallSubtileSize * j) + 1, (wallSubtileSize * i) + noInOrder), //ten noInOrder trochê Ciê zdradzi³ tutaj
-                    new Vector3(((floorWidth / 2) * floorSubtileSize), (wallSubtileSize * j) + 1, (wallSubtileSize * i)) + parent.transform.position,
+                    new Vector3(wallPosX, (wallSubtileSize * j) + 1, (wallSubtileSize * i)) + parent.transform.position,
                     Quaternion.Euler(new Vector3(180, 0, 90)),
                     parent.transform);
             }
@@ -104,7 +107,7 @@ public class LevelController : MonoBehaviour
         {
             float spawnX = Random.Range(-(floorSubtileSize * floorWidth) / 2, (floorSubtileSize * floorWidth) / 2);
             float spawnZ = tileLength * floorSubtileSize * (numberOfTiles - 1);
-            Vector3 spawnPoint = new Vector3(spawnX, gameObject.transform.position.y + 1, spawnZ);
+            Vector3 spawnPoint = new Vector3(spawnX, gameObject.transform.position.y + 5, spawnZ);
 
             Instantiate(pickup, spawnPoint, transform.rotation, parent);
         }

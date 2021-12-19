@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public GameController gameController;
     public WeaponSystem weaponSystem;
     public PlayerStats stats;
+    public LevelController levelController;
 
         [Header("Stats")]
 
@@ -26,6 +27,8 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        levelController = FindObjectOfType<LevelController>();
+
         maxHealth = stats.startHealth;
         playerHealth = maxHealth;
     }
@@ -114,6 +117,15 @@ public class PlayerController : MonoBehaviour
     {
         direction = new Vector3(movX, 0, 0);
         playerSpeedOut = stats.speedZ * movZ;
+
+        //do zmiany
+        //if(transform.position.x <= 13.5f && transform.position.x >= -13.5f)
+        //{
+        //    if (direction.magnitude > 0.1f)
+        //    {
+        //        transform.Translate(direction * stats.speedX * Time.deltaTime, Space.World);
+        //    }
+        //}
 
         if (direction.magnitude > 0.1f)
         {
