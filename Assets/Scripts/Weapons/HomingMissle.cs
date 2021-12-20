@@ -25,9 +25,9 @@ public class HomingMissle : StandardBullet
         base.Launch(_damage, _speed);
     }
 
-    public override void OnTriggerEnter(Collider other)
+    public override void OnCollisionEnter(Collision collision)
     {
-        base.OnTriggerEnter(other);
+        base.OnCollisionEnter(collision);
     }
 
     void FindTarget()

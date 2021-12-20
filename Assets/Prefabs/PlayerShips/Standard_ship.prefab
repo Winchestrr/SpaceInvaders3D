@@ -152,7 +152,7 @@ MonoBehaviour:
   gameController: {fileID: 7699639517789193114, guid: 8bb0400175c8f9845a5b6b5cd0a3a094, type: 3}
   weaponSystem: {fileID: 5292149896130560874}
   stats: {fileID: 11400000, guid: 84cee9b425f2cbf49ac3053cfe1af25d, type: 2}
-  playerHeight: 4
+  levelController: {fileID: 0}
   movX: 0
 --- !u!65 &4678447640380200424
 BoxCollider:
@@ -179,9 +179,9 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 4
   m_CollisionDetection: 0
 --- !u!1001 &8289456242214255366
 PrefabInstance:

@@ -5,11 +5,13 @@ using UnityEngine;
 public class BulletBase : MonoBehaviour
 {
     protected Rigidbody rb;
+    public ParticleSystem particle;
 
     protected int damage;
     protected float speed;
     public float lifetime;
 
+    public bool haveParticles = false;
     public bool isPiercing = false;
 
     public virtual void Launch(int _damage, float _speed)
