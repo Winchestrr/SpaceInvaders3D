@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 311511147741164285}
   - component: {fileID: 3746271584439024984}
   - component: {fileID: 1448357399830219154}
+  - component: {fileID: -5170588717230747535}
   m_Layer: 0
   m_Name: SciFiPanel_09
   m_TagString: Untagged
@@ -83,3 +84,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &-5170588717230747535
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088011911127099463}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3996192141481870390, guid: f4158938c994abf4899ae1fa106cc5c8, type: 3}

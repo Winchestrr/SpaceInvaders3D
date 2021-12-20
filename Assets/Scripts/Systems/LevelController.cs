@@ -10,6 +10,7 @@ public class LevelController : MonoBehaviour
     public GameObject[] floorSubtiles;
     public GameObject levelTile;
     public GameObject[] pickups;
+    public GameObject particleMover;
 
     public float wallSubtileSize;
     public float floorSubtileSize;
@@ -117,6 +118,8 @@ public class LevelController : MonoBehaviour
 
     void MoveLevel()
     {
+        particleMover.transform.Translate(0f, 0f, (levelSpeed - PlayerController.playerSpeedOut) * Time.deltaTime, Space.Self);
+
         for (int i = 0; i < currentLevelTiles.Count; i++)
         {
             currentLevelTiles[i].transform.Translate(0f, 0f, (levelSpeed - PlayerController.playerSpeedOut) * Time.deltaTime, Space.Self);

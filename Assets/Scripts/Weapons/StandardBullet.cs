@@ -21,13 +21,17 @@ public class StandardBullet : BulletBase
     //    }
     //}
 
+    private Transform particleMover;
+
     public virtual void OnCollisionEnter(Collision collision)
     {
+        particleMover = GameObject.Find("ParticleMover").transform;
+
         if (haveParticles)
         {
             if (collision.gameObject.tag == "Player") return;
             Vector3 spawnPosition = collision.transform.position;
-            Instantiate(particle, spawnPosition, collision.transform.rotation);
+            Instantiate(particle, spawnPosition, collision.transform.rotation, particleMover);
         }
 
         if (collision.gameObject.tag == "Obstacle")
