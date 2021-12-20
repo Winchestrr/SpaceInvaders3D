@@ -35,6 +35,10 @@ public class SceneSelectWindow : EditorWindow
             EditorSceneManager.OpenScene("Assets/Scenes/Select_ship.unity");
         }
 
+        GUILayout.EndHorizontal();
+
+        GUILayout.BeginHorizontal();
+
         if (GUILayout.Button("Settings"))
         {
             EditorSceneManager.SaveOpenScenes();
@@ -45,6 +49,12 @@ public class SceneSelectWindow : EditorWindow
         {
             EditorSceneManager.SaveOpenScenes();
             EditorSceneManager.OpenScene("Assets/Scenes/Credits.unity");
+        }
+
+        if (GUILayout.Button("Test"))
+        {
+            EditorSceneManager.SaveOpenScenes();
+            EditorSceneManager.OpenScene("Assets/Scenes/Test_field.unity");
         }
 
         GUILayout.EndHorizontal();

@@ -52,7 +52,8 @@ MonoBehaviour:
   currentPlayerShip: {fileID: 0}
   virtualCamera: {fileID: 0}
   canvasAnimator: {fileID: 0}
-  chosenShipIndex: 0
+  chosenShipIndex: 1
+  playerHeight: 3.2
 --- !u!114 &8251579261379084644
 MonoBehaviour:
   m_ObjectHideFlags: 0
