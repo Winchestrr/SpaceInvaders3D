@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 905cae5d57e9155418600d222871e3b0, type: 3}
   m_Name: StandardEnemy
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 9
   contactDamage: 30
   maxHealth: 100
   pointValue: 80
