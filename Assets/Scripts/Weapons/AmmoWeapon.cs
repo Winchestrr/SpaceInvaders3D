@@ -9,7 +9,7 @@ public class AmmoWeapon : GunBase
     public WeaponSystem weaponSystem;
 
     [SerializeField] protected bool isReloadable;
-    [SerializeField] protected int magazineSize;
+    public int magazineSize;
     public int allBullets;
     [SerializeField] protected int ammoCost;
     public int bulletsLeft;

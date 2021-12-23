@@ -23,7 +23,7 @@ public class WeaponPickup : MonoBehaviour
                 if(gunBase.gameObject.tag == weaponPrefab.tag)
                 {
                     AmmoWeapon tempWeapon = gunBase.gameObject.GetComponent<AmmoWeapon>();
-                    tempWeapon.bulletsLeft += tempWeapon.allBullets;
+                    tempWeapon.allBullets += tempWeapon.magazineSize;
 
                     isFound = true;
                     Destroy(gameObject);
