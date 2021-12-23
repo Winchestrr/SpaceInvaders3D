@@ -102,7 +102,8 @@ public class AmmoWeapon : GunBase
             allBullets -= (magazineSize - bulletsLeft);
             bulletsLeft = magazineSize;
             isMagazineEmpty = false;
-            
+
+            if (allBullets <= 0) allBullets = 0;
 
             isShooting = true;
             canReload = true;

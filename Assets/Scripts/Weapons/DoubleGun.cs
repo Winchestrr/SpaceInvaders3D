@@ -38,7 +38,7 @@ public class DoubleGun : AmmoWeapon
                 isMagazineEmpty = true;
                 //reload allert true
             }
-            else if(bulletsLeft == 0)
+            else if(bulletsLeft == 0 && allBullets == 0)
             {
                 weaponSystem.RemoveWeapon(gameObject);
                 isMagazineEmpty = true;

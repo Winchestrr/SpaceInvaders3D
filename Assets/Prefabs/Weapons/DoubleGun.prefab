@@ -118,11 +118,11 @@ MonoBehaviour:
   isShooting: 1
   uiController: {fileID: 0}
   weaponSystem: {fileID: 0}
-  isReloadable: 0
-  magazineSize: 100
-  allBullets: 100
+  isReloadable: 1
+  magazineSize: 50
+  allBullets: 50
   ammoCost: 1
-  bulletsLeft: 100
+  bulletsLeft: 50
   currentReloadRate: 0
   reloadTime: 0
   isMagazineEmpty: 0
