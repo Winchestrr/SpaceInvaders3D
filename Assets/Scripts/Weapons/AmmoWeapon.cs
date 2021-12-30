@@ -82,6 +82,11 @@ public class AmmoWeapon : GunBase
                 isMagazineEmpty = true;
                 //reload allert true
             }
+
+            if(allBullets <= 0)
+            {
+                weaponSystem.RemoveWeapon(this.gameObject);
+            }
             //else if(bulletsLeft == 0)
             //{
             //    weaponSystem.RemoveWeapon(gameObject);

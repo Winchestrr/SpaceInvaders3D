@@ -144,9 +144,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunEnd: {fileID: 2952161961173772520}
   bullet: {fileID: 8121441352637930604, guid: 9bf850be66593eb48840fc383e15d6eb, type: 3}
-  shootParticles: {fileID: 0}
+  shootParticles: {fileID: 4306813012167626786, guid: 5a6620205fe16c74883273ae1ce1c939, type: 3}
   damage: 15
   bulletSpeed: 30
   timeBetweenShots: 0.2
-  haveParticles: 0
+  haveParticles: 1
   isShooting: 1

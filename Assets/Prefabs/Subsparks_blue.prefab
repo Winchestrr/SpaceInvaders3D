@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4953092824319545208}
   - component: {fileID: 6025496553756465209}
   m_Layer: 0
-  m_Name: Subsparks
+  m_Name: Subsparks_blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

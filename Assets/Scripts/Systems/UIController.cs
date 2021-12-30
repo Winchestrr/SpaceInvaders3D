@@ -88,6 +88,7 @@ public class UIController : MonoBehaviour
 
     public IEnumerator ReloadBar()
     {
+        reloadTextGO.SetActive(false);
         reloadBarGO.SetActive(true);
         reloadBar.fillAmount = 0;
 

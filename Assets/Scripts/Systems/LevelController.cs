@@ -63,7 +63,7 @@ public class LevelController : MonoBehaviour
 
         GenerateFloor(tempTile);
         GenerateWalls(tempTile);
-        if (isGenerated) SpawnPickups(pickups[0], tempTile.transform);
+        if (isGenerated) SpawnPickups(pickups[Random.Range(0, pickups.Length)], tempTile.transform);
     }
 
     void GenerateWalls(GameObject parent)
