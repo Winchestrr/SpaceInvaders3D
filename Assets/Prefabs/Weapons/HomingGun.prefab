@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 903602138659909423}
   - component: {fileID: 3935738594690090575}
   - component: {fileID: 2244084051509238835}
-  - component: {fileID: 7003605071387667842}
+  - component: {fileID: 4944689053454552050}
   m_Layer: 0
   m_Name: HomingGun
   m_TagString: Untagged
@@ -130,7 +130,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7003605071387667842
+--- !u!114 &4944689053454552050
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -139,14 +139,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 3350582973380746705}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e1cb0212d831f54e994826b250db62b, type: 3}
+  m_Script: {fileID: 11500000, guid: 6ff2f90ddc3cb4e48a8c478e78113654, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gunEnd: {fileID: 2952161961173772520}
   bullet: {fileID: 8121441352637930604, guid: 9bf850be66593eb48840fc383e15d6eb, type: 3}
   shootParticles: {fileID: 4306813012167626786, guid: 5a6620205fe16c74883273ae1ce1c939, type: 3}
-  damage: 15
+  damage: 30
   bulletSpeed: 30
   timeBetweenShots: 0.2
   haveParticles: 1
   isShooting: 1
+  uiController: {fileID: 0}
+  weaponSystem: {fileID: 0}
+  isReloadable: 1
+  magazineSize: 30
+  allBullets: 30
+  ammoCost: 1
+  bulletsLeft: 30
+  currentReloadRate: 0
+  reloadTime: 0
+  isMagazineEmpty: 0
+  canReload: 0

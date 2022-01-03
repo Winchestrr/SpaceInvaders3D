@@ -61,10 +61,10 @@ public class AmmoWeapon : GunBase
         }
     }
 
-    internal void SetAmount()
-    {
+    //internal void SetAmount()
+    //{
 
-    }
+    //}
 
     protected override void Shoot()
     {

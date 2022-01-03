@@ -28,6 +28,11 @@ public class HomingMissle : StandardBullet
     public override void OnCollisionEnter(Collision collision)
     {
         base.OnCollisionEnter(collision);
+
+        if(collision.gameObject.tag == "Obstacle")
+        {
+            Destroy(gameObject);
+        }
     }
 
     void FindTarget()
