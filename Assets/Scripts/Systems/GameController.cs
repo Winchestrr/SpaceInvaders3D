@@ -26,7 +26,6 @@ public class GameController : MonoBehaviour
 
     public float playerHeight;
 
-    //test events
     public delegate void newGameOver();
     public static event newGameOver OnGameOver;
 
@@ -45,6 +44,12 @@ public class GameController : MonoBehaviour
 
         chosenShipIndex = SaveData.chosenShip;
         currentPlayerShip = InstantiatePlayerShip(playerShips[chosenShipIndex]);
+    }
+
+    //test
+    private void InstantiateControllers()
+    {
+
     }
 
     public static void GameOver()

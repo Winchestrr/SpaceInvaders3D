@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Main_menu.unity
+    path: Assets/Scenes/Main_Menu.unity
     guid: 7b32036ba79cc3848a4932a66c7054dc
   - enabled: 1
     path: Assets/Scenes/Select_ship.unity
@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Tile_level.unity
     guid: 241b386d2c2e85745817d41a1865937d
+  - enabled: 1
+    path: Assets/Scenes/Settings.unity
+    guid: 3b4356b62712ddd4c832514559ee7884
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 38790a8eb33be9e479b9ec1e5ab5db05
   m_configObjects: {}
