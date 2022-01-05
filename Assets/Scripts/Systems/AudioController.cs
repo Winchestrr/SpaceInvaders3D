@@ -20,6 +20,11 @@ public class AudioController : MonoBehaviour
     //do Wiktora: jak bêdziesz chcia³ robiæ ten kontroler SFXów to mo¿esz w tym skrypcie,
     //zignoruj to co tu jest bo to tylko do muzyki siê odnosi
 
+    private void Awake()
+    {
+        levelMusic.volume = SaveData.musicLevel;
+    }
+
     private void Start()
     {
         levelMusic.Play();

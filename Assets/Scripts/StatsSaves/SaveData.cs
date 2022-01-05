@@ -15,11 +15,4 @@ public static class SaveData
     public static float musicLevel { get; set; }
     public static float sfxLevel { get; set; }
     public static string graphicsQuality { get; set; }
-
-    //public SaveData()
-    //{
-    //    score = GameStatsSystem.points;
-    //    time = GameStatsSystem.currentTime;
-    //    enemiesKilled = GameStatsSystem.enemiesKilled;
-    //}
 }
