@@ -11,7 +11,7 @@ public class ButtonsManager : MonoBehaviour
 
     private void Awake()
     {
-        Object.DontDestroyOnLoad(this.gameObject);
+        //Object.DontDestroyOnLoad(this.gameObject);
 
         if (SceneManager.GetActiveScene().name == "Settings")
         {
