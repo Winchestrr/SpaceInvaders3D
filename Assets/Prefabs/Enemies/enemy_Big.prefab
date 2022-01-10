@@ -434,8 +434,12 @@ MonoBehaviour:
   destroyLine: {fileID: 0}
   healthBar: {fileID: 8975959448820700387}
   stats: {fileID: 11400000, guid: 885228130d5cee242a4e96e44facf27d, type: 2}
+  isDebug: 0
   rayDistance: 1000
   isPlayerHit: 0
+  castingLayer:
+    serializedVersion: 2
+    m_Bits: 1591
   currentWeapon: {fileID: 2644161806934361896}
 --- !u!65 &3605423918516116651
 BoxCollider:
@@ -487,7 +491,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 256224879861134967, guid: f5e7a7c24192f3041bda29bd83b20349, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.95
+      value: 2.54
       objectReference: {fileID: 0}
     - target: {fileID: 256224879861134967, guid: f5e7a7c24192f3041bda29bd83b20349, type: 3}
       propertyPath: m_LocalRotation.w
@@ -519,7 +523,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4590710077573779035, guid: f5e7a7c24192f3041bda29bd83b20349, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 13.64
+      value: 18.7
       objectReference: {fileID: 0}
     - target: {fileID: 8922065159038615757, guid: f5e7a7c24192f3041bda29bd83b20349, type: 3}
       propertyPath: m_Name

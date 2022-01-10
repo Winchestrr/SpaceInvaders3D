@@ -77743,6 +77743,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3073975667e024c4596164a5deac3c85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sfxSlider: {fileID: 0}
+  musicSlider: {fileID: 0}
 --- !u!4 &1152041951
 Transform:
   m_ObjectHideFlags: 0
@@ -141435,6 +141437,14 @@ PrefabInstance:
     - target: {fileID: 3397810547565344393, guid: eeeba90ba5cb78d4d87798668d5480cd, type: 3}
       propertyPath: m_Name
       value: Orange_vol_light
+      objectReference: {fileID: 0}
+    - target: {fileID: 3397810547565344394, guid: eeeba90ba5cb78d4d87798668d5480cd, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3397810547565344394, guid: eeeba90ba5cb78d4d87798668d5480cd, type: 3}
+      propertyPath: m_Color.r
+      value: 0.34229445
       objectReference: {fileID: 0}
     - target: {fileID: 3397810547565344397, guid: eeeba90ba5cb78d4d87798668d5480cd, type: 3}
       propertyPath: m_RootOrder

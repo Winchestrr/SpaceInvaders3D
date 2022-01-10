@@ -146,7 +146,8 @@ MonoBehaviour:
   bullet: {fileID: 283372586154606677, guid: 348878aad293dd8488395d8fc701e109, type: 3}
   shootParticles: {fileID: 0}
   damage: 15
-  bulletSpeed: 60
+  bulletSpeed: 48
   timeBetweenShots: 0.2
   haveParticles: 0
   isShooting: 1
+  addAngle: 1

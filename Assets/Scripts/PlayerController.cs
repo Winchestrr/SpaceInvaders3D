@@ -12,7 +12,9 @@ public class PlayerController : MonoBehaviour
     public WeaponSystem weaponSystem;
     public PlayerStats stats;
     public LevelController levelController;
-    public ParticleSystem contactParticle;
+
+    public ParticleSystem contactParticlePrefab;
+    private ParticleSystem contactParticle;
 
         [Header("Stats")]
 
@@ -28,7 +30,8 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        //Instantiate(contactParticle, transform.position, transform.rotation, transform);
+        contactParticle = Instantiate(contactParticlePrefab, transform.position, transform.rotation);
+        //contactParticle.Stop();
         levelController = FindObjectOfType<LevelController>();
 
         maxHealth = stats.startHealth;
@@ -54,11 +57,17 @@ public class PlayerController : MonoBehaviour
 
             case "Enemy":
 
-                //contactParticle.transform.Translate(collision.transform.position);
-                //contactParticle.Play();
+                if (collision.contactCount > 0)
+                {
+                    Debug.Log("particle: " + collision.contacts[0].point.ToString());
+
+                    contactParticle.gameObject.transform.position = collision.contacts[0].point;
+                    contactParticle.gameObject.transform.forward = collision.contacts[0].normal;
+                    contactParticle.Emit(100);
+                }
 
                 DealPlayerDamage(collision.gameObject.GetComponent<EnemyBase>().stats.contactDamage);
-                Destroy(collision.gameObject);
+                //Destroy(collision.gameObject);
 
                 break;
         }
@@ -66,7 +75,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionExit(Collision collision)
     {
-        ////contactParticle.Stop();
+        //contactParticle.Stop();
     }
 
     private void OnTriggerEnter(Collider target)

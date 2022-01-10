@@ -13,11 +13,14 @@ public class EnemyBase : MonoBehaviour
     private int currentHealth;
     private bool isAlive = true;
     private bool canMove = true;
+    public bool isDebug;
 
     [Header("Raycast")]
     private RaycastHit hitInfo;
     public float rayDistance;
     public bool isPlayerHit;
+
+    public LayerMask castingLayer;
 
     protected virtual void OnEnable()
     {
@@ -79,9 +82,11 @@ public class EnemyBase : MonoBehaviour
 
     protected void CastRay()
     {
-        //Debug.DrawRay(transform.position, transform.forward * rayDistance, Color.green);
-        if (Physics.Raycast(transform.position, transform.forward, out hitInfo, rayDistance))
+        Debug.DrawRay(transform.position, transform.forward * rayDistance, Color.green);
+        if (Physics.Raycast(transform.position, transform.forward, out hitInfo, rayDistance, castingLayer))
         {
+            if(isDebug) Debug.Log("hit");
+
             if(hitInfo.transform.gameObject.tag == "Player")
             {
                 isPlayerHit = true;

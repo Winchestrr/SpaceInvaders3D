@@ -153,7 +153,7 @@ MonoBehaviour:
   weaponSystem: {fileID: 5292149896130560874}
   stats: {fileID: 11400000, guid: 84cee9b425f2cbf49ac3053cfe1af25d, type: 2}
   levelController: {fileID: 0}
-  contactParticle: {fileID: 4509374616467620552, guid: 45ff8c0337819c54e80f6fa387f35898, type: 3}
+  contactParticlePrefab: {fileID: 4509374616467620552, guid: 45ff8c0337819c54e80f6fa387f35898, type: 3}
   movX: 0
 --- !u!65 &4678447640380200424
 BoxCollider:
