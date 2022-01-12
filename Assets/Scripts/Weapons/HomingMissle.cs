@@ -62,7 +62,10 @@ public class HomingMissle : StandardBullet
         }
         Vector3 toTarget = target.position - transform.position;
         Quaternion targetRotation = Quaternion.LookRotation(toTarget);
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+
+        transform.rotation = Quaternion.RotateTowards(
+            transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+
         rb.velocity = transform.forward * speed;
     }
 }

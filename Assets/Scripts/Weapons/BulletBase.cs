@@ -14,10 +14,16 @@ public class BulletBase : MonoBehaviour
     public bool haveParticles = false;
     public bool isPiercing = false;
 
+    [Range(0, 5)]
+    public float angle;
+
     public virtual void Launch(int _damage, float _speed)
     {
+        Vector3 bulletDirection = transform.forward;
+        bulletDirection.y += Random.Range(-angle, angle);
+
         rb = GetComponent<Rigidbody>();
-        rb.velocity = transform.forward * _speed;
+        rb.velocity = bulletDirection * _speed;
 
         speed = _speed;
         damage = _damage;
