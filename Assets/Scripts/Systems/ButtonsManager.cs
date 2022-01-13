@@ -48,6 +48,10 @@ public class ButtonsManager : MonoBehaviour
             case "exit":
                 Application.Quit();
                 break;
+
+            case "test":
+                Debug.Log("TEST BUTTON");
+                break;
         }
     }
 
