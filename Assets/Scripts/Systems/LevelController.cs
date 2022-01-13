@@ -31,6 +31,9 @@ public class LevelController : MonoBehaviour
 
     private Collider[] hitColliders;
 
+    //public delegate void SpeedChange(int speed);
+    //public static event SpeedChange speedChange;
+
     private void Start()
     {
         GenerateLevel();
@@ -38,7 +41,7 @@ public class LevelController : MonoBehaviour
 
     private void Update()
     {
-        levelSpeed = levelSpeedDisplay;
+        levelSpeedDisplay = levelSpeed;
 
         MoveLevel();
     }
