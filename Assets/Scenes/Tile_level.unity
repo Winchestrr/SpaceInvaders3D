@@ -1062,6 +1062,24 @@ MonoBehaviour:
   - 1800
   - 2500
   - 3500
+  levelSpeedValues:
+  - -24
+  - -26
+  - -30
+  - -34
+  - -40
+  spawnTimerMinValues:
+  - 3
+  - 2.5
+  - 2
+  - 2
+  - 1
+  spawnTimerMaxValues:
+  - 5
+  - 5
+  - 4
+  - 3.5
+  - 2.3
 --- !u!1 &1688058029
 GameObject:
   m_ObjectHideFlags: 0

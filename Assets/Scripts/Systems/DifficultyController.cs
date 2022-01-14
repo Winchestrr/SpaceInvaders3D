@@ -12,6 +12,10 @@ public class DifficultyController : MonoBehaviour
     [SerializeField] private float debugOffset;
 
     [SerializeField] private float[] levels;
+    [SerializeField] private float[] levelSpeedValues;
+    [SerializeField] private float[] spawnTimerMinValues;
+    [SerializeField] private float[] spawnTimerMaxValues;
+
 
     private void Update()
     {
@@ -30,34 +34,31 @@ public class DifficultyController : MonoBehaviour
         {
             if (distance <= levels[0])
             {
-                LevelController.levelSpeed = -24f;
-                EnemySpawner.spawnTimerMin = 3f;
-                EnemySpawner.spawnTimerMax = 5f;
+                SetDifficulty(0);
             }
             else if (distance <= levels[1])
             {
-                LevelController.levelSpeed = -26f;
-                EnemySpawner.spawnTimerMin = 2.5f;
-                EnemySpawner.spawnTimerMax = 5f;
+                SetDifficulty(1);
             }
             else if (distance <= levels[2])
             {
-                LevelController.levelSpeed = -30f;
-                EnemySpawner.spawnTimerMin = 2f;
-                EnemySpawner.spawnTimerMax = 4f;
+                SetDifficulty(2);
             }
             else if (distance <= levels[3])
             {
-                LevelController.levelSpeed = -34f;
-                EnemySpawner.spawnTimerMin = 2f;
-                EnemySpawner.spawnTimerMax = 3.5f;
+                SetDifficulty(3);
             }
             else if (distance <= levels[4])
             {
-                LevelController.levelSpeed = -40f;
-                EnemySpawner.spawnTimerMin = 1f;
-                EnemySpawner.spawnTimerMax = 2.3f;
+                SetDifficulty(4);
             }
         }
+    }
+
+    private void SetDifficulty(int level)
+    {
+        LevelController.levelSpeed = levelSpeedValues[level];
+        EnemySpawner.spawnTimerMin = spawnTimerMaxValues[level];
+        EnemySpawner.spawnTimerMax = spawnTimerMaxValues[level];
     }
 }
