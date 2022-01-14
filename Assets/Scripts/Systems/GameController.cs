@@ -61,6 +61,10 @@ public class GameController : MonoBehaviour
         Destroy(instance.currentPlayerShip);
         instance.canvasAnimator.SetTrigger("GameOver");
 
+        SaveData.score = GameStatsSystem.points;
+        SaveData.enemiesKilled = GameStatsSystem.enemiesKilled;
+        SaveData.roundTime = GameStatsSystem.currentTime;
+
         SaveGame();
 
         Time.timeScale = 0.2f;

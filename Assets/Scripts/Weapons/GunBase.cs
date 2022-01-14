@@ -24,8 +24,6 @@ public class GunBase : MonoBehaviour
 
     public virtual void TryShoot()
     {
-        Debug.Log("try shoot");
-
         if(CanShoot())
         {
             Shoot();
