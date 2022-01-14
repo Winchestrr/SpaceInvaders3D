@@ -60,6 +60,9 @@ public class GameController : MonoBehaviour
         EnemySpawner.canSpawn = !EnemySpawner.canSpawn;
         Destroy(instance.currentPlayerShip);
         instance.canvasAnimator.SetTrigger("GameOver");
+
+        SaveGame();
+
         Time.timeScale = 0.2f;
     }
 
@@ -76,5 +79,15 @@ public class GameController : MonoBehaviour
     public void StickCameraToPlayer(GameObject target)
     {
         virtualCamera.Follow = target.transform;
+    }
+
+    public static void SaveGame()
+    {
+        PlayerPrefs.SetFloat("score", SaveData.score);
+        PlayerPrefs.SetFloat("roundTime", SaveData.roundTime);
+        PlayerPrefs.SetFloat("enemiesKilled", SaveData.enemiesKilled);
+        PlayerPrefs.SetFloat("chosenShip", SaveData.chosenShip);
+
+        PlayerPrefs.Save();
     }
 }
