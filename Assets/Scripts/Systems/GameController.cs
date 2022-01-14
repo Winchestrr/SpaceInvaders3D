@@ -15,6 +15,7 @@ public class GameController : MonoBehaviour
     public GameObject currentPlayerShip;
     public CinemachineVirtualCamera virtualCamera;
     public Animator canvasAnimator;
+    public dreamloLeaderBoard dreamlo;
 
 
     [Header("Stats")]
@@ -25,6 +26,8 @@ public class GameController : MonoBehaviour
     public static bool isPaused;
 
     public float playerHeight;
+
+    public static string playerName;
 
     public delegate void newGameOver();
     public static event newGameOver OnGameOver;
@@ -44,6 +47,9 @@ public class GameController : MonoBehaviour
 
         chosenShipIndex = SaveData.chosenShip;
         currentPlayerShip = InstantiatePlayerShip(playerShips[chosenShipIndex]);
+
+        //testowo
+        playerName = "test2";
     }
 
     //test
@@ -56,6 +62,8 @@ public class GameController : MonoBehaviour
     {
         OnGameOver();
 
+        SaveGame();
+
         GameController.currentState = GameController.GameState.GAMEOVER;
         EnemySpawner.canSpawn = !EnemySpawner.canSpawn;
         Destroy(instance.currentPlayerShip);
@@ -64,8 +72,8 @@ public class GameController : MonoBehaviour
         SaveData.score = GameStatsSystem.points;
         SaveData.enemiesKilled = GameStatsSystem.enemiesKilled;
         SaveData.roundTime = GameStatsSystem.currentTime;
-
-        SaveGame();
+        SaveData.finalScore = (int) Mathf.Ceil(GameStatsSystem.points +
+            (GameStatsSystem.currentTime * Mathf.Ceil(GameStatsSystem.enemiesKilled / 2)));
 
         Time.timeScale = 0.2f;
     }
@@ -93,5 +101,14 @@ public class GameController : MonoBehaviour
         PlayerPrefs.SetFloat("chosenShip", SaveData.chosenShip);
 
         PlayerPrefs.Save();
+    }
+
+    public void UploadScore()
+    {
+        dreamlo.AddScore(
+            playerName,
+            SaveData.finalScore,
+            SaveData.enemiesKilled,
+            (SaveData.roundTime.ToString() + "s"));
     }
 }

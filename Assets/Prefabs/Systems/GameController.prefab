@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7699639517789193115}
   - component: {fileID: 7699639517789193114}
   - component: {fileID: 8251579261379084644}
+  - component: {fileID: 1660345247}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -66,5 +67,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59ceef31e9e775b43adef391fd79d829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamlo: {fileID: 0}
   pointsDisplay: 0
   enemiesKilledDisplay: 0
+--- !u!114 &1660345247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7699639517789193113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa8d6fc77bd4de74887f9fecfc0b99af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanceTracker: {fileID: 0}
+  isControlled: 1
+  distance: 0
+  debugOffset: 0
+  levels:
+  - 500
+  - 1200
+  - 1800
+  - 2500
+  - 3500
+  levelSpeedValues:
+  - -24
+  - -26
+  - -30
+  - -34
+  - -40
+  spawnTimerMinValues:
+  - 3
+  - 2.5
+  - 2
+  - 2
+  - 1
+  spawnTimerMaxValues:
+  - 5
+  - 5
+  - 4
+  - 3.5
+  - 2.3

@@ -6,11 +6,11 @@ using UnityEngine.Networking;
 
 public class dreamloLeaderBoard : MonoBehaviour {
 
-	string dreamloWebserviceURL = "http://dreamlo.com/lb/";
+	public string dreamloWebserviceURL = "http://dreamlo.com/lb/";
 
 	public bool IUpgradedAndGotSSL = false;
-	public string privateCode = "";
-	public string publicCode = "";
+	public string privateCode = "MwpPtxvT40qmF6rCKUkiEAPs_V6gTnzEWvaqj4gzhnJg";
+	public string publicCode = "61e1fb668f40bb1034552e85";
 	
 	string highScores = "";
 	
