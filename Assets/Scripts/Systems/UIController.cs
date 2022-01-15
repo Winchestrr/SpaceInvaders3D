@@ -27,6 +27,7 @@ public class UIController : MonoBehaviour
     public Text pointsText;
     public GameObject pauseScreen;
     public Image healthBar;
+    private dreamloLeaderBoard dreamlo;
 
     [Header("Game over screen")]
     [SerializeField] private TextMeshProUGUI scoreText;
@@ -34,10 +35,16 @@ public class UIController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI enemiesKilledText;
     [SerializeField] private TextMeshProUGUI finalScoreText;
 
+    [Header("Leaderboard")]
+    public TextMeshProUGUI leaderboardText;
+    public Button uploadButton;
+
     private void Awake()
     {
         if (instance == null) instance = this;
         else Debug.LogError("Instance problem");
+
+        dreamlo = dreamloLeaderBoard.GetSceneDreamloLeaderboard();
     }
 
     #region ---EVENT_ASSIGN---
@@ -84,6 +91,41 @@ public class UIController : MonoBehaviour
         timeText.SetText(">time : {0}", GameStatsSystem.currentTime);
         enemiesKilledText.SetText(">enemies killed: {0}", GameStatsSystem.enemiesKilled);
         finalScoreText.SetText(">final score: {0}", SaveData.finalScore);
+    }
+
+    public void UploadAndGetScores()
+    {
+        uploadButton.interactable = false;
+
+        //dreamlo.AddScore(
+        //    GameController.playerName,
+        //    SaveData.finalScore,
+        //    SaveData.enemiesKilled,
+        //    (SaveData.roundTime.ToString() + "s"));
+
+        leaderboardText.text = "";
+
+        List<dreamloLeaderBoard.Score> scoreList = dreamlo.ToListHighToLow();
+
+        if (scoreList == null) return;
+        else
+        {
+            int maxToDisplay = 20;
+            int count = 0;
+
+            foreach (dreamloLeaderBoard.Score currentScore in scoreList)
+            {
+                count++;
+
+                leaderboardText.text +=
+                    ((count) + ". " +
+                    currentScore.playerName +
+                    ": " + currentScore.score +
+                    ", " + currentScore.shortText + "\n");
+
+                if (count >= maxToDisplay) break;
+            }
+        }
     }
 
     public IEnumerator ReloadBar()

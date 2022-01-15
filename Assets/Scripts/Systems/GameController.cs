@@ -49,7 +49,7 @@ public class GameController : MonoBehaviour
         currentPlayerShip = InstantiatePlayerShip(playerShips[chosenShipIndex]);
 
         //testowo
-        playerName = "test2";
+        playerName = "LB_TEST";
     }
 
     //test
