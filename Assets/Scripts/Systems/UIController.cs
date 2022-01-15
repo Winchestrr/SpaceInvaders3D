@@ -36,7 +36,12 @@ public class UIController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI finalScoreText;
 
     [Header("Leaderboard")]
-    public TextMeshProUGUI leaderboardText;
+    public GameObject leaderboardGO;
+    public TextMeshProUGUI lbCount;
+    public TextMeshProUGUI lbNames;
+    public TextMeshProUGUI lbScore;
+    public TextMeshProUGUI lbTime;
+    public TMP_InputField nameInput;
     public Button uploadButton;
 
     private void Awake()
@@ -67,6 +72,8 @@ public class UIController : MonoBehaviour
     public void Update()
     {
         SetUI();
+
+        if (Input.GetKeyDown(KeyCode.U)) UploadAndGetScores();
     }
 
     #region ---SET_UI_ELEMENTS---
@@ -95,19 +102,34 @@ public class UIController : MonoBehaviour
 
     public void UploadAndGetScores()
     {
+        StartCoroutine(UploadAndGetScoresIE());
+    }
+
+    public IEnumerator UploadAndGetScoresIE()
+    {
+
         uploadButton.interactable = false;
+        leaderboardGO.SetActive(true);
 
-        //dreamlo.AddScore(
-        //    GameController.playerName,
-        //    SaveData.finalScore,
-        //    SaveData.enemiesKilled,
-        //    (SaveData.roundTime.ToString() + "s"));
+        dreamlo.AddScore(
+            //GameController.playerName,
+            nameInput.text,
+            SaveData.finalScore,
+            SaveData.enemiesKilled,
+            (SaveData.roundTime.ToString() + "s"));
 
-        leaderboardText.text = "";
+        lbCount.text = "";
+        lbNames.text = "Wait...";
+        lbScore.text = "";
+        lbTime.text = "";
+
+        yield return new WaitForSeconds(0.3f);
+
+        lbNames.text = "";
 
         List<dreamloLeaderBoard.Score> scoreList = dreamlo.ToListHighToLow();
 
-        if (scoreList == null) return;
+        if (scoreList == null) yield return null;
         else
         {
             int maxToDisplay = 20;
@@ -117,11 +139,10 @@ public class UIController : MonoBehaviour
             {
                 count++;
 
-                leaderboardText.text +=
-                    ((count) + ". " +
-                    currentScore.playerName +
-                    ": " + currentScore.score +
-                    ", " + currentScore.shortText + "\n");
+                lbCount.text += count + "\n";
+                lbNames.text += currentScore.playerName + "\n";
+                lbScore.text += currentScore.score + "\n";
+                lbTime.text += currentScore.shortText + "\n";
 
                 if (count >= maxToDisplay) break;
             }
