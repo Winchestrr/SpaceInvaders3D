@@ -12,8 +12,9 @@ public class UIController : MonoBehaviour
     [Header("Weapons")]
     public GameObject ammoWeaponGO;
     public AmmoWeapon ammoWeapon;
-    public GameObject ammoTextGO;
-    public Text ammoText;
+    public GameObject ammoCounterGO;
+    public TextMeshProUGUI currentBulletText;
+    public TextMeshProUGUI leftBulletsText;
 
     [Header("Reload")]
     public GameObject reloadTextGO;
@@ -24,10 +25,13 @@ public class UIController : MonoBehaviour
     [Header("Systems")]
     public GameController gameController;
     public Text gameStateText;
-    public Text pointsText;
+    public TextMeshProUGUI pointsText;
     public GameObject pauseScreen;
-    public Image healthBar;
     private dreamloLeaderBoard dreamlo;
+
+    [Header("HP Bar")]
+    public Image healthBar;
+    public Gradient healthGradient;
 
     [Header("Game over screen")]
     [SerializeField] private TextMeshProUGUI scoreText;
@@ -50,6 +54,9 @@ public class UIController : MonoBehaviour
         else Debug.LogError("Instance problem");
 
         dreamlo = dreamloLeaderBoard.GetSceneDreamloLeaderboard();
+
+        if (SaveData.chosenShip == 1) ammoCounterGO.SetActive(true);
+        else ammoCounterGO.SetActive(false);
     }
 
     #region ---EVENT_ASSIGN---
@@ -73,10 +80,9 @@ public class UIController : MonoBehaviour
     {
         SetUI();
 
-        if (Input.GetKeyDown(KeyCode.U)) UploadAndGetScores();
-
         if (Input.GetKeyDown(KeyCode.Return) && 
-            GameController.currentState == GameController.GameState.GAMEOVER)
+            GameController.currentState == GameController.GameState.GAMEOVER &&
+            nameInput.text != null)
         {
             UploadAndGetScores();
         }
@@ -88,14 +94,16 @@ public class UIController : MonoBehaviour
     public void SetUI()
     {
         gameStateText.text = GameController.currentState.ToString();
-        pointsText.text = GameStatsSystem.points.ToString();
+        pointsText.text = GameStatsSystem.points.ToString("000000");
 
         if (ammoWeaponGO != null)
         {
-            ammoText.text = "Ammo: " + ammoWeapon.bulletsLeft + "/" + ammoWeapon.allBullets;
+            currentBulletText.text = ammoWeapon.bulletsLeft.ToString("000");
+            leftBulletsText.text = ammoWeapon.allBullets.ToString("000");
         }
 
         healthBar.fillAmount = (float)PlayerController.playerHealth / (float)PlayerController.maxHealth;
+        healthBar.color = healthGradient.Evaluate(healthBar.fillAmount);
     }
 
     public void SetGameOverScreen()
