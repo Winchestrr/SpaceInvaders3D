@@ -74,6 +74,12 @@ public class UIController : MonoBehaviour
         SetUI();
 
         if (Input.GetKeyDown(KeyCode.U)) UploadAndGetScores();
+
+        if (Input.GetKeyDown(KeyCode.Return) && 
+            GameController.currentState == GameController.GameState.GAMEOVER)
+        {
+            UploadAndGetScores();
+        }
     }
 
     #region ---SET_UI_ELEMENTS---
@@ -94,10 +100,13 @@ public class UIController : MonoBehaviour
 
     public void SetGameOverScreen()
     {
+        int finalScore = (int)Mathf.Ceil(GameStatsSystem.points +
+            (GameStatsSystem.currentTime * Mathf.Ceil(GameStatsSystem.enemiesKilled / 2)));
+
         scoreText.SetText(">score: {0}", GameStatsSystem.points);
         timeText.SetText(">time : {0}", GameStatsSystem.currentTime);
         enemiesKilledText.SetText(">enemies killed: {0}", GameStatsSystem.enemiesKilled);
-        finalScoreText.SetText(">final score: {0}", SaveData.finalScore);
+        finalScoreText.SetText(">final score: {0}", finalScore);
     }
 
     public void UploadAndGetScores()
