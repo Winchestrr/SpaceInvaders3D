@@ -11,8 +11,8 @@ public class EnemySpawner : MonoBehaviour
 
     public static bool canSpawn = true;
 
-    public float spawnTimerMin;
-    public float spawnTimerMax;
+    public static float spawnTimerMin;
+    public static float spawnTimerMax;
 
     public float spawnY;
     public float spawnZ;

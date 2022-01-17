@@ -48,33 +48,31 @@ public class ButtonsManager : MonoBehaviour
             case "exit":
                 Application.Quit();
                 break;
+
+            case "test":
+                Debug.Log("TEST BUTTON");
+                break;
+
+            case "save":
+                PlayerPrefs.Save();
+                break;
         }
     }
-
-    //public void OnSliderChange(string name, float value)
-    //{
-    //    switch(name)
-    //    {
-    //        case "music":
-    //            SaveData.musicLevel = value;
-    //            break;
-
-    //        case "sfx":
-    //            SaveData.sfxLevel = value;
-    //            break;
-    //    }
-    //}
     
     public void OnSliderChange(string name)
     {
         switch (name)
         {
             case "music":
+                PlayerPrefs.SetFloat("musicVolume", musicSlider.value);
+
                 SaveData.musicLevel = musicSlider.value;
                 Debug.Log(SaveData.musicLevel);
                 break;
 
             case "sfx":
+                PlayerPrefs.SetFloat("sfxVolume", sfxSlider.value);
+
                 SaveData.sfxLevel = sfxSlider.value;
                 Debug.Log(SaveData.sfxLevel);
                 break;

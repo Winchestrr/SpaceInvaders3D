@@ -34,7 +34,7 @@ public class SoundManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P)) PlaySound("shoot");
+        //if (Input.GetKeyDown(KeyCode.P)) PlaySound("shoot");
     }
     public void PlaySound (string clip)
     {

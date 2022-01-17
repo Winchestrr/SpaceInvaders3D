@@ -12,8 +12,9 @@ public class UIController : MonoBehaviour
     [Header("Weapons")]
     public GameObject ammoWeaponGO;
     public AmmoWeapon ammoWeapon;
-    public GameObject ammoTextGO;
-    public Text ammoText;
+    public GameObject ammoCounterGO;
+    public TextMeshProUGUI currentBulletText;
+    public TextMeshProUGUI leftBulletsText;
 
     [Header("Reload")]
     public GameObject reloadTextGO;
@@ -24,9 +25,13 @@ public class UIController : MonoBehaviour
     [Header("Systems")]
     public GameController gameController;
     public Text gameStateText;
-    public Text pointsText;
+    public TextMeshProUGUI pointsText;
     public GameObject pauseScreen;
+    private dreamloLeaderBoard dreamlo;
+
+    [Header("HP Bar")]
     public Image healthBar;
+    public Gradient healthGradient;
 
     [Header("Game over screen")]
     [SerializeField] private TextMeshProUGUI scoreText;
@@ -34,10 +39,24 @@ public class UIController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI enemiesKilledText;
     [SerializeField] private TextMeshProUGUI finalScoreText;
 
+    [Header("Leaderboard")]
+    public GameObject leaderboardGO;
+    public TextMeshProUGUI lbCount;
+    public TextMeshProUGUI lbNames;
+    public TextMeshProUGUI lbScore;
+    public TextMeshProUGUI lbTime;
+    public TMP_InputField nameInput;
+    public Button uploadButton;
+
     private void Awake()
     {
         if (instance == null) instance = this;
         else Debug.LogError("Instance problem");
+
+        dreamlo = dreamloLeaderBoard.GetSceneDreamloLeaderboard();
+
+        if (SaveData.chosenShip == 1) ammoCounterGO.SetActive(true);
+        else ammoCounterGO.SetActive(false);
     }
 
     #region ---EVENT_ASSIGN---
@@ -60,6 +79,13 @@ public class UIController : MonoBehaviour
     public void Update()
     {
         SetUI();
+
+        if (Input.GetKeyDown(KeyCode.Return) && 
+            GameController.currentState == GameController.GameState.GAMEOVER &&
+            nameInput.text != null)
+        {
+            UploadAndGetScores();
+        }
     }
 
     #region ---SET_UI_ELEMENTS---
@@ -68,22 +94,76 @@ public class UIController : MonoBehaviour
     public void SetUI()
     {
         gameStateText.text = GameController.currentState.ToString();
-        pointsText.text = GameStatsSystem.points.ToString();
+        pointsText.text = GameStatsSystem.points.ToString("000000");
 
         if (ammoWeaponGO != null)
         {
-            ammoText.text = "Ammo: " + ammoWeapon.bulletsLeft + "/" + ammoWeapon.allBullets;
+            currentBulletText.text = ammoWeapon.bulletsLeft.ToString("000");
+            leftBulletsText.text = ammoWeapon.allBullets.ToString("000");
         }
 
         healthBar.fillAmount = (float)PlayerController.playerHealth / (float)PlayerController.maxHealth;
+        healthBar.color = healthGradient.Evaluate(healthBar.fillAmount);
     }
 
     public void SetGameOverScreen()
     {
+        int finalScore = (int)Mathf.Ceil(GameStatsSystem.points +
+            (GameStatsSystem.currentTime * Mathf.Ceil(GameStatsSystem.enemiesKilled / 2)));
+
         scoreText.SetText(">score: {0}", GameStatsSystem.points);
         timeText.SetText(">time : {0}", GameStatsSystem.currentTime);
         enemiesKilledText.SetText(">enemies killed: {0}", GameStatsSystem.enemiesKilled);
-        finalScoreText.SetText(">final score: ");
+        finalScoreText.SetText(">final score: {0}", finalScore);
+    }
+
+    public void UploadAndGetScores()
+    {
+        StartCoroutine(UploadAndGetScoresIE());
+    }
+
+    public IEnumerator UploadAndGetScoresIE()
+    {
+
+        uploadButton.interactable = false;
+        leaderboardGO.SetActive(true);
+
+        dreamlo.AddScore(
+            //GameController.playerName,
+            nameInput.text,
+            SaveData.finalScore,
+            SaveData.enemiesKilled,
+            (SaveData.roundTime.ToString() + "s"));
+
+        lbCount.text = "";
+        lbNames.text = "Wait...";
+        lbScore.text = "";
+        lbTime.text = "";
+
+        yield return new WaitForSeconds(0.3f);
+
+        lbNames.text = "";
+
+        List<dreamloLeaderBoard.Score> scoreList = dreamlo.ToListHighToLow();
+
+        if (scoreList == null) yield return null;
+        else
+        {
+            int maxToDisplay = 20;
+            int count = 0;
+
+            foreach (dreamloLeaderBoard.Score currentScore in scoreList)
+            {
+                count++;
+
+                lbCount.text += count + "\n";
+                lbNames.text += currentScore.playerName + "\n";
+                lbScore.text += currentScore.score + "\n";
+                lbTime.text += currentScore.shortText + "\n";
+
+                if (count >= maxToDisplay) break;
+            }
+        }
     }
 
     public IEnumerator ReloadBar()

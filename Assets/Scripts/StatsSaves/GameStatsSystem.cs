@@ -7,6 +7,8 @@ public class GameStatsSystem : MonoBehaviour
 {
     public static GameStatsSystem instance;
 
+    public dreamloLeaderBoard dreamlo;
+
     public static int points;
     public int pointsDisplay;
 
@@ -17,7 +19,6 @@ public class GameStatsSystem : MonoBehaviour
     public static float startTime = 0;
     public static float currentTime;
     public static float gameOverTime;
-
 
     private void Start()
     {

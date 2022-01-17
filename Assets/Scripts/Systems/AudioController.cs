@@ -22,7 +22,7 @@ public class AudioController : MonoBehaviour
 
     private void Awake()
     {
-        levelMusic.volume = SaveData.musicLevel;
+        levelMusic.volume = PlayerPrefs.GetFloat("musicVolume");
     }
 
     private void Start()
