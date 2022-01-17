@@ -62,7 +62,7 @@ GameObject:
   - component: {fileID: 1350853095373452588}
   - component: {fileID: 4678447640380200424}
   - component: {fileID: 2913529257883008977}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Standard_ship
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -154,7 +154,9 @@ MonoBehaviour:
   stats: {fileID: 11400000, guid: 84cee9b425f2cbf49ac3053cfe1af25d, type: 2}
   levelController: {fileID: 0}
   contactParticlePrefab: {fileID: 4509374616467620552, guid: 45ff8c0337819c54e80f6fa387f35898, type: 3}
+  obstacleDamage: 20
   movX: 0
+  shipPositionClamp: 14.5
 --- !u!65 &4678447640380200424
 BoxCollider:
   m_ObjectHideFlags: 0

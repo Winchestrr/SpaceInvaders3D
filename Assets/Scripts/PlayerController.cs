@@ -15,22 +15,37 @@ public class PlayerController : MonoBehaviour
 
     public ParticleSystem contactParticlePrefab;
     private ParticleSystem contactParticle;
+    private GameObject particleMover;
 
         [Header("Stats")]
 
     public static int maxHealth;
     public static int playerHealth;
 
-    float targetAngleZ;
+    public int obstacleDamage;
+
+    private float targetAngleZ;
 
     public float movX;
     public static float movZ;
     public static float playerSpeedOut;
     Vector3 direction;
 
+    public float shipPositionClamp;
+
+    private void Awake()
+    {
+        particleMover = GameObject.Find("ParticleMover");
+    }
+
     private void Start()
     {
-        contactParticle = Instantiate(contactParticlePrefab, transform.position, transform.rotation);
+        contactParticle = Instantiate(
+            contactParticlePrefab,
+            transform.position,
+            transform.rotation,
+            particleMover.transform);
+
         //contactParticle.Stop();
         levelController = FindObjectOfType<LevelController>();
 
@@ -44,31 +59,28 @@ public class PlayerController : MonoBehaviour
         GetInputs();
         PlayerMove();
         SetRotation();
+        CheckLimits();
     }
 
     private void OnCollisionEnter(Collision collision)
     {
+        if (collision.contactCount > 0)
+        {
+            Debug.Log("particle: " + collision.contacts[0].point.ToString());
+
+            contactParticle.gameObject.transform.position = collision.contacts[0].point;
+            contactParticle.gameObject.transform.forward = collision.contacts[0].normal;
+            contactParticle.Emit(100);
+        }
+
         switch (collision.gameObject.tag)
         {
             case "Obstacle":
-                Destroy(gameObject);
-                GameController.GameOver();
+                DealPlayerDamage(obstacleDamage);
                 break;
 
             case "Enemy":
-
-                if (collision.contactCount > 0)
-                {
-                    Debug.Log("particle: " + collision.contacts[0].point.ToString());
-
-                    contactParticle.gameObject.transform.position = collision.contacts[0].point;
-                    contactParticle.gameObject.transform.forward = collision.contacts[0].normal;
-                    contactParticle.Emit(100);
-                }
-
                 DealPlayerDamage(collision.gameObject.GetComponent<EnemyBase>().stats.contactDamage);
-                //Destroy(collision.gameObject);
-
                 break;
         }
     }
@@ -159,7 +171,10 @@ public class PlayerController : MonoBehaviour
 
     void SetRotation()
     {
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, targetAngleZ), stats.rotationSpeed * Time.deltaTime);
+        transform.rotation = Quaternion.Slerp(
+            transform.rotation,
+            Quaternion.Euler(0, 0, targetAngleZ),
+            stats.rotationSpeed * Time.deltaTime);
     }
 
     void OldPlayerMove()
@@ -182,5 +197,13 @@ public class PlayerController : MonoBehaviour
                 targetAngleZ = stats.desiredAngleZ;
             }
         }
+    }
+
+    void CheckLimits()
+    {
+        transform.position = new Vector3(
+            Mathf.Clamp(transform.position.x, -shipPositionClamp, shipPositionClamp),
+            transform.position.y,
+            transform.position.z);
     }
 }

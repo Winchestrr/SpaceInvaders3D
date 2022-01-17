@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 371681039025346841}
   - component: {fileID: 6303463892257503709}
   - component: {fileID: 4609899553816105956}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Second_ship
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -105,7 +105,9 @@ MonoBehaviour:
   weaponSystem: {fileID: 6838212588855734111}
   stats: {fileID: 11400000, guid: 84cee9b425f2cbf49ac3053cfe1af25d, type: 2}
   levelController: {fileID: 0}
+  contactParticlePrefab: {fileID: 0}
   movX: 0
+  shipPositionClamp: 0
 --- !u!65 &6303463892257503709
 BoxCollider:
   m_ObjectHideFlags: 0

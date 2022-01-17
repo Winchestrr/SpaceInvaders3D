@@ -53,6 +53,7 @@ MonoBehaviour:
   currentPlayerShip: {fileID: 0}
   virtualCamera: {fileID: 0}
   canvasAnimator: {fileID: 0}
+  dreamlo: {fileID: 0}
   chosenShipIndex: 1
   playerHeight: 3.2
 --- !u!114 &8251579261379084644
@@ -86,27 +87,19 @@ MonoBehaviour:
   isControlled: 1
   distance: 0
   debugOffset: 0
-  levels:
-  - 500
-  - 1200
-  - 1800
-  - 2500
-  - 3500
-  levelSpeedValues:
-  - -24
-  - -26
-  - -30
-  - -34
-  - -40
-  spawnTimerMinValues:
-  - 3
-  - 2.5
-  - 2
-  - 2
-  - 1
-  spawnTimerMaxValues:
-  - 5
-  - 5
-  - 4
-  - 3.5
-  - 2.3
+  diffProps:
+  - levelDistance: 500
+    levelSpeedValue: -24
+    spawnTimerRange: {x: 3, y: 5}
+  - levelDistance: 1200
+    levelSpeedValue: -26
+    spawnTimerRange: {x: 2.5, y: 5}
+  - levelDistance: 1800
+    levelSpeedValue: -30
+    spawnTimerRange: {x: 2, y: 4}
+  - levelDistance: 2500
+    levelSpeedValue: -34
+    spawnTimerRange: {x: 2, y: 3.5}
+  - levelDistance: 3500
+    levelSpeedValue: -40
+    spawnTimerRange: {x: 1, y: 2.3}

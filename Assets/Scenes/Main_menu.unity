@@ -444,8 +444,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3830424580590477160, guid: 5e3cc53138308f443b5cda5fecc0237f, type: 3}
       propertyPath: m_text
-      value: credits
+      value: CREDITS
       objectReference: {fileID: 0}
+    - target: {fileID: 3830424580590477160, guid: 5e3cc53138308f443b5cda5fecc0237f, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 5a640e2fe1409a14cb8cc4f575a186e6, type: 2}
+    - target: {fileID: 3830424580590477160, guid: 5e3cc53138308f443b5cda5fecc0237f, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -6632591726027200803, guid: 5a640e2fe1409a14cb8cc4f575a186e6, type: 2}
     - target: {fileID: 3830424581423670024, guid: 5e3cc53138308f443b5cda5fecc0237f, type: 3}
       propertyPath: m_Colors.m_PressedColor.b
       value: 0.990566
@@ -853,8 +861,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3830424580590477160, guid: 5e3cc53138308f443b5cda5fecc0237f, type: 3}
       propertyPath: m_text
-      value: start game
+      value: START GAME
       objectReference: {fileID: 0}
+    - target: {fileID: 3830424580590477160, guid: 5e3cc53138308f443b5cda5fecc0237f, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 5a640e2fe1409a14cb8cc4f575a186e6, type: 2}
+    - target: {fileID: 3830424580590477160, guid: 5e3cc53138308f443b5cda5fecc0237f, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -6632591726027200803, guid: 5a640e2fe1409a14cb8cc4f575a186e6, type: 2}
     - target: {fileID: 3830424581423670024, guid: 5e3cc53138308f443b5cda5fecc0237f, type: 3}
       propertyPath: m_Colors.m_PressedColor.b
       value: 0.990566
@@ -1014,8 +1030,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3830424580590477160, guid: 5e3cc53138308f443b5cda5fecc0237f, type: 3}
       propertyPath: m_text
-      value: settings
+      value: SETTINGS
       objectReference: {fileID: 0}
+    - target: {fileID: 3830424580590477160, guid: 5e3cc53138308f443b5cda5fecc0237f, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 5a640e2fe1409a14cb8cc4f575a186e6, type: 2}
+    - target: {fileID: 3830424580590477160, guid: 5e3cc53138308f443b5cda5fecc0237f, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -6632591726027200803, guid: 5a640e2fe1409a14cb8cc4f575a186e6, type: 2}
     - target: {fileID: 3830424581423670024, guid: 5e3cc53138308f443b5cda5fecc0237f, type: 3}
       propertyPath: m_Colors.m_PressedColor.b
       value: 0.990566
@@ -1308,8 +1332,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3830424580590477160, guid: 5e3cc53138308f443b5cda5fecc0237f, type: 3}
       propertyPath: m_text
-      value: exit
+      value: EXIT
       objectReference: {fileID: 0}
+    - target: {fileID: 3830424580590477160, guid: 5e3cc53138308f443b5cda5fecc0237f, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 5a640e2fe1409a14cb8cc4f575a186e6, type: 2}
+    - target: {fileID: 3830424580590477160, guid: 5e3cc53138308f443b5cda5fecc0237f, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -6632591726027200803, guid: 5a640e2fe1409a14cb8cc4f575a186e6, type: 2}
     - target: {fileID: 3830424581423670024, guid: 5e3cc53138308f443b5cda5fecc0237f, type: 3}
       propertyPath: m_Colors.m_PressedColor.b
       value: 0.2588235
