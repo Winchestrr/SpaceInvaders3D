@@ -21,6 +21,7 @@ public class SoundManager : MonoBehaviour
     //AudioSource i s¹ podpiête do skryptu-matki, który jest na SoundManagerze
 
     public AudioSource shootSFX;
+    public AudioSource lowHealth;
 
     //public static AudioClip laserShot;
      //AudioSource audioSrc;
@@ -42,7 +43,11 @@ public class SoundManager : MonoBehaviour
         {
             case "shoot":
                 shootSFX.Play();
-                break;        
+                break;
+
+            case "lowHP":
+                lowHealth.Play();
+                break;
         }
     }
 }
