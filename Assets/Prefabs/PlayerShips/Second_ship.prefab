@@ -106,8 +106,9 @@ MonoBehaviour:
   stats: {fileID: 11400000, guid: 84cee9b425f2cbf49ac3053cfe1af25d, type: 2}
   levelController: {fileID: 0}
   contactParticlePrefab: {fileID: 0}
+  obstacleDamage: 20
   movX: 0
-  shipPositionClamp: 0
+  shipPositionClamp: 14.5
 --- !u!65 &6303463892257503709
 BoxCollider:
   m_ObjectHideFlags: 0
