@@ -6,6 +6,7 @@ public class BoogieMode : MonoBehaviour
 {
     public Light dirLight;
     public AudioSource boogieMusic;
+    public GameObject musicPlayer;
 
     public static bool boogieMode = false;
 
@@ -24,12 +25,8 @@ public class BoogieMode : MonoBehaviour
 
     private void BoogieModeON()
     {
+        boogieMode = true;
+        musicPlayer.SetActive(false);
         boogieMusic.Play();
-        InvokeRepeating("RandomLight", 0, (60f / 132f));
-    }
-
-    private void RandomLight()
-    {
-        dirLight.color = Random.ColorHSV(0, 1, 1, 1, 0, 1);
     }
 }

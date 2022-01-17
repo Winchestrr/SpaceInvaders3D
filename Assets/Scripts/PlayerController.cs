@@ -64,7 +64,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.contactCount > 0)
+        if (collision.contactCount > 0 && collision.gameObject.tag != "Bullet")
         {
             Debug.Log("particle: " + collision.contacts[0].point.ToString());
 

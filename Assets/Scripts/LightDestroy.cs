@@ -5,6 +5,7 @@ using UnityEngine;
 public class LightDestroy : MonoBehaviour
 {
     public Gradient lightColor;
+    public bool isAlreadyGroovin = false;
 
     private void Awake()
     {
@@ -14,5 +15,18 @@ public class LightDestroy : MonoBehaviour
     private void Update()
     {
         if (gameObject.transform.position.z <= -70) Destroy(gameObject);
+
+        if (BoogieMode.boogieMode && !isAlreadyGroovin) BoogieModeON();
+    }
+
+    private void BoogieModeON()
+    {
+        isAlreadyGroovin = true;
+        InvokeRepeating("RandomLight", 0, (60f / 132f));
+    }
+
+    private void RandomLight()
+    {
+        gameObject.GetComponent<Light>().color = Random.ColorHSV(0, 1, 1, 1, 0, 1);
     }
 }
