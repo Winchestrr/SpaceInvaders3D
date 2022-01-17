@@ -35,7 +35,6 @@ public class LevelController : MonoBehaviour
     [Header("Light")]
     public GameObject lightLeft;
     public GameObject lightRight;
-    public Gradient lightColor;
 
     //public delegate void SpeedChange(int speed);
     //public static event SpeedChange speedChange;
@@ -134,9 +133,6 @@ public class LevelController : MonoBehaviour
 
         if (leftOrRight) Instantiate(lightLeft, spawnPointLeft, lightLeft.transform.rotation, particleMover.transform);
         else Instantiate(lightRight, spawnPointRight, lightRight.transform.rotation, particleMover.transform);
-
-        //lightRight.GetComponent<Light>().color = lightColor.Evaluate((float)(Random.Range(0, 100) / 100));
-        //lightLeft.GetComponent<Light>().color = lightColor.Evaluate((float)(Random.Range(0, 100) / 100));
 
         leftOrRight = !leftOrRight;
     }

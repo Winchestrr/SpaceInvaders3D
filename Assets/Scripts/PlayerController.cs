@@ -70,7 +70,7 @@ public class PlayerController : MonoBehaviour
 
             contactParticle.gameObject.transform.position = collision.contacts[0].point;
             contactParticle.gameObject.transform.forward = collision.contacts[0].normal;
-            contactParticle.Emit(100);
+            contactParticle.Emit(Random.Range(30, 80));
         }
 
         switch (collision.gameObject.tag)

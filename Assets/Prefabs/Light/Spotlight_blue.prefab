@@ -45,14 +45,14 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 0.24056602, g: 0.4630242, b: 1, a: 1}
-  m_Intensity: 1000
+  m_Color: {r: 0.6983293, g: 0.3630523, b: 0.5763557, a: 1}
+  m_Intensity: 1200
   m_Range: 40.92418
-  m_SpotAngle: 128.21568
-  m_InnerSpotAngle: 111.31471
+  m_SpotAngle: 135.6185
+  m_InnerSpotAngle: 96.50909
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -110,7 +110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 1
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 1
   m_LightLayerMask: 1
   m_CustomShadowLayers: 0
   m_ShadowLayerMask: 1
@@ -128,3 +128,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c869beaf128640240a5ec215775589a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lightColor:
+    serializedVersion: 2
+    key0: {r: 0.5613208, g: 0.6912998, b: 1, a: 1}
+    key1: {r: 1, g: 0.4481132, b: 0.4481132, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
