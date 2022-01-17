@@ -130921,7 +130921,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4035350727181750759, guid: f6aadb96aef79c6449b6e1c7049f6350, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6aadb96aef79c6449b6e1c7049f6350, type: 3}
@@ -142053,6 +142053,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spotlight_purple
       objectReference: {fileID: 0}
+    - target: {fileID: 3864249910077402900, guid: 0fc7b678665d36b44811e5db82ca592b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3864249910077402903, guid: 0fc7b678665d36b44811e5db82ca592b, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -142154,6 +142158,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spotlight_blue
       objectReference: {fileID: 0}
+    - target: {fileID: 428282573231987366, guid: 59167882ebaa4c94d9152b3a70de29c3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59167882ebaa4c94d9152b3a70de29c3, type: 3}
 --- !u!1001 &1269081802617271397
@@ -142228,6 +142236,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spotlight_red
       objectReference: {fileID: 0}
+    - target: {fileID: 3026692758226882083, guid: 0af9dd1cb36958b43854a8026dee722e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3026692758226882094, guid: 0af9dd1cb36958b43854a8026dee722e, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -142288,6 +142300,10 @@ PrefabInstance:
     - target: {fileID: 3397810547565344393, guid: eeeba90ba5cb78d4d87798668d5480cd, type: 3}
       propertyPath: m_Name
       value: Orange_vol_light
+      objectReference: {fileID: 0}
+    - target: {fileID: 3397810547565344393, guid: eeeba90ba5cb78d4d87798668d5480cd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3397810547565344394, guid: eeeba90ba5cb78d4d87798668d5480cd, type: 3}
       propertyPath: m_Color.g
@@ -142454,6 +142470,10 @@ PrefabInstance:
     - target: {fileID: 5034856426616536066, guid: 7f78d490a61990140b9795eb3bad31dc, type: 3}
       propertyPath: m_Name
       value: lamp_placeholder
+      objectReference: {fileID: 0}
+    - target: {fileID: 5034856426616536066, guid: 7f78d490a61990140b9795eb3bad31dc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5662352469626349240, guid: 7f78d490a61990140b9795eb3bad31dc, type: 3}
       propertyPath: m_RootOrder

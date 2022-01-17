@@ -28,8 +28,14 @@ public class LevelController : MonoBehaviour
     public float levelSpeedDisplay;
 
     private bool isGenerated;
+    private bool leftOrRight;
 
     private Collider[] hitColliders;
+
+    [Header("Light")]
+    public GameObject lightLeft;
+    public GameObject lightRight;
+    public Gradient lightColor;
 
     //public delegate void SpeedChange(int speed);
     //public static event SpeedChange speedChange;
@@ -66,6 +72,8 @@ public class LevelController : MonoBehaviour
 
         GenerateFloor(tempTile);
         GenerateWalls(tempTile);
+        SpawnLight();
+
         if (isGenerated) SpawnPickups(pickups[Random.Range(0, pickups.Length)], tempTile.transform);
     }
 
@@ -115,6 +123,22 @@ public class LevelController : MonoBehaviour
 
             Instantiate(pickup, spawnPoint, transform.rotation, parent);
         }
+    }
+
+    void SpawnLight()
+    {
+        float spawnZ = tileLength * floorSubtileSize * (numberOfTiles - 1);
+
+        Vector3 spawnPointLeft = new Vector3(gameObject.transform.position.x - 1, 27f, spawnZ);
+        Vector3 spawnPointRight = new Vector3(gameObject.transform.position.x + 1, 27f, spawnZ);
+
+        if (leftOrRight) Instantiate(lightLeft, spawnPointLeft, lightLeft.transform.rotation, particleMover.transform);
+        else Instantiate(lightRight, spawnPointRight, lightRight.transform.rotation, particleMover.transform);
+
+        //lightRight.GetComponent<Light>().color = lightColor.Evaluate((float)(Random.Range(0, 100) / 100));
+        //lightLeft.GetComponent<Light>().color = lightColor.Evaluate((float)(Random.Range(0, 100) / 100));
+
+        leftOrRight = !leftOrRight;
     }
 
     #endregion
