@@ -22,7 +22,10 @@ public class SoundManager : MonoBehaviour
 
     public AudioSource shootSFX;
     public AudioSource lowHealth;
-
+    public AudioSource homingMisile;
+    public AudioSource shipExplosion;
+    public AudioSource shipEngine;
+    
     //public static AudioClip laserShot;
      //AudioSource audioSrc;
 
@@ -48,6 +51,19 @@ public class SoundManager : MonoBehaviour
             case "lowHP":
                 lowHealth.Play();
                 break;
+
+            case "homingMisile":
+                homingMisile.Play();
+                break;
+
+            case "explosion":
+                shipExplosion.Play();
+                break;
+
+            case "engine":
+                shipEngine.Play();
+                break;
+
         }
     }
 }
