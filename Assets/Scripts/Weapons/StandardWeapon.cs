@@ -8,6 +8,8 @@ public class StandardWeapon : GunBase
     {
         base.Shoot();
 
+        //SoundManager.PlaySound("shoot");
+
         GameObject shotBullet = Instantiate(bullet, gunEnd.position, transform.rotation);
         shotBullet.GetComponent<BulletBase>().Launch(damage, bulletSpeed);
     }

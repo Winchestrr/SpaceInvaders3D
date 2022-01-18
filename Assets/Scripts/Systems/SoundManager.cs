@@ -20,48 +20,46 @@ public class SoundManager : MonoBehaviour
     //skrypt SoundManager jest tylko na obiekcie SoundManager. ka¿dy kolejny dŸwiêk to kolejny obiekt pod SoundManager - te obiekty maj¹ tylko
     //AudioSource i s¹ podpiête do skryptu-matki, który jest na SoundManagerze
 
+    public static SoundManager instance;
+
     public AudioSource shootSFX;
     public AudioSource lowHealth;
     public AudioSource homingMisile;
     public AudioSource shipExplosion;
     public AudioSource shipEngine;
-    
-    //public static AudioClip laserShot;
-     //AudioSource audioSrc;
 
-    void Start()
+    void Awake()
     {
-      
-        // laserShot = SFX.Load<AudioCLip>("LaserShot")
-       // audioSrc = GetComponent<AudioSource>();
+        if (instance == null) instance = this;
+        else Debug.LogError("Instance problem");
     }
 
     void Update()
     {
         //if (Input.GetKeyDown(KeyCode.P)) PlaySound("shoot");
     }
-    public void PlaySound (string clip)
+    public static void PlaySound (string clip)
     {
         switch (clip)
         {
             case "shoot":
-                shootSFX.Play();
+                instance.shootSFX.Play();
                 break;
 
             case "lowHP":
-                lowHealth.Play();
+                instance.lowHealth.Play();
                 break;
 
             case "homingMisile":
-                homingMisile.Play();
+                instance.homingMisile.Play();
                 break;
 
             case "explosion":
-                shipExplosion.Play();
+                instance.shipExplosion.Play();
                 break;
 
             case "engine":
-                shipEngine.Play();
+                instance.shipEngine.Play();
                 break;
 
         }

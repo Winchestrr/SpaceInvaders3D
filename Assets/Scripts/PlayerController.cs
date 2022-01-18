@@ -40,11 +40,16 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        //contactParticle = Instantiate(
+        //    contactParticlePrefab,
+        //    transform.position,
+        //    transform.rotation,
+        //    particleMover.transform);
+
         contactParticle = Instantiate(
             contactParticlePrefab,
             transform.position,
-            transform.rotation,
-            particleMover.transform);
+            transform.rotation);
 
         //contactParticle.Stop();
         levelController = FindObjectOfType<LevelController>();
@@ -60,6 +65,8 @@ public class PlayerController : MonoBehaviour
         PlayerMove();
         SetRotation();
         CheckLimits();
+
+        if (playerHealth <= (stats.startHealth / 3)) StartCoroutine(LowHPSound());
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -85,11 +92,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnCollisionExit(Collision collision)
-    {
-        //contactParticle.Stop();
-    }
-
     private void OnTriggerEnter(Collider target)
     {
         switch(target.tag)
@@ -111,6 +113,20 @@ public class PlayerController : MonoBehaviour
         if (playerHealth <= 0)
         {
             GameController.GameOver();
+        }
+    }
+
+    private IEnumerator LowHPSound()
+    {
+        Debug.Log("ie works");
+
+        if(playerHealth <= (stats.startHealth / 3))
+        {
+            Debug.Log("warunek dziala");
+
+            //SoundManager.PlaySound("lowHP");
+            yield return new WaitWhile(() => SoundManager.instance.lowHealth.isPlaying);
+            StartCoroutine(LowHPSound());
         }
     }
 

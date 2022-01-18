@@ -82,19 +82,13 @@ public class EnemyBase : MonoBehaviour
 
     protected void CastRay()
     {
-        //Debug.DrawRay(transform.position, transform.forward * rayDistance, Color.green);
+        Debug.DrawRay(transform.position, transform.forward * rayDistance, Color.green);
         if (Physics.Raycast(transform.position, transform.forward, out hitInfo, rayDistance, castingLayer))
         {
             if(isDebug) Debug.Log("hit");
 
-            if(hitInfo.transform.gameObject.tag == "Player")
-            {
-                isPlayerHit = true;
-            }
-            else
-            {
-                isPlayerHit = false;
-            }
+            if(hitInfo.transform.gameObject.tag == "Player") isPlayerHit = true; 
+            else isPlayerHit = false;
         }
     }
 }

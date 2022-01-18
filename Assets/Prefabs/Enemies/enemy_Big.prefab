@@ -435,11 +435,11 @@ MonoBehaviour:
   healthBar: {fileID: 8975959448820700387}
   stats: {fileID: 11400000, guid: 885228130d5cee242a4e96e44facf27d, type: 2}
   isDebug: 0
-  rayDistance: 1000
+  rayDistance: 200
   isPlayerHit: 0
   castingLayer:
     serializedVersion: 2
-    m_Bits: 1591
+    m_Bits: 1719
   currentWeapon: {fileID: 2644161806934361896}
 --- !u!65 &3605423918516116651
 BoxCollider:
@@ -520,6 +520,22 @@ PrefabInstance:
     - target: {fileID: 256224879861134967, guid: f5e7a7c24192f3041bda29bd83b20349, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3319237668823820372, guid: f5e7a7c24192f3041bda29bd83b20349, type: 3}
+      propertyPath: damage
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3319237668823820372, guid: f5e7a7c24192f3041bda29bd83b20349, type: 3}
+      propertyPath: haveParticles
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3319237668823820372, guid: f5e7a7c24192f3041bda29bd83b20349, type: 3}
+      propertyPath: shootParticles
+      value: 
+      objectReference: {fileID: 4306813012167626786, guid: 7970e14c856e6e5419683e499af30fb3, type: 3}
+    - target: {fileID: 3319237668823820372, guid: f5e7a7c24192f3041bda29bd83b20349, type: 3}
+      propertyPath: timeBetweenShots
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4590710077573779035, guid: f5e7a7c24192f3041bda29bd83b20349, type: 3}
       propertyPath: m_LocalPosition.z
