@@ -27,6 +27,7 @@ public class SoundManager : MonoBehaviour
     public AudioSource homingMisile;
     public AudioSource shipExplosion;
     public AudioSource shipEngine;
+    public AudioSource uiClick;
 
     void Awake()
     {
@@ -60,6 +61,9 @@ public class SoundManager : MonoBehaviour
 
             case "engine":
                 instance.shipEngine.Play();
+                break;
+            case "click":
+                instance.uiClick.Play();
                 break;
 
         }
