@@ -8,6 +8,7 @@ public class ButtonsManager : MonoBehaviour
 {
     public Slider sfxSlider;
     public Slider musicSlider;
+    public Toggle toggle;
 
     private void Awake()
     {
@@ -17,6 +18,13 @@ public class ButtonsManager : MonoBehaviour
         {
             sfxSlider = GameObject.Find("SFX_slider").GetComponent<Slider>();
             musicSlider = GameObject.Find("Music_slider").GetComponent<Slider>();
+            toggle = GameObject.Find("Toggle").GetComponent<Toggle>();
+
+            sfxSlider.value = PlayerPrefs.GetFloat("sfxVolume");
+            musicSlider.value = PlayerPrefs.GetFloat("musicVolume");
+
+            if (SaveData.isBoogie) toggle.isOn = true;
+            else toggle.isOn = false;
         }
     }
 
@@ -78,5 +86,11 @@ public class ButtonsManager : MonoBehaviour
                 break;
 
         }
+    }
+
+    public void BoogieToggle()
+    {
+        if (toggle.isOn == true) SaveData.isBoogie = true;
+        else SaveData.isBoogie = false;
     }
 }

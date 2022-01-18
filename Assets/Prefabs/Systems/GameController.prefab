@@ -52,6 +52,7 @@ MonoBehaviour:
   - {fileID: 3429273752451055058, guid: a4251eb923ff1f3428598844514fe57a, type: 3}
   currentPlayerShip: {fileID: 0}
   virtualCamera: {fileID: 0}
+  boogie: {fileID: 0}
   canvasAnimator: {fileID: 0}
   dreamlo: {fileID: 0}
   chosenShipIndex: 1

@@ -15,5 +15,5 @@ public static class SaveData
     //settings
     public static float musicLevel { get; set; }
     public static float sfxLevel { get; set; }
-    public static string graphicsQuality { get; set; }
+    public static bool isBoogie { get; set; }
 }

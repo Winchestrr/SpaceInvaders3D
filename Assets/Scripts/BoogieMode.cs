@@ -8,8 +8,6 @@ public class BoogieMode : MonoBehaviour
     public AudioSource boogieMusic;
     public GameObject musicPlayer;
 
-    public static bool boogieMode = false;
-
     private void Start()
     {
         
@@ -23,9 +21,9 @@ public class BoogieMode : MonoBehaviour
         }
     }
 
-    private void BoogieModeON()
+    public void BoogieModeON()
     {
-        boogieMode = true;
+        SaveData.isBoogie = true;
         musicPlayer.SetActive(false);
         boogieMusic.Play();
     }

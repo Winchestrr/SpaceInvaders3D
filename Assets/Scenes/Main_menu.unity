@@ -368,6 +368,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sfxSlider: {fileID: 0}
   musicSlider: {fileID: 0}
+  toggle: {fileID: 0}
 --- !u!1 &354725047
 GameObject:
   m_ObjectHideFlags: 0
@@ -451,9 +452,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 5a640e2fe1409a14cb8cc4f575a186e6, type: 2}
     - target: {fileID: 3830424580590477160, guid: 5e3cc53138308f443b5cda5fecc0237f, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3830424580590477160, guid: 5e3cc53138308f443b5cda5fecc0237f, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3830424580590477160, guid: 5e3cc53138308f443b5cda5fecc0237f, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3830424580590477160, guid: 5e3cc53138308f443b5cda5fecc0237f, type: 3}
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: -6632591726027200803, guid: 5a640e2fe1409a14cb8cc4f575a186e6, type: 2}
+    - target: {fileID: 3830424580590477160, guid: 5e3cc53138308f443b5cda5fecc0237f, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
+      objectReference: {fileID: 0}
     - target: {fileID: 3830424581423670024, guid: 5e3cc53138308f443b5cda5fecc0237f, type: 3}
       propertyPath: m_Colors.m_PressedColor.b
       value: 0.990566
@@ -868,9 +885,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 5a640e2fe1409a14cb8cc4f575a186e6, type: 2}
     - target: {fileID: 3830424580590477160, guid: 5e3cc53138308f443b5cda5fecc0237f, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3830424580590477160, guid: 5e3cc53138308f443b5cda5fecc0237f, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3830424580590477160, guid: 5e3cc53138308f443b5cda5fecc0237f, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3830424580590477160, guid: 5e3cc53138308f443b5cda5fecc0237f, type: 3}
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: -6632591726027200803, guid: 5a640e2fe1409a14cb8cc4f575a186e6, type: 2}
+    - target: {fileID: 3830424580590477160, guid: 5e3cc53138308f443b5cda5fecc0237f, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4280427085
+      objectReference: {fileID: 0}
     - target: {fileID: 3830424581423670024, guid: 5e3cc53138308f443b5cda5fecc0237f, type: 3}
       propertyPath: m_Colors.m_PressedColor.b
       value: 0.990566
@@ -1037,9 +1070,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 5a640e2fe1409a14cb8cc4f575a186e6, type: 2}
     - target: {fileID: 3830424580590477160, guid: 5e3cc53138308f443b5cda5fecc0237f, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3830424580590477160, guid: 5e3cc53138308f443b5cda5fecc0237f, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3830424580590477160, guid: 5e3cc53138308f443b5cda5fecc0237f, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3830424580590477160, guid: 5e3cc53138308f443b5cda5fecc0237f, type: 3}
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: -6632591726027200803, guid: 5a640e2fe1409a14cb8cc4f575a186e6, type: 2}
+    - target: {fileID: 3830424580590477160, guid: 5e3cc53138308f443b5cda5fecc0237f, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4280427085
+      objectReference: {fileID: 0}
     - target: {fileID: 3830424581423670024, guid: 5e3cc53138308f443b5cda5fecc0237f, type: 3}
       propertyPath: m_Colors.m_PressedColor.b
       value: 0.990566
@@ -1339,9 +1388,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 5a640e2fe1409a14cb8cc4f575a186e6, type: 2}
     - target: {fileID: 3830424580590477160, guid: 5e3cc53138308f443b5cda5fecc0237f, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3830424580590477160, guid: 5e3cc53138308f443b5cda5fecc0237f, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3830424580590477160, guid: 5e3cc53138308f443b5cda5fecc0237f, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3830424580590477160, guid: 5e3cc53138308f443b5cda5fecc0237f, type: 3}
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: -6632591726027200803, guid: 5a640e2fe1409a14cb8cc4f575a186e6, type: 2}
+    - target: {fileID: 3830424580590477160, guid: 5e3cc53138308f443b5cda5fecc0237f, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4280427085
+      objectReference: {fileID: 0}
     - target: {fileID: 3830424581423670024, guid: 5e3cc53138308f443b5cda5fecc0237f, type: 3}
       propertyPath: m_Colors.m_PressedColor.b
       value: 0.2588235

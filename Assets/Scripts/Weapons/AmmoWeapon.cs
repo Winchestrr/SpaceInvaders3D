@@ -55,16 +55,11 @@ public class AmmoWeapon : GunBase
             StartCoroutine(Reload());
         }
 
-        if (isMagazineEmpty && isReloadable)
+        if (isMagazineEmpty && isReloadable && uiController.canCheckReload)
         {
             uiController.reloadTextGO.SetActive(true);
         }
     }
-
-    //internal void SetAmount()
-    //{
-
-    //}
 
     protected override void Shoot()
     {
@@ -83,14 +78,7 @@ public class AmmoWeapon : GunBase
                 //reload allert true
             }
 
-            if(allBullets <= 0)
-            {
-                weaponSystem.RemoveWeapon(this.gameObject);
-            }
-            //else if(bulletsLeft == 0)
-            //{
-            //    weaponSystem.RemoveWeapon(gameObject);
-            //}
+            if(allBullets <= 0) weaponSystem.RemoveWeapon(this.gameObject);
         }
     }
 
@@ -113,6 +101,6 @@ public class AmmoWeapon : GunBase
             isShooting = true;
             canReload = true;
         }
-        else { yield break; }
+        else yield break;
     }
 }

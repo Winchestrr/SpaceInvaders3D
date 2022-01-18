@@ -16,7 +16,7 @@ public class LightDestroy : MonoBehaviour
     {
         if (gameObject.transform.position.z <= -70) Destroy(gameObject);
 
-        if (BoogieMode.boogieMode && !isAlreadyGroovin) BoogieModeON();
+        if (SaveData.isBoogie && !isAlreadyGroovin) BoogieModeON();
     }
 
     private void BoogieModeON()

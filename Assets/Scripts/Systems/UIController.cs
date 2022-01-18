@@ -21,6 +21,7 @@ public class UIController : MonoBehaviour
     public Text reloadText;
     public GameObject reloadBarGO;
     public Image reloadBar;
+    public bool canCheckReload;
 
     [Header("Systems")]
     public GameController gameController;
@@ -168,6 +169,7 @@ public class UIController : MonoBehaviour
 
     public IEnumerator ReloadBar()
     {
+        canCheckReload = false;
         reloadTextGO.SetActive(false);
         reloadBarGO.SetActive(true);
         reloadBar.fillAmount = 0;
@@ -179,6 +181,7 @@ public class UIController : MonoBehaviour
         }
 
         reloadBarGO.SetActive(false);
+        canCheckReload = true;
     }
 
     public static void Pause()

@@ -14,6 +14,7 @@ public class GameController : MonoBehaviour
     public GameObject[] playerShips;
     public GameObject currentPlayerShip;
     public CinemachineVirtualCamera virtualCamera;
+    public BoogieMode boogie;
     public Animator canvasAnimator;
     public dreamloLeaderBoard dreamlo;
 
@@ -48,8 +49,7 @@ public class GameController : MonoBehaviour
         chosenShipIndex = SaveData.chosenShip;
         currentPlayerShip = InstantiatePlayerShip(playerShips[chosenShipIndex]);
 
-        //testowo
-        playerName = "LB_TEST";
+        if (SaveData.isBoogie) boogie.BoogieModeON();
     }
 
     //test

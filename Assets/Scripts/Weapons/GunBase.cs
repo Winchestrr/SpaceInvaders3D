@@ -24,16 +24,12 @@ public class GunBase : MonoBehaviour
 
     public virtual void TryShoot()
     {
-        if(CanShoot())
-        {
-            Shoot();
-        }    
+        if(CanShoot()) Shoot();
     }
 
     protected virtual void Shoot()
     {
         lastShotTime = Time.time;
-        //play gunshot audio
 
         if (haveParticles) Instantiate(shootParticles, gunEnd.position, gunEnd.rotation, gunEnd.transform);
     }
