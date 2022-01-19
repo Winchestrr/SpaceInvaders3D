@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoubleGun : AmmoWeapon
+public class DoubleGun : AmmoWeapon2
 {
     [SerializeField] private Transform gunEnd2;
 
@@ -11,7 +11,7 @@ public class DoubleGun : AmmoWeapon
         if (bulletsLeft > 0)
         {
             isMagazineEmpty = false;
-            bulletsLeft -= ammoCost;
+            bulletsLeft--;
 
             base.Shoot();
 
@@ -22,15 +22,16 @@ public class DoubleGun : AmmoWeapon
             shotBullet2.GetComponent<StandardBullet>().Launch(damage, bulletSpeed);
 
 
-            if (bulletsLeft == 0 && isReloadable)
+            if (bulletsInMagazine <= 0 && isReloadable)
             {
+                bulletsInMagazine = 0;
                 isMagazineEmpty = true;
-                //reload allert true
-            }
-            else if(bulletsLeft == 0 && allBullets == 0)
-            {
-                weaponSystem.RemoveWeapon(gameObject);
-                isMagazineEmpty = true;
+
+                if (bulletsLeft <= 0)
+                {
+                    Debug.Log("remove weapon");
+                    weaponSystem.RemoveWeapon(this.gameObject);
+                }
             }
         }
     }

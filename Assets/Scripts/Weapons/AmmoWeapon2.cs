@@ -5,7 +5,7 @@ using UnityEngine;
 public class AmmoWeapon2 : GunBase
 {
     [Header("Systems")]
-    private WeaponSystem weaponSystem;
+    protected WeaponSystem weaponSystem;
     private UIController uiController;
 
     [Header("General")]
@@ -25,6 +25,31 @@ public class AmmoWeapon2 : GunBase
     {
         uiController = FindObjectOfType<UIController>();
         weaponSystem = FindObjectOfType<WeaponSystem>();
+
+        uiController.ammoWeapon = this;
+        uiController.ammoWeaponGO = this.gameObject;
+        uiController.canCheckReload = true;
+
+        UIController.isNumber = true;
+        uiController.NumbersInfinityChange();
+    }
+
+    private void OnEnable()
+    {
+        uiController.ammoCounterGO.SetActive(true);
+        if (bulletsInMagazine == 0) uiController.reloadTextGO.SetActive(true);
+    }
+
+    private void OnDisable()
+    {
+        if (uiController.ammoCounterGO != null) uiController.ammoCounterGO.SetActive(false);
+        if (uiController.reloadTextGO != null) uiController.reloadTextGO.SetActive(false);
+
+        if (!canReload)
+        {
+            uiController.StopReload();
+            canReload = true;
+        }
     }
 
     private void Update()
@@ -32,6 +57,11 @@ public class AmmoWeapon2 : GunBase
         if(Input.GetKeyDown(KeyCode.R) && isReloadable && canReload)
         {
             StartCoroutine(Reload());
+        }
+
+        if(isMagazineEmpty && isReloadable &&uiController.canCheckReload)
+        {
+            uiController.reloadTextGO.SetActive(true);
         }
     }
 
@@ -54,7 +84,7 @@ public class AmmoWeapon2 : GunBase
                 if(bulletsLeft <= 0)
                 {
                     Debug.Log("remove weapon");
-                    //weaponSystem.RemoveWeapon(this.gameObject);
+                    weaponSystem.RemoveWeapon(this.gameObject);
                 }
             }
         }
@@ -67,11 +97,20 @@ public class AmmoWeapon2 : GunBase
             isShooting = false;
             canReload = false;
 
-            //yield return StartCoroutine(uiController.ReloadBar());
-            yield return new WaitForSeconds(reloadTime);
+            yield return StartCoroutine(uiController.ReloadBar());
+            //yield return new WaitForSeconds(reloadTime);
 
-            bulletsLeft -= (magazineSize - bulletsInMagazine);
-            bulletsInMagazine = (magazineSize - bulletsInMagazine);
+            if(bulletsLeft <= magazineSize)
+            {
+                bulletsInMagazine += bulletsLeft;
+                bulletsLeft = 0;
+            }
+            else
+            {
+                bulletsLeft -= (magazineSize - bulletsInMagazine);
+                bulletsInMagazine += (magazineSize - bulletsInMagazine);
+            }
+            
             isMagazineEmpty = false;
 
             if (bulletsLeft <= 0) bulletsLeft = 0;

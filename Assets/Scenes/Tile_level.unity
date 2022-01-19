@@ -921,11 +921,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 428282573231987365, guid: 59167882ebaa4c94d9152b3a70de29c3, type: 3}
   m_PrefabInstance: {fileID: 84266136}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &996529280 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5960009424702059079, guid: 5ceba98fd9ff4264cb45ac81bcacab9a, type: 3}
-  m_PrefabInstance: {fileID: 1427641163}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1027377826 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 428282573231987365, guid: 59167882ebaa4c94d9152b3a70de29c3, type: 3}
@@ -1342,10 +1337,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3043666137843509790, guid: 5ceba98fd9ff4264cb45ac81bcacab9a, type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 4294967295
-      objectReference: {fileID: 0}
     - target: {fileID: 6009163222851153428, guid: 5ceba98fd9ff4264cb45ac81bcacab9a, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1430,10 +1421,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6009163222851153431, guid: 5ceba98fd9ff4264cb45ac81bcacab9a, type: 3}
-      propertyPath: uploadStuff
-      value: 
-      objectReference: {fileID: 996529280}
     - target: {fileID: 6009163222851153432, guid: 5ceba98fd9ff4264cb45ac81bcacab9a, type: 3}
       propertyPath: m_Name
       value: Canvas

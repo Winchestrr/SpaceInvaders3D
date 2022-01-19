@@ -11,10 +11,18 @@ public class UIController : MonoBehaviour
 
     [Header("Weapons")]
     public GameObject ammoWeaponGO;
-    public AmmoWeapon ammoWeapon;
+    public AmmoWeapon2 ammoWeapon;
     public GameObject ammoCounterGO;
     public TextMeshProUGUI currentBulletText;
     public TextMeshProUGUI leftBulletsText;
+    public GameObject infinities;
+    public static bool isNumber;
+
+    [Header("Weapon icons")]
+    public Image standardIcon;
+    public Image doubleIcon;
+    public Image homingIcon;
+    public Image[] iconList;
 
     [Header("Reload")]
     public GameObject reloadTextGO;
@@ -57,8 +65,13 @@ public class UIController : MonoBehaviour
 
         dreamlo = dreamloLeaderBoard.GetSceneDreamloLeaderboard();
 
-        if (SaveData.chosenShip == 1) ammoCounterGO.SetActive(true);
-        else ammoCounterGO.SetActive(false);
+        if (ammoWeaponGO == null) ammoCounterGO.SetActive(false);
+        else ammoWeaponGO.SetActive(true);
+
+        NumbersInfinityChange();
+
+        //if (SaveData.chosenShip == 1) ammoCounterGO.SetActive(true);
+        //else ammoCounterGO.SetActive(false);
     }
 
     #region ---EVENT_ASSIGN---
@@ -100,8 +113,8 @@ public class UIController : MonoBehaviour
 
         if (ammoWeaponGO != null)
         {
-            currentBulletText.text = ammoWeapon.bulletsLeft.ToString("000");
-            leftBulletsText.text = ammoWeapon.allBullets.ToString("000");
+            currentBulletText.text = ammoWeapon.bulletsInMagazine.ToString("000");
+            leftBulletsText.text = ammoWeapon.bulletsLeft.ToString("000");
         }
 
         healthBar.fillAmount = (float)PlayerController.playerHealth / (float)PlayerController.maxHealth;
@@ -183,6 +196,38 @@ public class UIController : MonoBehaviour
 
         reloadBarGO.SetActive(false);
         canCheckReload = true;
+    }
+
+    public void StopReload()
+    {
+        StopCoroutine(ReloadBar());
+        reloadBar.fillAmount = 0;
+        reloadBarGO.SetActive(false);
+        canCheckReload = true;
+    }
+
+    public void SetWeaponIcon(int number)
+    {
+        foreach(Image icon in iconList)
+        {
+            icon.gameObject.SetActive(false);
+        }
+
+        iconList[number].gameObject.SetActive(true);
+    }
+
+    public void NumbersInfinityChange()
+    {
+        if(!isNumber)
+        {
+            ammoCounterGO.SetActive(false);
+            infinities.SetActive(true);
+        }
+        else
+        {
+            infinities.SetActive(false);
+            ammoCounterGO.SetActive(true);
+        }
     }
 
     public static void Pause()

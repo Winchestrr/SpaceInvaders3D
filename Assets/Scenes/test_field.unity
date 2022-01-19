@@ -48315,38 +48315,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 750978408}
   m_Mesh: {fileID: 3996192141481870390, guid: f4158938c994abf4899ae1fa106cc5c8, type: 3}
---- !u!1 &751187082 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4948116410171917463, guid: f6aadb96aef79c6449b6e1c7049f6350, type: 3}
-  m_PrefabInstance: {fileID: 1981746553}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &751187084
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 751187082}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac034ff52e897714e95a0163dc70209e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gunEnd: {fileID: 833495126}
-  bullet: {fileID: 2944955773603090048, guid: 7b78021aac6ec2c409cfb7500fc54f1a, type: 3}
-  shootParticles: {fileID: 4953092824319545208, guid: bad3b2094babd944ca881c48c864786e, type: 3}
-  damage: 35
-  bulletSpeed: 18
-  timeBetweenShots: 0.24
-  haveParticles: 1
-  isShooting: 1
-  canReload: 1
-  bulletsInMagazine: 4
-  bulletsLeft: 90
-  magazineSize: 4
-  isMagazineEmpty: 0
-  reloadTime: 2
-  isReloadable: 1
 --- !u!1 &751970157
 GameObject:
   m_ObjectHideFlags: 0
@@ -54703,11 +54671,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 833139309}
   m_Mesh: {fileID: -3415834014019632369, guid: 4121648ce3c192240ab1bc1e5e3eab90, type: 3}
---- !u!4 &833495126 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7110946200996868672, guid: f6aadb96aef79c6449b6e1c7049f6350, type: 3}
-  m_PrefabInstance: {fileID: 1981746553}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &836588693
 GameObject:
   m_ObjectHideFlags: 0
@@ -130455,8 +130418,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Standard_ship
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1255090632441998350, guid: f6aadb96aef79c6449b6e1c7049f6350, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6aadb96aef79c6449b6e1c7049f6350, type: 3}
 --- !u!1 &1982938484
 GameObject:

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class WeaponSystem : MonoBehaviour
 {
+    private UIController uiController;
     public List<GunBase> weapons;
     public Transform weaponHolder;
 
@@ -11,6 +12,8 @@ public class WeaponSystem : MonoBehaviour
 
     private void Start()
     {
+        uiController = FindObjectOfType<UIController>();
+
         GunBase[] tmpWeapons = GetComponentsInChildren<GunBase>(true);
         foreach(GunBase weapon in tmpWeapons)
         {
@@ -28,6 +31,8 @@ public class WeaponSystem : MonoBehaviour
         weapons[currentWeaponIndex].gameObject.SetActive(false);
         currentWeaponIndex = newWeaponIndex;
         weapons[currentWeaponIndex].gameObject.SetActive(true);
+
+        uiController.SetWeaponIcon(newWeaponIndex);
     }
 
     public void NextWeapon()
@@ -61,6 +66,7 @@ public class WeaponSystem : MonoBehaviour
     {
         weapons.Remove(weapon.GetComponent<GunBase>());
         currentWeaponIndex--;
+
         Destroy(weapon);
     }
 }

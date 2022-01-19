@@ -24,9 +24,11 @@ public class AmmoWeapon : GunBase
     {
         uiController = FindObjectOfType<UIController>();
         weaponSystem = FindObjectOfType<WeaponSystem>();
-        uiController.ammoWeapon = this;
-        uiController.ammoWeaponGO = this.gameObject;
+        //uiController.ammoWeapon = this;
+        //uiController.ammoWeaponGO = this.gameObject;
         uiController.canCheckReload = true;
+
+        
     }
 
     private void OnEnable()
