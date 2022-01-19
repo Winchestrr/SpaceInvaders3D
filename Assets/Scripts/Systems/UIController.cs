@@ -48,6 +48,7 @@ public class UIController : MonoBehaviour
     public TextMeshProUGUI lbTime;
     public TMP_InputField nameInput;
     public Button uploadButton;
+    public GameObject uploadStuff;
 
     private void Awake()
     {
@@ -126,7 +127,7 @@ public class UIController : MonoBehaviour
     public IEnumerator UploadAndGetScoresIE()
     {
 
-        uploadButton.interactable = false;
+        uploadStuff.SetActive(false);
         leaderboardGO.SetActive(true);
 
         dreamlo.AddScore(

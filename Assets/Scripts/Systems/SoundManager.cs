@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
+    #region TUTORIAL
     //szybki tutorial jak dodawaæ kolejne dŸwiêki, bo ju¿ ogarn¹³em co tam nie dzia³a³o
     //  1. klikasz prawym na obiekt SoundManager na scenie -> create empty
     //  2. nazywasz ten obiekt tak jak nazwa SFXu
@@ -19,6 +20,7 @@ public class SoundManager : MonoBehaviour
 
     //skrypt SoundManager jest tylko na obiekcie SoundManager. ka¿dy kolejny dŸwiêk to kolejny obiekt pod SoundManager - te obiekty maj¹ tylko
     //AudioSource i s¹ podpiête do skryptu-matki, który jest na SoundManagerze
+    #endregion
 
     public static SoundManager instance;
 
@@ -28,17 +30,18 @@ public class SoundManager : MonoBehaviour
     public AudioSource shipExplosion;
     public AudioSource shipEngine;
     public AudioSource uiClick;
+    public AudioSource buttonHover;
 
     void Awake()
     {
         if (instance == null) instance = this;
-        else Debug.LogError("Instance problem");
+        //else Debug.LogError("Instance problem");
+        else return;
+
+        //if(GameObject.Find("SoundManager") == null) DontDestroyOnLoad(this.gameObject);
+        DontDestroyOnLoad(this.gameObject);
     }
 
-    void Update()
-    {
-        //if (Input.GetKeyDown(KeyCode.P)) PlaySound("shoot");
-    }
     public static void PlaySound (string clip)
     {
         switch (clip)
@@ -62,8 +65,13 @@ public class SoundManager : MonoBehaviour
             case "engine":
                 instance.shipEngine.Play();
                 break;
+
             case "click":
                 instance.uiClick.Play();
+                break;
+
+            case "hover":
+                instance.buttonHover.Play();
                 break;
 
         }

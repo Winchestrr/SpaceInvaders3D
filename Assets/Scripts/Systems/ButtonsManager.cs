@@ -30,6 +30,8 @@ public class ButtonsManager : MonoBehaviour
 
     public void OnAnyMenuButton(string name)
     {
+        SoundManager.PlaySound("click");
+
         switch(name)
         {
             case "menu":
