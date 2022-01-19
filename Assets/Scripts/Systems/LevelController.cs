@@ -8,6 +8,8 @@ public class LevelController : MonoBehaviour
 
     public GameObject[] wallsSubtiles;
     public GameObject[] floorSubtiles;
+    public GameObject[] litSubtiles;
+    private GameObject[] currentSubtiles;
     public GameObject levelTile;
     public GameObject[] pickups;
     public GameObject particleMover;
@@ -84,12 +86,15 @@ public class LevelController : MonoBehaviour
             {
                 wallPosX = ((floorWidth / 2) * floorSubtileSize);
 
-                Instantiate(wallsSubtiles[Random.Range(0, wallsSubtiles.Length)],
+                if (Random.Range(0, 100) <= 90) currentSubtiles = wallsSubtiles;
+                else currentSubtiles = litSubtiles;
+
+                Instantiate(currentSubtiles[Random.Range(0, currentSubtiles.Length)],
                     new Vector3(-wallPosX, (wallSubtileSize * j) + 1, (wallSubtileSize * i)) + parent.transform.position,
                     Quaternion.Euler(new Vector3(0, 0, -90)),
                     parent.transform);
 
-                Instantiate(wallsSubtiles[Random.Range(0, wallsSubtiles.Length)],
+                Instantiate(currentSubtiles[Random.Range(0, currentSubtiles.Length)],
                     new Vector3(wallPosX, (wallSubtileSize * j) + 1, (wallSubtileSize * i)) + parent.transform.position,
                     Quaternion.Euler(new Vector3(180, 0, 90)),
                     parent.transform);
