@@ -54,6 +54,8 @@ public class GameController : MonoBehaviour
 
     private void OnEnable()
     {
+        if (MusicPlayer.instance.levelMusic.isPlaying == true) return;
+
         MusicPlayer.MenuMusicPlay(false);
         MusicPlayer.LevelMusicPlay(true);
     }

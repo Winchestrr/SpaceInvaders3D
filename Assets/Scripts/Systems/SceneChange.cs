@@ -13,7 +13,6 @@ public class SceneChange : MonoBehaviour
     private void Awake()
     {
         if (instance == null) instance = this;
-        //else Debug.LogError("Instance problem");
     }
 
     public void ChooseShip(int ship)
@@ -30,6 +29,7 @@ public class SceneChange : MonoBehaviour
 
     public void EndAnimationChangeScene()
     {
+        MusicPlayer.previousScene = SceneManager.GetActiveScene().name;
         switch(sceneToChange)
         {
             case "menu":

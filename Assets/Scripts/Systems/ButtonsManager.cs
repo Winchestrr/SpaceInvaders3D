@@ -47,6 +47,7 @@ public class ButtonsManager : MonoBehaviour
                 GameStatsSystem.points = 0;
                 EnemySpawner.canSpawn = true;
                 Time.timeScale = 1;
+                MusicPlayer.MusicSpeedReset();
                 break;
 
             case "credits":

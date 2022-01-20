@@ -18,6 +18,8 @@ public class MusicPlayer : MonoBehaviour
     [Range(0, 5)]
     public float pitchSpeed;
 
+    public static string previousScene;
+
 
     private void Awake()
     {
@@ -30,7 +32,14 @@ public class MusicPlayer : MonoBehaviour
 
         LevelMusicPlay(false);
 
-        
+        Debug.Log(menuMusic.isPlaying);
+
+        if (SceneManager.GetActiveScene().name == "Main_Menu" &&
+            menuMusic.isPlaying == false &&
+            previousScene == "Tile_level")
+        {
+            MenuMusicPlay(true);
+        }
     }
 
     private void OnEnable()
@@ -40,10 +49,7 @@ public class MusicPlayer : MonoBehaviour
 
     private void Start()
     {
-        if (SceneManager.GetActiveScene().name == "Main_Menu" && menuMusic.isPlaying == false)
-        {
-            MenuMusicPlay(true);
-        }
+        MenuMusicPlay(true);
     }
 
     private void Update()
@@ -52,7 +58,7 @@ public class MusicPlayer : MonoBehaviour
     }
 
     public static void MenuMusicPlay(bool state)
-    {
+    { 
         if (state) instance.menuMusic.Play();
         else instance.menuMusic.Stop();
     }
@@ -81,5 +87,10 @@ public class MusicPlayer : MonoBehaviour
         {
             levelMusic.pitch = Mathf.Lerp(levelMusic.pitch, 0, pitchSpeed * Time.fixedDeltaTime);
         }
+    }
+
+    public static void MusicSpeedReset()
+    {
+        instance.levelMusic.pitch = 1;
     }
 }
