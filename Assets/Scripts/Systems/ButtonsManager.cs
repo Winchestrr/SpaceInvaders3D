@@ -36,11 +36,13 @@ public class ButtonsManager : MonoBehaviour
         {
             case "menu":
                 Time.timeScale = 1;
-                SceneManager.LoadScene("Main_Menu");
+                //SceneManager.LoadScene("Main_Menu");
+                SceneChange.ChangeScene("menu");
                 break;
 
             case "start":
-                SceneManager.LoadScene("Tile_level");
+                //SceneManager.LoadScene("Tile_level");
+                SceneChange.ChangeScene("level");
                 GameController.currentState = GameController.GameState.BATTLE;
                 GameStatsSystem.points = 0;
                 EnemySpawner.canSpawn = true;
@@ -48,11 +50,13 @@ public class ButtonsManager : MonoBehaviour
                 break;
 
             case "credits":
-                SceneManager.LoadScene("Credits");
+                //SceneManager.LoadScene("Credits");
+                SceneChange.ChangeScene("credits");
                 break;
 
             case "settings":
-                SceneManager.LoadScene("Settings");
+                //SceneManager.LoadScene("Settings");
+                SceneChange.ChangeScene("settings");
                 break;
 
             case "exit":
@@ -65,6 +69,11 @@ public class ButtonsManager : MonoBehaviour
 
             case "save":
                 PlayerPrefs.Save();
+                break;
+
+            case "select":
+                //SceneManager.LoadScene("Select_ship");
+                SceneChange.ChangeScene("select");
                 break;
         }
     }

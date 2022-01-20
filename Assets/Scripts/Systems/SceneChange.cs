@@ -6,39 +6,51 @@ using UnityEngine.SceneManagement;
 public class SceneChange : MonoBehaviour
 {
     public Animator animator;
+    public static string sceneToChange;
+
+    public static SceneChange instance;
+
+    private void Awake()
+    {
+        if (instance == null) instance = this;
+        //else Debug.LogError("Instance problem");
+    }
 
     public void ChooseShip(int ship)
     {
         SaveData.chosenShip = ship;
+        PlayerPrefs.SetInt("chosenShip", ship);
     }
 
-    public void OnSceneChange()
+    public static void ChangeScene(string scene)
     {
-        animator.SetTrigger("SceneOut");
+        sceneToChange = scene;
+        instance.animator.SetTrigger("ChangeScene");
     }
 
-    public void ChangeToMenu()
+    public void EndAnimationChangeScene()
     {
-        SceneManager.LoadScene("Main_Menu");
-    }
+        switch(sceneToChange)
+        {
+            case "menu":
+                SceneManager.LoadScene("Main_Menu");
+                break;
 
-    public void ChangeToGame()
-    {
-        SceneManager.LoadScene("Tile_level");
-    }
+            case "select":
+                SceneManager.LoadScene("Select_ship");
+                break;
 
-    public void ChangeToSelect()
-    {
-        SceneManager.LoadScene("Select_ship");
-    }
+            case "level":
+                SceneManager.LoadScene("Tile_level");
+                break;
 
-    public void ChangeToSettings()
-    {
-        SceneManager.LoadScene("Settings");
-    }
+            case "settings":
+                SceneManager.LoadScene("Settings");
+                break;
 
-    public void ChangeToCredits()
-    {
-        SceneManager.LoadScene("Credits");
+            case "credits":
+                SceneManager.LoadScene("Credits");
+                break;
+        }
     }
 }

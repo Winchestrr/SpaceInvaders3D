@@ -95,7 +95,6 @@ public class UIController : MonoBehaviour
 
     #region ---SET_UI_ELEMENTS---
 
-    //to zmieniæ na static, ale nie wiem jak
     public void SetUI()
     {
         gameStateText.text = GameController.currentState.ToString();

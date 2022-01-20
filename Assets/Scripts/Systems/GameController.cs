@@ -52,10 +52,10 @@ public class GameController : MonoBehaviour
         if (SaveData.isBoogie) boogie.BoogieModeON();
     }
 
-    //test
-    private void InstantiateControllers()
+    private void OnEnable()
     {
-
+        MusicPlayer.MenuMusicPlay(false);
+        MusicPlayer.LevelMusicPlay(true);
     }
 
     public static void GameOver()
