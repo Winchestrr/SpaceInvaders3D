@@ -67,11 +67,11 @@ public class SoundManager : MonoBehaviour
                 break;
 
             case "click":
-                instance.uiClick.Play();
+                //instance.uiClick.Play();
                 break;
 
             case "hover":
-                instance.buttonHover.Play();
+                //instance.buttonHover.Play();
                 break;
 
         }

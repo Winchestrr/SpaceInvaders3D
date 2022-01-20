@@ -8,10 +8,10 @@ public class DoubleGun : AmmoWeapon2
 
     protected override void Shoot()
     {
-        if (bulletsLeft > 0)
+        if (bulletsInMagazine > 0)
         {
             isMagazineEmpty = false;
-            bulletsLeft--;
+            bulletsInMagazine--;
 
             base.Shoot();
 

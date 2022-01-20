@@ -142,18 +142,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac034ff52e897714e95a0163dc70209e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gunEnd: {fileID: 0}
+  gunEnd: {fileID: 1917025234210601789}
   bullet: {fileID: 2944955773603090048, guid: 7b78021aac6ec2c409cfb7500fc54f1a, type: 3}
-  shootParticles: {fileID: 4953092824319545208, guid: bad3b2094babd944ca881c48c864786e, type: 3}
+  shootParticles: {fileID: 4306813012167626786, guid: 6f7ced993bf1acc4882e92bc63e98e5f, type: 3}
   damage: 35
   bulletSpeed: 18
   timeBetweenShots: 0.24
   haveParticles: 1
   isShooting: 1
+  uiController: {fileID: 0}
   canReload: 1
-  bulletsInMagazine: 4
-  bulletsLeft: 90
-  magazineSize: 4
+  bulletsInMagazine: 100
+  bulletsLeft: 900
+  magazineSize: 100
   isMagazineEmpty: 0
-  reloadTime: 2
+  reloadTime: 1
   isReloadable: 1

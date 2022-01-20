@@ -110,21 +110,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunEnd: {fileID: 5030750614626717277}
   bullet: {fileID: 2944955773603090048, guid: 7b78021aac6ec2c409cfb7500fc54f1a, type: 3}
-  shootParticles: {fileID: 0}
+  shootParticles: {fileID: 4306813012167626786, guid: 6f7ced993bf1acc4882e92bc63e98e5f, type: 3}
   damage: 10
   bulletSpeed: 30
   timeBetweenShots: 0.2
-  haveParticles: 0
+  haveParticles: 1
   isShooting: 1
   uiController: {fileID: 0}
-  weaponSystem: {fileID: 0}
-  isReloadable: 1
-  magazineSize: 50
-  allBullets: 50
-  ammoCost: 1
-  bulletsLeft: 50
-  currentReloadRate: 0
-  reloadTime: 0
-  isMagazineEmpty: 0
   canReload: 0
+  bulletsInMagazine: 50
+  bulletsLeft: 0
+  magazineSize: 50
+  isMagazineEmpty: 0
+  reloadTime: 1
+  isReloadable: 1
   gunEnd2: {fileID: 6852186080060347221}

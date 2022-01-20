@@ -45,9 +45,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f579fefeba774393965b534c29d2e83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamloWebserviceURL: http://dreamlo.com/lb/
   IUpgradedAndGotSSL: 0
-  privateCode: 
-  publicCode: 
+  privateCode: MwpPtxvT40qmF6rCKUkiEAPs_V6gTnzEWvaqj4gzhnJg
+  publicCode: 61e1fb668f40bb1034552e85
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 0

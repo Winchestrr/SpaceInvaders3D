@@ -107,7 +107,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 2
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0
@@ -3873,7 +3873,7 @@ ParticleSystem:
   LightsModule:
     enabled: 1
     ratio: 0.05
-    light: {fileID: 2334340307366050054, guid: 5acf7e92fc67e6f4f99c2d6f21cd110c, type: 3}
+    light: {fileID: 2334340307366050054, guid: 08dcc12e78c142b41806d561b169d7d4, type: 3}
     randomDistribution: 1
     color: 0
     range: 1

@@ -14,8 +14,8 @@ public class WeaponSystem : MonoBehaviour
     {
         uiController = FindObjectOfType<UIController>();
 
-        GunBase[] tmpWeapons = GetComponentsInChildren<GunBase>(true);
-        foreach(GunBase weapon in tmpWeapons)
+        GunBase[] tmpWeapons = GetComponentsInChildren<AmmoWeapon2>(true);
+        foreach(AmmoWeapon2 weapon in tmpWeapons)
         {
             weapons.Add(weapon);
         }
@@ -64,9 +64,9 @@ public class WeaponSystem : MonoBehaviour
 
     public void RemoveWeapon(GameObject weapon)
     {
-        weapons.Remove(weapon.GetComponent<GunBase>());
-        currentWeaponIndex--;
+        //weapons.Remove(weapon.GetComponent<GunBase>());
+        //currentWeaponIndex--;
 
-        Destroy(weapon);
+        //Destroy(weapon);
     }
 }

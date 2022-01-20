@@ -15,8 +15,6 @@ public class UIController : MonoBehaviour
     public GameObject ammoCounterGO;
     public TextMeshProUGUI currentBulletText;
     public TextMeshProUGUI leftBulletsText;
-    public GameObject infinities;
-    public static bool isNumber;
 
     [Header("Weapon icons")]
     public Image standardIcon;
@@ -64,14 +62,6 @@ public class UIController : MonoBehaviour
         else Debug.LogError("Instance problem");
 
         dreamlo = dreamloLeaderBoard.GetSceneDreamloLeaderboard();
-
-        if (ammoWeaponGO == null) ammoCounterGO.SetActive(false);
-        else ammoWeaponGO.SetActive(true);
-
-        NumbersInfinityChange();
-
-        //if (SaveData.chosenShip == 1) ammoCounterGO.SetActive(true);
-        //else ammoCounterGO.SetActive(false);
     }
 
     #region ---EVENT_ASSIGN---
@@ -199,7 +189,7 @@ public class UIController : MonoBehaviour
     }
 
     public void StopReload()
-    {
+    { 
         StopCoroutine(ReloadBar());
         reloadBar.fillAmount = 0;
         reloadBarGO.SetActive(false);
@@ -216,19 +206,6 @@ public class UIController : MonoBehaviour
         iconList[number].gameObject.SetActive(true);
     }
 
-    public void NumbersInfinityChange()
-    {
-        if(!isNumber)
-        {
-            ammoCounterGO.SetActive(false);
-            infinities.SetActive(true);
-        }
-        else
-        {
-            infinities.SetActive(false);
-            ammoCounterGO.SetActive(true);
-        }
-    }
 
     public static void Pause()
     {

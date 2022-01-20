@@ -6,7 +6,7 @@ public class AmmoWeapon2 : GunBase
 {
     [Header("Systems")]
     protected WeaponSystem weaponSystem;
-    private UIController uiController;
+    public UIController uiController;
 
     [Header("General")]
     public bool canReload;
@@ -30,22 +30,21 @@ public class AmmoWeapon2 : GunBase
         uiController.ammoWeaponGO = this.gameObject;
         uiController.canCheckReload = true;
 
-        UIController.isNumber = true;
-        uiController.NumbersInfinityChange();
     }
 
     private void OnEnable()
     {
-        uiController.ammoCounterGO.SetActive(true);
+        uiController.ammoWeapon = this;
+        uiController.ammoWeaponGO = this.gameObject;
+
         if (bulletsInMagazine == 0) uiController.reloadTextGO.SetActive(true);
     }
 
     private void OnDisable()
     {
-        if (uiController.ammoCounterGO != null) uiController.ammoCounterGO.SetActive(false);
         if (uiController.reloadTextGO != null) uiController.reloadTextGO.SetActive(false);
 
-        if (!canReload)
+        if (!canReload && uiController != null)
         {
             uiController.StopReload();
             canReload = true;
@@ -83,8 +82,8 @@ public class AmmoWeapon2 : GunBase
 
                 if(bulletsLeft <= 0)
                 {
-                    Debug.Log("remove weapon");
-                    weaponSystem.RemoveWeapon(this.gameObject);
+                    Debug.Log("magazine empty");
+                    //weaponSystem.RemoveWeapon(this.gameObject);
                 }
             }
         }

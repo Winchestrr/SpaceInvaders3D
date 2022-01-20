@@ -4,16 +4,6 @@ using UnityEngine;
 
 public class StandardWeapon : GunBase
 {
-    private UIController uiController;
-
-    private void Awake()
-    {
-
-        uiController = FindObjectOfType<UIController>();
-        uiController.NumbersInfinityChange();
-        UIController.isNumber = false;
-    }
-
     protected override void Shoot()
     {
         base.Shoot();

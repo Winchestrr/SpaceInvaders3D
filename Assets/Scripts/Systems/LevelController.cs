@@ -75,7 +75,7 @@ public class LevelController : MonoBehaviour
         GenerateWalls(tempTile);
         SpawnLight();
 
-        if (isGenerated) SpawnPickups(pickups[Random.Range(0, pickups.Length)], tempTile.transform);
+        if (isGenerated && pickups.Length > 0) SpawnPickups(pickups[Random.Range(0, pickups.Length)], tempTile.transform);
     }
 
     void GenerateWalls(GameObject parent)

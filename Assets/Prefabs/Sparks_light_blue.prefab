@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2334340307366050054}
   - component: {fileID: 7821252676452005648}
   m_Layer: 0
-  m_Name: Sparks_light
+  m_Name: Sparks_light_blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

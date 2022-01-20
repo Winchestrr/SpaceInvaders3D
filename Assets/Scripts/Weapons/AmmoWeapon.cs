@@ -33,18 +33,11 @@ public class AmmoWeapon : GunBase
 
     private void OnEnable()
     {
-        uiController.ammoCounterGO.SetActive(true);
-
         canReload = true;
     }
 
     private void OnDisable()
     {
-        if(uiController.ammoCounterGO != null)
-        {
-            uiController.ammoCounterGO.SetActive(false);
-        }
-
         if(uiController.reloadTextGO != null)
         {
             uiController.reloadTextGO.SetActive(false);
