@@ -9,6 +9,7 @@ TagManager:
   - Weapon
   - Enemy
   - DoubleGun
+  - FxTemporaire
   layers:
   - Default
   - TransparentFX
@@ -16,7 +17,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Pickup
   - Player
   - EnemyBullet
   - Enemy

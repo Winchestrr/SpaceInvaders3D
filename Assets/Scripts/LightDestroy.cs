@@ -22,6 +22,8 @@ public class LightDestroy : MonoBehaviour
     private void BoogieModeON()
     {
         isAlreadyGroovin = true;
+        gameObject.GetComponent<Light>().intensity = 2000;
+
         InvokeRepeating("RandomLight", 0, (60f / 132f));
     }
 

@@ -58,18 +58,19 @@ public class MusicPlayer : MonoBehaviour
     }
 
     public static void MenuMusicPlay(bool state)
-    { 
+    {
+        if (instance == null) return;
+
         if (state) instance.menuMusic.Play();
         else instance.menuMusic.Stop();
     }
 
     public static void LevelMusicPlay(bool state)
     {
+        if (instance == null) return;
+
         if (state) instance.levelMusic.Play();
-        else
-        {
-            instance.levelMusic.Stop();
-        }
+        else instance.levelMusic.Stop();
     }
 
     void LowpassPitchChange()

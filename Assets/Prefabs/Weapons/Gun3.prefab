@@ -152,6 +152,7 @@ MonoBehaviour:
   isShooting: 1
   uiController: {fileID: 0}
   canReload: 1
+  weaponType: standard
   bulletsInMagazine: 100
   bulletsLeft: 900
   magazineSize: 100

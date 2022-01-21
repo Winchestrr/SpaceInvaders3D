@@ -10,6 +10,8 @@ public class AmmoWeapon2 : GunBase
 
     [Header("General")]
     public bool canReload;
+    public static string currentWeaponType;
+    public string weaponType;
 
     [Header("Bullets")]
     public int bulletsInMagazine;
@@ -30,6 +32,7 @@ public class AmmoWeapon2 : GunBase
         uiController.ammoWeaponGO = this.gameObject;
         uiController.canCheckReload = true;
 
+        currentWeaponType = weaponType;
     }
 
     private void OnEnable()

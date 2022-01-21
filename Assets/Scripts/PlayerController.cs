@@ -40,12 +40,6 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        //contactParticle = Instantiate(
-        //    contactParticlePrefab,
-        //    transform.position,
-        //    transform.rotation,
-        //    particleMover.transform);
-
         contactParticle = Instantiate(
             contactParticlePrefab,
             transform.position,
@@ -55,7 +49,9 @@ public class PlayerController : MonoBehaviour
         levelController = FindObjectOfType<LevelController>();
 
         maxHealth = stats.startHealth;
-        playerHealth = maxHealth;
+        //playerHealth = maxHealth;
+        playerHealth = 70;
+
     }
 
     void LateUpdate()
@@ -73,7 +69,8 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.contactCount > 0 && collision.gameObject.tag != "Bullet")
         {
-            Debug.Log("particle: " + collision.contacts[0].point.ToString());
+            if (collision.gameObject.layer == 6) return;
+            //Debug.Log("particle: " + collision.contacts[0].point.ToString());
 
             contactParticle.gameObject.transform.position = collision.contacts[0].point;
             contactParticle.gameObject.transform.forward = collision.contacts[0].normal;
@@ -113,6 +110,10 @@ public class PlayerController : MonoBehaviour
         if (playerHealth <= 0)
         {
             GameController.GameOver();
+        }
+        if (playerHealth >= maxHealth)
+        {
+            playerHealth = maxHealth;
         }
     }
 
