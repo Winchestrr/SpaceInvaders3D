@@ -305,6 +305,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7954414691989487643, guid: 403f8c6c66de53f4ebe53afa5bcaaca2, type: 3}
+      propertyPath: canReload
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8344148227643933483, guid: 403f8c6c66de53f4ebe53afa5bcaaca2, type: 3}
       propertyPath: m_Name
       value: DoubleGun
@@ -327,6 +331,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3943265023849209613}
     m_Modifications:
+    - target: {fileID: 2113999725349126262, guid: 2dcebdf46476dbb4b969619bc96af8ce, type: 3}
+      propertyPath: canReload
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2113999725349126262, guid: 2dcebdf46476dbb4b969619bc96af8ce, type: 3}
+      propertyPath: isReloadable
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3350582973380746705, guid: 2dcebdf46476dbb4b969619bc96af8ce, type: 3}
       propertyPath: m_Name
       value: HomingGun
@@ -379,7 +391,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4944689053454552050, guid: 2dcebdf46476dbb4b969619bc96af8ce, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2dcebdf46476dbb4b969619bc96af8ce, type: 3}
 --- !u!4 &5357298941177766733 stripped
 Transform:

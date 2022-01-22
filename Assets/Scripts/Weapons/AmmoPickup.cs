@@ -25,6 +25,9 @@ public class AmmoPickup : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        StartCoroutine(PickUpPickup());
+        if (collision.gameObject.tag != "Player") return;
+
         switch(typeOfPickup)
         {
             case "ammo":
@@ -56,8 +59,6 @@ public class AmmoPickup : MonoBehaviour
                 PlayerController.playerHealth += healingRate;
                 break;
         }
-
-        StartCoroutine(PickUpPickup());
     }
 
     IEnumerator PickUpPickup()

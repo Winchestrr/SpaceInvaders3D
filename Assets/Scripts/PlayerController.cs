@@ -45,13 +45,10 @@ public class PlayerController : MonoBehaviour
             transform.position,
             transform.rotation);
 
-        //contactParticle.Stop();
         levelController = FindObjectOfType<LevelController>();
 
         maxHealth = stats.startHealth;
-        //playerHealth = maxHealth;
-        playerHealth = 70;
-
+        playerHealth = maxHealth;
     }
 
     void LateUpdate()
@@ -62,7 +59,11 @@ public class PlayerController : MonoBehaviour
         SetRotation();
         CheckLimits();
 
-        if (playerHealth <= (stats.startHealth / 3)) StartCoroutine(LowHPSound());
+        if (playerHealth <= (stats.startHealth / 3))
+        {
+            Debug.Log("warunek dziala");
+            SoundManager.PlaySound("lowHP");
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -117,19 +118,19 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private IEnumerator LowHPSound()
-    {
-        Debug.Log("ie works");
+    //private IEnumerator LowHPSound()
+    //{
+    //    Debug.Log("ie works");
 
-        if(playerHealth <= (stats.startHealth / 3))
-        {
-            Debug.Log("warunek dziala");
+    //    if(playerHealth <= (stats.startHealth / 3))
+    //    {
+    //        Debug.Log("warunek dziala");
 
-            //SoundManager.PlaySound("lowHP");
-            yield return new WaitWhile(() => SoundManager.instance.lowHealth.isPlaying);
-            StartCoroutine(LowHPSound());
-        }
-    }
+    //        //SoundManager.PlaySound("lowHP");
+    //        yield return new WaitWhile(() => SoundManager.instance.lowHealth.isPlaying);
+    //        StartCoroutine(LowHPSound());
+    //    }
+    //}
 
     void GetInputs()
     {

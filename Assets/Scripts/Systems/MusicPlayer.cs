@@ -92,6 +92,6 @@ public class MusicPlayer : MonoBehaviour
 
     public static void MusicSpeedReset()
     {
-        instance.levelMusic.pitch = 1;
+        if(instance != null) instance.levelMusic.pitch = 1;
     }
 }

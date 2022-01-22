@@ -111,7 +111,7 @@ MonoBehaviour:
   gunEnd: {fileID: 5030750614626717277}
   bullet: {fileID: 2944955773603090048, guid: 7b78021aac6ec2c409cfb7500fc54f1a, type: 3}
   shootParticles: {fileID: 4306813012167626786, guid: 6f7ced993bf1acc4882e92bc63e98e5f, type: 3}
-  damage: 10
+  damage: 25
   bulletSpeed: 30
   timeBetweenShots: 0.2
   haveParticles: 1

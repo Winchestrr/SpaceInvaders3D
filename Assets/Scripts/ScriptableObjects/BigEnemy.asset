@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   contactDamage: 50
-  maxHealth: 150
+  maxHealth: 120
   pointValue: 130

@@ -32,6 +32,8 @@ public class SoundManager : MonoBehaviour
     public AudioSource uiClick;
     public AudioSource buttonHover;
 
+    public bool canPlayHPSound;
+
     void Awake()
     {
         if (instance == null) instance = this;
@@ -47,18 +49,27 @@ public class SoundManager : MonoBehaviour
         switch (clip)
         {
             case "shoot":
+                instance.shootSFX.Stop();
+                instance.shootSFX.pitch = Random.Range(1.05f, 1.2f);
                 instance.shootSFX.Play();
                 break;
 
             case "lowHP":
-                instance.lowHealth.Play();
+                if (instance.canPlayHPSound)
+                {
+                    instance.StartCoroutine(instance.LowHPCoroutine());
+                }
                 break;
 
-            case "homingMisile":
+            case "homing":
+                instance.homingMisile.Stop();
+                instance.homingMisile.pitch = Random.Range(0.85f, 1f);
                 instance.homingMisile.Play();
                 break;
 
             case "explosion":
+                instance.shipExplosion.Stop();
+                instance.shipExplosion.pitch = Random.Range(0.8f, 1.1f);
                 instance.shipExplosion.Play();
                 break;
 
@@ -67,13 +78,22 @@ public class SoundManager : MonoBehaviour
                 break;
 
             case "click":
-                //instance.uiClick.Play();
+                instance.uiClick.Play();
                 break;
 
             case "hover":
-                //instance.buttonHover.Play();
+                instance.buttonHover.Play();
                 break;
 
         }
+    }
+
+    public IEnumerator LowHPCoroutine()
+    {
+        canPlayHPSound = false;
+        instance.lowHealth.Play();
+        yield return new WaitWhile(() => instance.lowHealth.isPlaying);
+        yield return new WaitForSeconds(0.2f);
+        canPlayHPSound = true;
     }
 }

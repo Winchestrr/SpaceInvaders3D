@@ -71,6 +71,9 @@ public class AmmoWeapon2 : GunBase
     {
         if (bulletsInMagazine > 0)
         {
+            if (weaponType == "homing") SoundManager.PlaySound("homing");
+            else SoundManager.PlaySound("shoot");
+
             bulletsInMagazine--;
 
             base.Shoot();
@@ -82,12 +85,6 @@ public class AmmoWeapon2 : GunBase
             {
                 bulletsInMagazine = 0;
                 isMagazineEmpty = true;
-
-                if(bulletsLeft <= 0)
-                {
-                    Debug.Log("magazine empty");
-                    //weaponSystem.RemoveWeapon(this.gameObject);
-                }
             }
         }
     }

@@ -10,10 +10,7 @@ public class BoogieMode : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            BoogieModeON();
-        }
+        //if (Input.GetKeyDown(KeyCode.B)) BoogieModeON();
     }
 
     public void BoogieModeON()

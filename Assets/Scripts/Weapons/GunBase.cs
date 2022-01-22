@@ -32,8 +32,6 @@ public class GunBase : MonoBehaviour
     {
         lastShotTime = Time.time;
 
-        //if (haveParticles) Instantiate(shootParticles, gunEnd.position, gunEnd.rotation, gunEnd.transform);
-
         if (!haveParticles) return;
 
         if (particle == null)
