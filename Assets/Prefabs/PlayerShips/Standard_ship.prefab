@@ -196,8 +196,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 3943265023849209613}
     m_Modifications:
     - target: {fileID: 1897538679685154224, guid: d7b3cac173b613143a3cb011e03ea3f4, type: 3}
+      propertyPath: bulletSpeed
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 1897538679685154224, guid: d7b3cac173b613143a3cb011e03ea3f4, type: 3}
+      propertyPath: bulletsLeft
+      value: 899
+      objectReference: {fileID: 0}
+    - target: {fileID: 1897538679685154224, guid: d7b3cac173b613143a3cb011e03ea3f4, type: 3}
       propertyPath: shootParticlesGO
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1897538679685154224, guid: d7b3cac173b613143a3cb011e03ea3f4, type: 3}
+      propertyPath: timeBetweenShots
+      value: 0.22
       objectReference: {fileID: 0}
     - target: {fileID: 2783670003671434001, guid: d7b3cac173b613143a3cb011e03ea3f4, type: 3}
       propertyPath: m_RootOrder

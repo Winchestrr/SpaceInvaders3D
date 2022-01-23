@@ -9,6 +9,7 @@ public class ButtonsManager : MonoBehaviour
     public Slider sfxSlider;
     public Slider musicSlider;
     public Toggle toggle;
+    public GameObject tutorialWindow;
 
     private void Awake()
     {
@@ -75,6 +76,11 @@ public class ButtonsManager : MonoBehaviour
             case "select":
                 //SceneManager.LoadScene("Select_ship");
                 SceneChange.ChangeScene("select");
+                break;
+
+            case "tutorial":
+                if (tutorialWindow.activeSelf) tutorialWindow.SetActive(false);
+                else tutorialWindow.SetActive(true);
                 break;
         }
     }
