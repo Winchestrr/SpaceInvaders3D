@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-        [Header("Objects")]
-
+    [Header("Objects")]
     public CharacterController controller;
     public CameraController cameraController;
     public GameController gameController;
@@ -15,10 +14,10 @@ public class PlayerController : MonoBehaviour
 
     public ParticleSystem contactParticlePrefab;
     private ParticleSystem contactParticle;
+    public ParticleSystem engineParticle;
     private GameObject particleMover;
 
-        [Header("Stats")]
-
+    [Header("Stats")]
     public static int maxHealth;
     public static int playerHealth;
 
@@ -32,6 +31,7 @@ public class PlayerController : MonoBehaviour
     Vector3 direction;
 
     public float shipPositionClamp;
+    public float engineParticleSpeed;
 
     private void Awake()
     {
@@ -59,9 +59,10 @@ public class PlayerController : MonoBehaviour
         SetRotation();
         CheckLimits();
 
+        SetParticle();
+
         if (playerHealth <= (stats.startHealth / 3))
         {
-            Debug.Log("warunek dziala");
             SoundManager.PlaySound("lowHP");
         }
     }
@@ -118,20 +119,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    //private IEnumerator LowHPSound()
-    //{
-    //    Debug.Log("ie works");
-
-    //    if(playerHealth <= (stats.startHealth / 3))
-    //    {
-    //        Debug.Log("warunek dziala");
-
-    //        //SoundManager.PlaySound("lowHP");
-    //        yield return new WaitWhile(() => SoundManager.instance.lowHealth.isPlaying);
-    //        StartCoroutine(LowHPSound());
-    //    }
-    //}
-
     void GetInputs()
     {
         movX = Input.GetAxis("Horizontal");
@@ -169,15 +156,6 @@ public class PlayerController : MonoBehaviour
         direction = new Vector3(movX, 0, 0);
         playerSpeedOut = stats.speedZ * movZ;
 
-        //do zmiany
-        //if(transform.position.x <= 13.5f && transform.position.x >= -13.5f)
-        //{
-        //    if (direction.magnitude > 0.1f)
-        //    {
-        //        transform.Translate(direction * stats.speedX * Time.deltaTime, Space.World);
-        //    }
-        //}
-
         if (direction.magnitude > 0.1f)
         {
             transform.Translate(direction * stats.speedX * Time.deltaTime, Space.World);
@@ -195,25 +173,19 @@ public class PlayerController : MonoBehaviour
             stats.rotationSpeed * Time.deltaTime);
     }
 
-    void OldPlayerMove()
+    void SetParticle()
     {
-        direction = new Vector3(movX, 0, 0);
-
-        playerSpeedOut = stats.speedZ * movZ;
-
-        if (direction.magnitude > 0.1f)
+        if (Input.GetKey(KeyCode.W))
         {
-            controller.Move(direction * stats.speedX * Time.deltaTime);
-
-            //to chyba do zmiany bêdzie
-            if (Input.GetKey(KeyCode.D))
-            {
-                targetAngleZ = -stats.desiredAngleZ;
-            }
-            else if (Input.GetKey(KeyCode.A))
-            {
-                targetAngleZ = stats.desiredAngleZ;
-            }
+            engineParticle.startSpeed = Mathf.Lerp(engineParticle.startSpeed, 6.5f, engineParticleSpeed * Time.deltaTime);
+        }
+        else if (Input.GetKey(KeyCode.S))
+        {
+            engineParticle.startSpeed = Mathf.Lerp(engineParticle.startSpeed, 1f, engineParticleSpeed * Time.deltaTime);
+        }
+        else
+        {
+            engineParticle.startSpeed = Mathf.Lerp(engineParticle.startSpeed, 2.2f, engineParticleSpeed * Time.deltaTime);
         }
     }
 

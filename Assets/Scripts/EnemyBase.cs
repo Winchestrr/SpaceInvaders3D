@@ -9,6 +9,7 @@ public class EnemyBase : MonoBehaviour
     public Transform destroyLine;
     public Image healthBar;
     public EnemyStats stats;
+    public ParticleSystem explosion;
 
     private int currentHealth;
     private bool isAlive = true;
@@ -48,8 +49,13 @@ public class EnemyBase : MonoBehaviour
             GameStatsSystem.enemiesKilled++;
             GameStatsSystem.AddPoints(stats.pointValue);
 
+            gameObject.GetComponent<MeshRenderer>().enabled = false;
+            gameObject.GetComponent<BoxCollider>().enabled = false;
+
+            explosion.Emit(75);
+
             SoundManager.PlaySound("explosion");
-            Destroy(gameObject);
+            Destroy(gameObject, 2);
         }
     }
 
