@@ -8,6 +8,7 @@ public class EnemyBase : MonoBehaviour
     [Header("Components")]
     public Transform destroyLine;
     public Image healthBar;
+    public GameObject wholeHealthBar;
     public EnemyStats stats;
     public ParticleSystem explosion;
 
@@ -52,7 +53,7 @@ public class EnemyBase : MonoBehaviour
 
             gameObject.GetComponent<MeshRenderer>().enabled = false;
             gameObject.GetComponent<BoxCollider>().enabled = false;
-            healthBar.gameObject.SetActive(false);
+            wholeHealthBar.SetActive(false);
             canShoot = false;
 
             explosion.Emit(75);

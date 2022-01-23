@@ -434,8 +434,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destroyLine: {fileID: 0}
   healthBar: {fileID: 8975959448820700387}
+  wholeHealthBar: {fileID: 1450587845464767833}
   stats: {fileID: 11400000, guid: 885228130d5cee242a4e96e44facf27d, type: 2}
   explosion: {fileID: 2310910113255686377}
+  canShoot: 1
   isDebug: 0
   rayDistance: 200
   isPlayerHit: 0

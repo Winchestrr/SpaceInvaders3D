@@ -309,7 +309,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1897538679685154224, guid: d7b3cac173b613143a3cb011e03ea3f4, type: 3}
       propertyPath: bulletSpeed
-      value: 21
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 1897538679685154224, guid: d7b3cac173b613143a3cb011e03ea3f4, type: 3}
       propertyPath: bulletsLeft
@@ -321,7 +321,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1897538679685154224, guid: d7b3cac173b613143a3cb011e03ea3f4, type: 3}
       propertyPath: timeBetweenShots
-      value: 0.22
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 2783670003671434001, guid: d7b3cac173b613143a3cb011e03ea3f4, type: 3}
       propertyPath: m_RootOrder

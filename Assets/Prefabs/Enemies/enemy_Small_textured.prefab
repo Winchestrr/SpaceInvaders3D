@@ -463,6 +463,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destroyLine: {fileID: 0}
   healthBar: {fileID: 3631531591697593016}
+  wholeHealthBar: {fileID: 6780069218877383531}
   stats: {fileID: 11400000, guid: 6dbb027caf191e94d9967db385b8632d, type: 2}
   explosion: {fileID: 5243810741014476396}
   canShoot: 1
@@ -550,6 +551,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7501605440380960858, guid: 1099e972ca4641446a784347415697dc, type: 3}
       propertyPath: prewarm
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7501605440380960858, guid: 1099e972ca4641446a784347415697dc, type: 3}
+      propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7501605440380960858, guid: 1099e972ca4641446a784347415697dc, type: 3}

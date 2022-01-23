@@ -18,11 +18,19 @@ public class MusicPlayer : MonoBehaviour
     [Range(0, 5)]
     public float pitchSpeed;
 
+    public static bool isOpenedFirstTime = true;
+
     public static string previousScene;
 
 
     private void Awake()
     {
+        if(isOpenedFirstTime)
+        {
+            PlayerPrefs.SetFloat("musicVolume", 1);
+            isOpenedFirstTime = false;
+        }
+
         levelMusic.volume = PlayerPrefs.GetFloat("musicVolume");
         menuMusic.volume = PlayerPrefs.GetFloat("musicVolume");
 

@@ -2077,8 +2077,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.12, y: 0.65}
   m_AnchorMax: {x: 0.88, y: 0.92}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0.000015259, y: 0}
+  m_SizeDelta: {x: -92.3085, y: 90.3639}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1458042064
 MonoBehaviour:
@@ -2100,7 +2100,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Game title
+  m_text: Space Breakout
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 889d223ce1acdcf4dba4888af688782a, type: 2}
   m_sharedMaterial: {fileID: 4996347096714514403, guid: 889d223ce1acdcf4dba4888af688782a, type: 2}
@@ -2127,7 +2127,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 214.5
+  m_fontSize: 202.35
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2137,9 +2137,9 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 5
+  m_characterSpacing: 12.62
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: -30.51
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0

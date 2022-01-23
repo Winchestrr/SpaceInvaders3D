@@ -41,13 +41,13 @@ public class SoundManager : MonoBehaviour
 
         //DontDestroyOnLoad(this.gameObject);
 
-        List<AudioSource> audioSources = new List<AudioSource>();
+        //List<AudioSource> audioSources = new List<AudioSource>();
         
-        foreach(Transform child in transform)
-        {
-            child.gameObject.GetComponent<AudioSource>().volume =
-                PlayerPrefs.GetFloat("sfxVolume");
-        }
+        //foreach(Transform child in transform)
+        //{
+        //    child.gameObject.GetComponent<AudioSource>().volume =
+        //        PlayerPrefs.GetFloat("sfxVolume");
+        //}
     }
 
     public static void PlaySound (string clip)

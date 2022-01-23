@@ -878,6 +878,7 @@ MonoBehaviour:
   sfxSlider: {fileID: 0}
   musicSlider: {fileID: 0}
   toggle: {fileID: 0}
+  tutorialWindow: {fileID: 0}
 --- !u!1 &1107194252
 GameObject:
   m_ObjectHideFlags: 0
@@ -940,8 +941,10 @@ MonoBehaviour:
 
     <size=70%><color=white>
 
-    <size=80%>3D modelling,
-    audio
+    <size=80%>3D art,
+
+    sound
+    design
 
 '
   m_isRightToLeft: 0
@@ -1261,11 +1264,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Dawid Kula
+  m_text: 'Dawid
 
-    <size=70%><color=white>
+    <size=70%>@Connor1337x<color=white>
 
-    <size=80%>3D modelling, shaders
+    <size=80%>3D art,
+    VFX
 
 '
   m_isRightToLeft: 0
@@ -1402,7 +1406,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Karolina B\u0142aszczuk\n<size=70%><color=white>\n<size=80%>UI design\n"
+  m_text: "Karolina B\u0142aszczuk\n<size=70%><color=white>\n<size=80%>UI, 2D design\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6d79e934a5e1a2f4fa3fc380ac63609b, type: 2}
   m_sharedMaterial: {fileID: -7571663955151560017, guid: 6d79e934a5e1a2f4fa3fc380ac63609b, type: 2}
