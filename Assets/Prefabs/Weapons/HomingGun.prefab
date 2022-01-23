@@ -184,6 +184,7 @@ MonoBehaviour:
   isShooting: 1
   uiController: {fileID: 0}
   canReload: 0
+  weaponType: homing
   bulletsInMagazine: 30
   bulletsLeft: 0
   magazineSize: 30

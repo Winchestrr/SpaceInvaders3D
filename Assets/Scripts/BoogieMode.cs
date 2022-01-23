@@ -8,23 +8,15 @@ public class BoogieMode : MonoBehaviour
     public AudioSource boogieMusic;
     public GameObject musicPlayer;
 
-    private void Start()
-    {
-        
-    }
-
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            BoogieModeON();
-        }
+        //if (Input.GetKeyDown(KeyCode.B)) BoogieModeON();
     }
 
     public void BoogieModeON()
     {
         SaveData.isBoogie = true;
-        musicPlayer.SetActive(false);
+        MusicPlayer.LevelMusicPlay(false);
         boogieMusic.Play();
     }
 }

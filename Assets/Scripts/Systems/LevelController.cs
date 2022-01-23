@@ -14,6 +14,8 @@ public class LevelController : MonoBehaviour
     public GameObject[] pickups;
     public GameObject particleMover;
 
+    public float spawnPickupChance;
+
     public float wallSubtileSize;
     public float floorSubtileSize;
     public float tileLength;
@@ -43,6 +45,7 @@ public class LevelController : MonoBehaviour
 
     private void Start()
     {
+        particleMover = GameObject.Find("ParticleMover");
         GenerateLevel();
     }
 
@@ -75,7 +78,12 @@ public class LevelController : MonoBehaviour
         GenerateWalls(tempTile);
         SpawnLight();
 
-        if (isGenerated && pickups.Length > 0) SpawnPickups(pickups[Random.Range(0, pickups.Length)], tempTile.transform);
+        if (isGenerated &&
+            pickups.Length > 0 &&
+            Random.Range(0, 100) < spawnPickupChance)
+        {
+            SpawnPickups(pickups[Random.Range(0, pickups.Length)], tempTile.transform);
+        }
     }
 
     void GenerateWalls(GameObject parent)

@@ -54,8 +54,6 @@ MonoBehaviour:
   - {fileID: 6797285398756711116, guid: 4286672db064c704b96dbd9cc5e1aeb3, type: 3}
   - {fileID: 1088011911127099463, guid: 3f7d5dbcfa4defd489b26f8fca67b52b, type: 3}
   - {fileID: 4410875631250989023, guid: c559f4c1cd0dd06428ebab96ecbb5182, type: 3}
-  - {fileID: 8257564672410176977, guid: da793ff940a86f447b7f609cd189e268, type: 3}
-  - {fileID: 4371008165409910202, guid: 9f8e8ecd5271bea47804eb056111ffaf, type: 3}
   floorSubtiles:
   - {fileID: 4410875631250989023, guid: c559f4c1cd0dd06428ebab96ecbb5182, type: 3}
   - {fileID: 1088011911127099463, guid: 3f7d5dbcfa4defd489b26f8fca67b52b, type: 3}
@@ -65,17 +63,23 @@ MonoBehaviour:
   - {fileID: 3455448217884872178, guid: 8b51a38448885ab44b6dcec2c5039381, type: 3}
   - {fileID: 1207058749838071435, guid: 73c76d76b0caba847b2e60f6b1c383a7, type: 3}
   - {fileID: 1740823539069208564, guid: 4225309e4a5a7db489384fd01d633ca7, type: 3}
-  - {fileID: 4371008165409910202, guid: 9f8e8ecd5271bea47804eb056111ffaf, type: 3}
+  litSubtiles:
   - {fileID: 8257564672410176977, guid: da793ff940a86f447b7f609cd189e268, type: 3}
+  - {fileID: 4371008165409910202, guid: 9f8e8ecd5271bea47804eb056111ffaf, type: 3}
   levelTile: {fileID: 2593652643335999632, guid: 80791397fbd1cb149b4016f2f2c614d9, type: 3}
   pickups:
-  - {fileID: 377749394621041867, guid: 7e821c9a6f1fadf468304d15854025a1, type: 3}
+  - {fileID: 377749394621041867, guid: 1c9976f44f243e34995ab04fe014cd21, type: 3}
+  - {fileID: 377749394621041867, guid: 5de8172c0000d5443a653584f873745d, type: 3}
+  particleMover: {fileID: 0}
+  spawnPickupChance: 70
   wallSubtileSize: 4
   floorSubtileSize: 4
   tileLength: 8
   floorWidth: 8
-  wallHeight: 4
+  wallHeight: 8
   numberOfTiles: 12
   startIndex: -1
   wallPosX: 0
-  levelSpeedDisplay: -13
+  levelSpeedDisplay: -24
+  lightLeft: {fileID: 428282573231987366, guid: 59167882ebaa4c94d9152b3a70de29c3, type: 3}
+  lightRight: {fileID: 3026692758226882083, guid: 0af9dd1cb36958b43854a8026dee722e, type: 3}

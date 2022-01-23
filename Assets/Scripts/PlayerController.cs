@@ -40,18 +40,11 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        //contactParticle = Instantiate(
-        //    contactParticlePrefab,
-        //    transform.position,
-        //    transform.rotation,
-        //    particleMover.transform);
-
         contactParticle = Instantiate(
             contactParticlePrefab,
             transform.position,
             transform.rotation);
 
-        //contactParticle.Stop();
         levelController = FindObjectOfType<LevelController>();
 
         maxHealth = stats.startHealth;
@@ -66,14 +59,19 @@ public class PlayerController : MonoBehaviour
         SetRotation();
         CheckLimits();
 
-        if (playerHealth <= (stats.startHealth / 3)) StartCoroutine(LowHPSound());
+        if (playerHealth <= (stats.startHealth / 3))
+        {
+            Debug.Log("warunek dziala");
+            SoundManager.PlaySound("lowHP");
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.contactCount > 0 && collision.gameObject.tag != "Bullet")
         {
-            Debug.Log("particle: " + collision.contacts[0].point.ToString());
+            if (collision.gameObject.layer == 6) return;
+            //Debug.Log("particle: " + collision.contacts[0].point.ToString());
 
             contactParticle.gameObject.transform.position = collision.contacts[0].point;
             contactParticle.gameObject.transform.forward = collision.contacts[0].normal;
@@ -114,21 +112,25 @@ public class PlayerController : MonoBehaviour
         {
             GameController.GameOver();
         }
-    }
-
-    private IEnumerator LowHPSound()
-    {
-        Debug.Log("ie works");
-
-        if(playerHealth <= (stats.startHealth / 3))
+        if (playerHealth >= maxHealth)
         {
-            Debug.Log("warunek dziala");
-
-            //SoundManager.PlaySound("lowHP");
-            yield return new WaitWhile(() => SoundManager.instance.lowHealth.isPlaying);
-            StartCoroutine(LowHPSound());
+            playerHealth = maxHealth;
         }
     }
+
+    //private IEnumerator LowHPSound()
+    //{
+    //    Debug.Log("ie works");
+
+    //    if(playerHealth <= (stats.startHealth / 3))
+    //    {
+    //        Debug.Log("warunek dziala");
+
+    //        //SoundManager.PlaySound("lowHP");
+    //        yield return new WaitWhile(() => SoundManager.instance.lowHealth.isPlaying);
+    //        StartCoroutine(LowHPSound());
+    //    }
+    //}
 
     void GetInputs()
     {

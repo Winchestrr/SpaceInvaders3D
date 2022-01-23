@@ -10,6 +10,8 @@ public class AmmoWeapon2 : GunBase
 
     [Header("General")]
     public bool canReload;
+    public static string currentWeaponType;
+    public string weaponType;
 
     [Header("Bullets")]
     public int bulletsInMagazine;
@@ -30,6 +32,7 @@ public class AmmoWeapon2 : GunBase
         uiController.ammoWeaponGO = this.gameObject;
         uiController.canCheckReload = true;
 
+        currentWeaponType = weaponType;
     }
 
     private void OnEnable()
@@ -68,6 +71,9 @@ public class AmmoWeapon2 : GunBase
     {
         if (bulletsInMagazine > 0)
         {
+            if (weaponType == "homing") SoundManager.PlaySound("homing");
+            else SoundManager.PlaySound("shoot");
+
             bulletsInMagazine--;
 
             base.Shoot();
@@ -79,12 +85,6 @@ public class AmmoWeapon2 : GunBase
             {
                 bulletsInMagazine = 0;
                 isMagazineEmpty = true;
-
-                if(bulletsLeft <= 0)
-                {
-                    Debug.Log("magazine empty");
-                    //weaponSystem.RemoveWeapon(this.gameObject);
-                }
             }
         }
     }

@@ -47,6 +47,8 @@ public class EnemyBase : MonoBehaviour
         {
             GameStatsSystem.enemiesKilled++;
             GameStatsSystem.AddPoints(stats.pointValue);
+
+            SoundManager.PlaySound("explosion");
             Destroy(gameObject);
         }
     }

@@ -55,6 +55,12 @@ public class GameController : MonoBehaviour
     private void OnEnable()
     {
         MusicPlayer.MenuMusicPlay(false);
+
+        if (MusicPlayer.instance == null ||
+            MusicPlayer.instance.levelMusic.isPlaying == true ||
+            SaveData.isBoogie == true)
+            return;
+
         MusicPlayer.LevelMusicPlay(true);
     }
 
