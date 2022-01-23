@@ -2493,14 +2493,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2841182218791339749, guid: 5062ce7875d097e4aaa652f7edbd016b, type: 3}
-      propertyPath: m_Volume
-      value: 0.698
-      objectReference: {fileID: 0}
-    - target: {fileID: 2841182218791339749, guid: 5062ce7875d097e4aaa652f7edbd016b, type: 3}
-      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
-      value: 0.242
-      objectReference: {fileID: 0}
     - target: {fileID: 2841182219764888728, guid: 5062ce7875d097e4aaa652f7edbd016b, type: 3}
       propertyPath: m_Name
       value: SoundManager
