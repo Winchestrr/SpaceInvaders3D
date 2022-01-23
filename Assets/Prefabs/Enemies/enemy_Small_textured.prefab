@@ -241,7 +241,7 @@ GameObject:
   - component: {fileID: 3981794042957251308}
   - component: {fileID: 3633828412590900803}
   m_Layer: 0
-  m_Name: Canvas (1)
+  m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -465,6 +465,7 @@ MonoBehaviour:
   healthBar: {fileID: 3631531591697593016}
   stats: {fileID: 11400000, guid: 6dbb027caf191e94d9967db385b8632d, type: 2}
   explosion: {fileID: 5243810741014476396}
+  canShoot: 1
   isDebug: 0
   rayDistance: 100
   isPlayerHit: 0

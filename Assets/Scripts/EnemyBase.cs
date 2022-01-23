@@ -14,6 +14,7 @@ public class EnemyBase : MonoBehaviour
     private int currentHealth;
     private bool isAlive = true;
     private bool canMove = true;
+    public bool canShoot = true;
     public bool isDebug;
 
     [Header("Raycast")]
@@ -51,6 +52,8 @@ public class EnemyBase : MonoBehaviour
 
             gameObject.GetComponent<MeshRenderer>().enabled = false;
             gameObject.GetComponent<BoxCollider>().enabled = false;
+            healthBar.gameObject.SetActive(false);
+            canShoot = false;
 
             explosion.Emit(75);
 
@@ -90,7 +93,7 @@ public class EnemyBase : MonoBehaviour
 
     protected void CastRay()
     {
-        Debug.DrawRay(transform.position, transform.forward * rayDistance, Color.green);
+        //Debug.DrawRay(transform.position, transform.forward * rayDistance, Color.green);
         if (Physics.Raycast(transform.position, transform.forward, out hitInfo, rayDistance, castingLayer))
         {
             if(isDebug) Debug.Log("hit");

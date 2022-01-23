@@ -10,7 +10,7 @@ public class StandardEnemy : EnemyBase
     {
         base.Update();
 
-        if(isPlayerHit && Random.Range(0, 100) > 50) currentWeapon.TryShoot();
+        if(isPlayerHit && canShoot && Random.Range(0, 100) > 50) currentWeapon.TryShoot();
     }
 
     protected override void OnEnable()
