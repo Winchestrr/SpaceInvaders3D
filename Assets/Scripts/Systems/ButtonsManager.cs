@@ -91,18 +91,13 @@ public class ButtonsManager : MonoBehaviour
         {
             case "music":
                 PlayerPrefs.SetFloat("musicVolume", musicSlider.value);
-
                 SaveData.musicLevel = musicSlider.value;
-                Debug.Log(SaveData.musicLevel);
                 break;
 
             case "sfx":
                 PlayerPrefs.SetFloat("sfxVolume", sfxSlider.value);
-
                 SaveData.sfxLevel = sfxSlider.value;
-                Debug.Log(SaveData.sfxLevel);
                 break;
-
         }
     }
 

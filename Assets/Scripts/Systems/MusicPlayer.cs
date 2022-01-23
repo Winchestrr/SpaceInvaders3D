@@ -23,7 +23,8 @@ public class MusicPlayer : MonoBehaviour
 
     private void Awake()
     {
-        
+        levelMusic.volume = PlayerPrefs.GetFloat("musicVolume");
+        menuMusic.volume = PlayerPrefs.GetFloat("musicVolume");
 
         DontDestroyOnLoad(gameObject);
         if (instance == null) instance = this;

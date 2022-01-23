@@ -37,11 +37,17 @@ public class SoundManager : MonoBehaviour
     void Awake()
     {
         if (instance == null) instance = this;
-        //else Debug.LogError("Instance problem");
         else return;
 
-        //if(GameObject.Find("SoundManager") == null) DontDestroyOnLoad(this.gameObject);
-        DontDestroyOnLoad(this.gameObject);
+        //DontDestroyOnLoad(this.gameObject);
+
+        List<AudioSource> audioSources = new List<AudioSource>();
+        
+        foreach(Transform child in transform)
+        {
+            child.gameObject.GetComponent<AudioSource>().volume =
+                PlayerPrefs.GetFloat("sfxVolume");
+        }
     }
 
     public static void PlaySound (string clip)
