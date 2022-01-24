@@ -46,6 +46,10 @@ public class GameController : MonoBehaviour
         currentState = GameState.STARTBATTLE;
         currentState = GameState.BATTLE;
 
+        GameStatsSystem.enemiesKilled = 0;
+        GameStatsSystem.points = 0;
+        GameStatsSystem.currentTime = 0;
+
         chosenShipIndex = SaveData.chosenShip;
         currentPlayerShip = InstantiatePlayerShip(playerShips[chosenShipIndex]);
 
@@ -61,14 +65,14 @@ public class GameController : MonoBehaviour
             SaveData.isBoogie == true)
             return;
 
-        MusicPlayer.LevelMusicPlay(true);
+        if(!SaveData.isBoogie) MusicPlayer.LevelMusicPlay(true);
     }
 
     public static void GameOver()
     {
         OnGameOver();
 
-        SaveGame();
+        
 
         GameController.currentState = GameController.GameState.GAMEOVER;
         EnemySpawner.canSpawn = !EnemySpawner.canSpawn;
@@ -80,6 +84,8 @@ public class GameController : MonoBehaviour
         SaveData.roundTime = GameStatsSystem.currentTime;
         SaveData.finalScore = (int) Mathf.Ceil(GameStatsSystem.points +
             (GameStatsSystem.currentTime * Mathf.Ceil(GameStatsSystem.enemiesKilled / 2)));
+
+        SaveGame();
 
         Time.timeScale = 0.2f;
     }

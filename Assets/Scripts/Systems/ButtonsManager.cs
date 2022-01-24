@@ -31,6 +31,7 @@ public class ButtonsManager : MonoBehaviour
 
     public void OnAnyMenuButton(string name)
     {
+        Debug.Log("button");
         SoundManager.PlaySound("click");
 
         switch(name)

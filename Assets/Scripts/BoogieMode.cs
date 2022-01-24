@@ -17,6 +17,7 @@ public class BoogieMode : MonoBehaviour
     {
         SaveData.isBoogie = true;
         MusicPlayer.LevelMusicPlay(false);
+        MusicPlayer.MenuMusicPlay(false);
         boogieMusic.Play();
     }
 }
