@@ -36,8 +36,6 @@ public class GameController : MonoBehaviour
 
     public void Awake()
     {
-        //instance == null ? instance = this : Debug.LogError("Instance problem"); 
-
         if (instance == null) instance = this;
         else Debug.LogError("Instance problem");
 
