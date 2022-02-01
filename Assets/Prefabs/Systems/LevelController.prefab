@@ -70,6 +70,8 @@ MonoBehaviour:
   pickups:
   - {fileID: 377749394621041867, guid: 1c9976f44f243e34995ab04fe014cd21, type: 3}
   - {fileID: 377749394621041867, guid: 5de8172c0000d5443a653584f873745d, type: 3}
+  - {fileID: 8654703577691633552, guid: e6d42eb2795274b438aa1823cb43398f, type: 3}
+  - {fileID: 8654703577691633552, guid: ac98514bba0b63943bb9c559b6da31d3, type: 3}
   particleMover: {fileID: 0}
   spawnPickupChance: 70
   wallSubtileSize: 4

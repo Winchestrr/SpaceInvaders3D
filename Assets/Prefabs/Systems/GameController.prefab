@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7699639517789193114}
   - component: {fileID: 8251579261379084644}
   - component: {fileID: 1660345247}
+  - component: {fileID: 5740117939451554285}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -92,15 +93,38 @@ MonoBehaviour:
   - levelDistance: 500
     levelSpeedValue: -24
     spawnTimerRange: {x: 3, y: 5}
+    playerFOV: 0
   - levelDistance: 1200
     levelSpeedValue: -26
     spawnTimerRange: {x: 2.5, y: 5}
+    playerFOV: 0
   - levelDistance: 1800
     levelSpeedValue: -30
     spawnTimerRange: {x: 2, y: 4}
+    playerFOV: 0
   - levelDistance: 2500
     levelSpeedValue: -34
     spawnTimerRange: {x: 2, y: 3.5}
+    playerFOV: 0
   - levelDistance: 3500
     levelSpeedValue: -40
     spawnTimerRange: {x: 1, y: 2.3}
+    playerFOV: 0
+--- !u!114 &5740117939451554285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7699639517789193113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4809133c0d2bde14a8024679f5312fad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDamageUpActive: 0
+  damageUpTime: 7
+  damageUpMultiplier: 2
+  isBulletsUpActive: 0
+  bulletsUpTime: 10
+  bulletsUpMultiplier: 2

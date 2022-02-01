@@ -6,6 +6,7 @@ public class AmmoPickup : MonoBehaviour
 {
     [SerializeField] private GameObject particleGO;
     private ParticleSystem particle;
+    private PowerUpSystem powerUpSystem;
 
     [Header("Ammo pickup")]
     public int standardAmmo;
@@ -19,6 +20,7 @@ public class AmmoPickup : MonoBehaviour
 
     private void Start()
     {
+        powerUpSystem = FindObjectOfType<PowerUpSystem>();
         particle = particleGO.GetComponent<ParticleSystem>();
         //particle = Instantiate(particleGO.gameObject, transform.position, transform.rotation).GetComponent<ParticleSystem>();
     }
@@ -28,12 +30,12 @@ public class AmmoPickup : MonoBehaviour
         StartCoroutine(PickUpPickup());
         if (collision.gameObject.tag != "Player") return;
 
-        switch(typeOfPickup)
+        WeaponSystem weaponSystem = collision.gameObject.GetComponentInChildren<WeaponSystem>();
+        AmmoWeapon2 ammoWeapon = weaponSystem.weapons[weaponSystem.currentWeaponIndex].GetComponent<AmmoWeapon2>();
+
+        switch (typeOfPickup)
         {
             case "ammo":
-                WeaponSystem weaponSystem = collision.gameObject.GetComponentInChildren<WeaponSystem>();
-                AmmoWeapon2 ammoWeapon = weaponSystem.weapons[weaponSystem.currentWeaponIndex].GetComponent<AmmoWeapon2>();
-
                 if (weaponSystem != null)
                 {
                     switch(AmmoWeapon2.currentWeaponType)
@@ -57,6 +59,14 @@ public class AmmoPickup : MonoBehaviour
 
             case "health":
                 PlayerController.playerHealth += healingRate;
+                break;
+
+            case "damageUp":
+                powerUpSystem.DamageUp();
+                break;
+
+            case "bulletsUp":
+                powerUpSystem.BulletsUp();
                 break;
         }
     }

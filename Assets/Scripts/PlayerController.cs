@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Stats")]
     public static int maxHealth;
-    public static int playerHealth;
+    public static float playerHealth;
 
     public int obstacleDamage;
 
@@ -106,7 +106,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public static void DealPlayerDamage(int damage)
+    public static void DealPlayerDamage(float damage)
     {
         playerHealth -= damage;
         if (playerHealth <= 0)

@@ -295,7 +295,7 @@ namespace VLB
 
         Vector3 GetDirection(uint dirInt)
         {
-            dirInt = dirInt % GetDirectionCount();
+            dirInt %= GetDirectionCount();
             switch (dirInt)
             {
                 case (uint)Direction.Up:    return  m_Master.raycastGlobalUp;

@@ -82,7 +82,7 @@ public class LevelController : MonoBehaviour
             pickups.Length > 0 &&
             Random.Range(0, 100) < spawnPickupChance)
         {
-            SpawnPickups(pickups[Random.Range(0, pickups.Length)], tempTile.transform);
+            SpawnPickups(tempTile.transform);
         }
     }
 
@@ -125,8 +125,22 @@ public class LevelController : MonoBehaviour
         }
     }
 
-    void SpawnPickups(GameObject pickup, Transform parent)
+    void SpawnPickups(Transform parent)
     {
+        GameObject pickup;
+        int randomNo = Random.Range(0, 100);
+
+        if(randomNo < 62)
+        {
+            if (Random.Range(0, 100) < 50) pickup = pickups[0];
+            else pickup = pickups[1];
+        }
+        else
+        {
+            if (Random.Range(0, 100) < 50) pickup = pickups[2];
+            else pickup = pickups[3];
+        }
+
         if (Random.Range(0, 2) > 0)
         {
             float spawnX = Random.Range(-(floorSubtileSize * floorWidth) / 2, (floorSubtileSize * floorWidth) / 2);

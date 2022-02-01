@@ -7,7 +7,7 @@ public class BulletBase : MonoBehaviour
     protected Rigidbody rb;
     public ParticleSystem particle;
 
-    protected int damage;
+    protected float damage;
     protected float speed;
     public float lifetime;
 
@@ -22,7 +22,7 @@ public class BulletBase : MonoBehaviour
         rb.velocity = transform.forward * (speed - LevelController.levelSpeed);
     }
 
-    public virtual void Launch(int _damage, float _speed)
+    public virtual void Launch(float _damage, float _speed)
     {
         Vector3 bulletDirection = transform.forward;
         bulletDirection.y += Random.Range(-angle, angle);

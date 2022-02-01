@@ -12,7 +12,7 @@ public class EnemyBase : MonoBehaviour
     public EnemyStats stats;
     public ParticleSystem explosion;
 
-    private int currentHealth;
+    private float currentHealth;
     private bool isAlive = true;
     private bool canMove = true;
     public bool canShoot = true;
@@ -40,7 +40,7 @@ public class EnemyBase : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         currentHealth -= damage;
         healthBar.fillAmount = ((float)currentHealth / (float)stats.maxHealth);

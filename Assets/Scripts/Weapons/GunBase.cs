@@ -10,9 +10,9 @@ public class GunBase : MonoBehaviour
     [SerializeField] protected ParticleSystem shootParticles;
     private ParticleSystem particle;
 
-    [SerializeField] protected int damage;
+    public float damage;
     [SerializeField] protected float bulletSpeed;
-    [SerializeField] protected float timeBetweenShots;
+    public float timeBetweenShots;
     protected float currentTimeBetweenShots;
     protected float lastShotTime;
     public bool haveParticles;

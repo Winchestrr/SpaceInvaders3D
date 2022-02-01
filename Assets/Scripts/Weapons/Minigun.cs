@@ -19,7 +19,7 @@ public class Minigun : GunBase
         GetInputs();
 
         animator.SetFloat("MinigunSpeed", minigunSpeed);
-        timeBetweenShots = timeBetweenShots / minigunSpeed;
+        timeBetweenShots /= minigunSpeed;
 
         
     }

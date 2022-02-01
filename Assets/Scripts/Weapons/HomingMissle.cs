@@ -20,7 +20,7 @@ public class HomingMissle : StandardBullet
         RotateToTarget();  
     }
 
-    public override void Launch(int _damage, float _speed)
+    public override void Launch(float _damage, float _speed)
     {
         base.Launch(_damage, _speed);
     }
